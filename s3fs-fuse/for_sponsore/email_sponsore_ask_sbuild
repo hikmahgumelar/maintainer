@@ -1,0 +1,10 @@
+Hi,
+
+I have tested the package in a clean unstable chroot using sbuild, and the build completed successfully.
+
+Lintian also completed successfully, with only minor warnings related to upstream manpage formatting and no significant Debian packaging issues.
+
+Please let me know if you would like the full build log or any further changes.
+
+Best regards,
+Hikmah Gumelar
