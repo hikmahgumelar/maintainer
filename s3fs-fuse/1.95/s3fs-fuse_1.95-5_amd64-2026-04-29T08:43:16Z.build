@@ -1,0 +1,44 @@
+sbuild (Debian sbuild) 0.91.8 (14 April 2026) on 138aa355a04f
+
++==============================================================================+
+| s3fs-fuse 1.95-5 (amd64)                     Wed, 29 Apr 2026 08:43:16 +0000 |
++==============================================================================+
+
+Package: s3fs-fuse
+Version: 1.95-5
+Source Version: 1.95-5
+Distribution: unstable
+Machine Architecture: amd64
+Host Architecture: amd64
+Build Architecture: amd64
+Build Type: binary
+
+I: No tarballs found in /root/.cache/sbuild
+Error fetching ranges
+No subuid entry for root
+invalid idmap
+E: Error creating chroot session: skipping s3fs-fuse
+
++------------------------------------------------------------------------------+
+| Summary                                      Wed, 29 Apr 2026 08:43:16 +0000 |
++------------------------------------------------------------------------------+
+
+Build Architecture: amd64
+Build Type: binary
+Build-Space: 0
+Build-Time: 0
+Distribution: unstable
+Fail-Stage: create-session
+Host Architecture: amd64
+Install-Time: 0
+Job: /packaging/s3fs-fuse/1.95/s3fs-fuse_1.95-5.dsc
+Machine Architecture: amd64
+Package: s3fs-fuse
+Package-Time: 0
+Source-Version: 1.95-5
+Space: 0
+Status: failed
+Version: 1.95-5
+--------------------------------------------------------------------------------
+Finished at 2026-04-29T08:43:16Z
+Build needed 00:00:00, 0k disk space

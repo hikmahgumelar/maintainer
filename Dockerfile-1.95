@@ -1,0 +1,19 @@
+FROM debian:s3fuse-1.95-5
+
+WORKDIR /packaging
+
+RUN apt update && apt install -y \
+    build-essential \
+    devscripts \
+    lintian \
+    fuse \
+    libfuse-dev \
+    libcurl4-openssl-dev \
+    libxml2-dev \
+    libssl-dev \
+    pkg-config \
+    git \
+    sbuild \
+    piuparts \
+
+CMD ["/bin/bash"]
