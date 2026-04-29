@@ -1,0 +1,3 @@
+s3fs-dbgsym_1.97-1_amd64.deb debug optional automatic=yes
+s3fs-fuse_1.97-1_amd64.buildinfo utils optional
+s3fs_1.97-1_amd64.deb utils optional

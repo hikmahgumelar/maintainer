@@ -1,0 +1,31 @@
+Source: s3fs-fuse
+Section: utils
+Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Uploaders: Mattia Rizzolo <mattia@debian.org>
+Build-Depends:
+ debhelper-compat (= 13),
+ libcurl4-gnutls-dev,
+ libfuse-dev,
+ libgcrypt20-dev,
+ libgnutls28-dev,
+ libxml2-dev,
+ pkgconf,
+Standards-Version: 4.7.4
+Homepage: https://github.com/s3fs-fuse/s3fs-fuse
+Vcs-Git: https://salsa.debian.org/debian/s3fs-fuse.git -b debian
+Vcs-Browser: https://salsa.debian.org/debian/s3fs-fuse
+
+Package: s3fs
+Architecture: any
+Depends:
+ fuse,
+ media-types,
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: FUSE-based file system backed by Amazon S3
+ s3fs is a FUSE filesystem that allows you to mount an Amazon S3 bucket
+ as a local filesystem. It stores files natively and transparently in
+ S3 (i.e., you can use other programs to access the same files).
+ Maximum file size is 5 TB when using multipart upload.
+ s3fs is stable and is being used in a number of production environments,
+ e.g., rsync backup to s3.

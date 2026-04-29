@@ -1,0 +1,523 @@
+#!/bin/bash
+#
+# s3fs - FUSE-based file system backed by Amazon S3
+#
+# Copyright 2007-2008 Randy Rizun <rrizun@gmail.com>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
+
+#### Test utils
+
+set -o errexit
+set -o pipefail
+
+#
+# Configuration
+#
+TEST_TEXT="HELLO WORLD"
+TEST_TEXT_FILE=test-s3fs.txt
+TEST_DIR=testdir
+# shellcheck disable=SC2034
+ALT_TEST_TEXT_FILE=test-s3fs-ALT.txt
+# shellcheck disable=SC2034
+TEST_TEXT_FILE_LENGTH=15
+# shellcheck disable=SC2034
+BIG_FILE=big-file-s3fs.txt
+# shellcheck disable=SC2034
+TEMP_DIR="${TMPDIR:-"/var/tmp"}"
+
+# /dev/urandom can only return 32 MB per block maximum
+BIG_FILE_BLOCK_SIZE=$((25 * 1024 * 1024))
+BIG_FILE_COUNT=1
+
+# This should be greater than the multipart size
+# shellcheck disable=SC2034
+BIG_FILE_LENGTH=$((BIG_FILE_BLOCK_SIZE * BIG_FILE_COUNT))
+
+# Set locale because some tests check for English expressions
+export LC_ALL=en_US.UTF-8
+
+# [NOTE]
+# stdbuf, truncate and sed installed on macos do not work as
+# expected(not compatible with Linux).
+# Therefore, macos installs a brew package such as coreutils
+# and uses gnu commands(gstdbuf, gtruncate, gsed).
+# Set your PATH appropriately so that you can find these commands.
+#
+if [ "$(uname)" = "Darwin" ]; then
+    # [NOTE][TODO]
+    # In macos-14(and maybe later), currently coreutils' gstdbuf doesn't
+    # work with the Github Actions Runner.
+    # This is because libstdbuf.so is arm64, when arm64e is required.
+    # To resolve this case, we'll avoid making calls to stdbuf. This can
+    # result in mixed log output, but there is currently no workaround.
+    #
+    if lipo -archs /opt/homebrew/Cellar/coreutils/9.8/libexec/coreutils/libstdbuf.so 2>/dev/null | grep -q 'arm64e'; then
+        export STDBUF_BIN="gstdbuf"
+    else
+        export STDBUF_BIN=""
+    fi
+    export TRUNCATE_BIN="gtruncate"
+else
+    export STDBUF_BIN="stdbuf"
+    export TRUNCATE_BIN="truncate"
+fi
+
+# [NOTE]
+# Specifying cache disable option depending on stat(coreutils) version
+# TODO: investigate why this is necessary #2327
+#
+if stat --cached=never / >/dev/null 2>&1; then
+    STAT_BIN=(stat --cache=never)
+else
+    STAT_BIN=(stat)
+fi
+
+function find_xattr() {
+    if [ "$(uname)" = "Darwin" ]; then
+        local LIST_XATTRS_KEYVALS; LIST_XATTRS_KEYVALS=$(xattr -l "$2" 2>/dev/null)
+        if ! echo "${LIST_XATTRS_KEYVALS}" | grep -q "$1"; then
+            return 1
+        fi
+    else
+        getfattr --absolute-names -n "$1" "$2" >/dev/null 2>&1 || return 1
+    fi
+    return 0
+}
+
+function get_xattr() {
+    if [ "$(uname)" = "Darwin" ]; then
+        xattr -p "$1" "$2"
+    else
+        getfattr -n "$1" --only-values "$2"
+    fi
+}
+
+function set_xattr() {
+    if [ "$(uname)" = "Darwin" ]; then
+        xattr -w "$1" "$2" "$3"
+    else
+        setfattr -n "$1" -v "$2" "$3"
+    fi
+}
+
+function del_xattr() {
+    if [ "$(uname)" = "Darwin" ]; then
+        xattr -d "$1" "$2"
+    else
+        setfattr -x "$1" "$2"
+    fi
+}
+
+function get_inode() {
+    if [ "$(uname)" = "Darwin" ]; then
+        "${STAT_BIN[@]}" -f "%i" "$1"
+    else
+        "${STAT_BIN[@]}" --format "%i" "$1"
+    fi
+}
+
+function get_size() {
+    if [ "$(uname)" = "Darwin" ]; then
+        "${STAT_BIN[@]}" -f "%z" "$1"
+    else
+        "${STAT_BIN[@]}" --format "%s" "$1"
+    fi
+}
+
+function check_file_size() {
+    local FILE_NAME="$1"
+    local EXPECTED_SIZE="$2"
+
+    # Verify file length via metadata
+    local size
+    size=$(get_size "${FILE_NAME}")
+    if [ "${size}" -ne "${EXPECTED_SIZE}" ]
+    then
+        echo "error: expected ${FILE_NAME} to be ${EXPECTED_SIZE} length but was ${size} via metadata"
+        return 1
+    fi
+
+    # Verify file length via data
+    # shellcheck disable=SC2002
+    size=$(cat "${FILE_NAME}" | wc -c)
+    if [ "${size}" -ne "${EXPECTED_SIZE}" ]
+    then
+        echo "error: expected ${FILE_NAME} to be ${EXPECTED_SIZE} length, got ${size} via data"
+        return 1
+    fi
+}
+
+function mk_test_file {
+    if [ $# = 0 ]; then
+        local TEXT="${TEST_TEXT}"
+    else
+        local TEXT="$1"
+    fi
+    echo "${TEXT}" > "${TEST_TEXT_FILE}"
+    if [ ! -e "${TEST_TEXT_FILE}" ]
+    then
+        echo "Could not create file ${TEST_TEXT_FILE}, it does not exist"
+        exit 1
+    fi
+}
+
+function rm_test_file {
+    if [ $# = 0 ]; then
+        local FILE="${TEST_TEXT_FILE}"
+    else
+        local FILE="$1"
+    fi
+    rm -f "${FILE}"
+
+    if [ -e "${FILE}" ]
+    then
+        echo "Could not cleanup file ${TEST_TEXT_FILE}"
+        exit 1
+    fi
+}
+
+function mk_test_dir {
+    mkdir "${TEST_DIR}"
+
+    if [ ! -d "${TEST_DIR}" ]; then
+        echo "Directory ${TEST_DIR} was not created"
+        exit 1
+    fi
+}
+
+function rm_test_dir {
+    rmdir "${TEST_DIR}"
+    if [ -e "${TEST_DIR}" ]; then
+        echo "Could not remove the test directory, it still exists: ${TEST_DIR}"
+        exit 1
+    fi
+}
+
+# Create and cd to a unique directory for this test run
+function cd_run_dir {
+    if [ "${TEST_BUCKET_MOUNT_POINT_1}" = "" ]; then
+        echo "TEST_BUCKET_MOUNT_POINT_1 variable not set"
+        return 1
+    fi
+    local RUN_DIR="${TEST_BUCKET_MOUNT_POINT_1}/${1}"
+    mkdir -p "${RUN_DIR}"
+    cd "${RUN_DIR}"
+}
+
+function clean_run_dir {
+    if [ "${TEST_BUCKET_MOUNT_POINT_1}" = "" ]; then
+        echo "TEST_BUCKET_MOUNT_POINT_1 variable not set"
+        return 1
+    fi
+    local RUN_DIR="${TEST_BUCKET_MOUNT_POINT_1}/${1}"
+
+    if [ -d "${RUN_DIR}" ]; then
+        rm -rf "${RUN_DIR}" || echo "Error removing ${RUN_DIR}"
+    fi
+}
+
+# Resets test suite
+function init_suite {
+    TEST_LIST=()
+    TEST_FAILED_LIST=()
+    TEST_PASSED_LIST=()
+}
+
+# Report a passing test case
+#   report_pass TEST_NAME
+function report_pass {
+    echo "$1 passed"
+    TEST_PASSED_LIST+=("$1")
+}
+
+# Report a failing test case
+#   report_fail TEST_NAME
+function report_fail {
+    echo "$1 failed"
+    TEST_FAILED_LIST+=("$1")
+}
+
+# Add tests to the suite
+#   add_tests TEST_NAME...
+function add_tests {
+    TEST_LIST+=("$@")
+}
+
+# Log test name and description
+#    describe [DESCRIPTION]
+function describe {
+    echo "${FUNCNAME[1]}: \"$*\""
+}
+
+# Runs each test in a suite and summarizes results.  The list of
+# tests added by add_tests() is called with CWD set to a tmp
+# directory in the bucket.  An attempt to clean this directory is
+# made after the test run.  
+function run_suite {
+   orig_dir="${PWD}"
+   key_prefix="testrun-${RANDOM}"
+
+   if ! cd_run_dir "${key_prefix}"; then
+       return 1
+   fi
+
+   for t in "${TEST_LIST[@]}"; do
+       # Ensure test input name differs every iteration
+       TEST_TEXT_FILE="test-s3fs-${RANDOM}.txt"
+       TEST_DIR="testdir-${RANDOM}"
+       # shellcheck disable=SC2034
+       ALT_TEST_TEXT_FILE="test-s3fs-ALT-${RANDOM}.txt"
+       # shellcheck disable=SC2034
+       BIG_FILE="big-file-s3fs-${RANDOM}.txt"
+       # The following sequence runs tests in a subshell to allow continuation
+       # on test failure, but still allowing errexit to be in effect during
+       # the test.
+       #
+       # See:
+       #     https://groups.google.com/d/msg/gnu.bash.bug/NCK_0GmIv2M/dkeZ9MFhPOIJ
+       # Other ways of trying to capture the return value will also disable
+       # errexit in the function due to bash... compliance with POSIX?
+       set +o errexit
+       (set -o errexit; $t $key_prefix)
+       # shellcheck disable=SC2181
+       if [ $? == 0 ]; then
+           report_pass "${t}"
+       else
+           report_fail "${t}"
+       fi
+       set -o errexit
+   done
+
+   cd "${orig_dir}"
+   if ! clean_run_dir "${key_prefix}"; then
+       return 1
+   fi
+
+   for t in "${TEST_PASSED_LIST[@]}"; do
+       echo "PASS: ${t}"
+   done
+   for t in "${TEST_FAILED_LIST[@]}"; do
+       echo "FAIL: ${t}"
+   done
+
+   local passed=${#TEST_PASSED_LIST[@]}
+   local failed=${#TEST_FAILED_LIST[@]}
+
+   echo "SUMMARY for $0: ${passed} tests passed.  ${failed} tests failed."
+
+   if [[ "${failed}" != 0 ]]; then
+       return 1
+   else
+       return 0
+   fi
+}
+
+# [TODO]
+# Temporary Solution for Ubuntu 25.10 Only
+# 
+# As of October 2025, the stat command in uutils coreutils (Rust) in Ubuntu 25.10
+# truncates the decimal point when retrieving atime/ctime individually.
+# We will take special measures to avoid this.
+# We will revert this once this issue is fixed.
+#
+TIME_FROM_FULL_STAT=$([ -f /etc/os-release ] && awk '/^ID=ubuntu/{os=1} /^VERSION_ID="25.10"/{version=1} END{print (os && version)}' /etc/os-release || echo 0)
+
+function get_ctime() {
+    # ex: "1657504903.019784214"
+    if [ "$(uname)" = "Darwin" ]; then
+        "${STAT_BIN[@]}" -f "%Fc" "$1"
+
+    elif [ "${TIME_FROM_FULL_STAT}" -eq 1 ]; then
+        TEMP_ATIME=$(stat "$1" | grep '^Change:' | awk '{print $2" "$3}')
+        TEMP_ATIME_SEC=$(date -d "${TEMP_ATIME}" +"%s")
+        TEMP_ATIME_NSEC=$(stat "$1" | awk '/^Change:/{print $3}' | cut -d'.' -f2)
+        printf '%s.%s' "${TEMP_ATIME_SEC}" "${TEMP_ATIME_NSEC}"
+    else
+        "${STAT_BIN[@]}" --format "%.9Z" "$1"
+    fi
+}
+
+function get_mtime() {
+    # ex: "1657504903.019784214"
+    if [ "$(uname)" = "Darwin" ]; then
+        "${STAT_BIN[@]}" -f "%Fm" "$1"
+    else
+        "${STAT_BIN[@]}" --format "%.9Y" "$1"
+    fi
+}
+
+function get_atime() {
+    # ex: "1657504903.019784214"
+    if [ "$(uname)" = "Darwin" ]; then
+        "${STAT_BIN[@]}" -f "%Fa" "$1"
+
+    elif [ "${TIME_FROM_FULL_STAT}" -eq 1 ]; then
+        TEMP_ATIME=$(stat "$1" | grep '^Access:' | grep -v 'Uid:' | awk '{print $2" "$3}')
+        TEMP_ATIME_SEC=$(date -d "${TEMP_ATIME}" +"%s")
+        TEMP_ATIME_NSEC=$(stat "$1" | grep -v 'Uid:' | awk '/^Access:/{print $3}' | cut -d'.' -f2)
+        printf '%s.%s' "${TEMP_ATIME_SEC}" "${TEMP_ATIME_NSEC}"
+    else
+        "${STAT_BIN[@]}" --format "%.9X" "$1"
+    fi
+}
+
+function get_permissions() {
+    if [ "$(uname)" = "Darwin" ]; then
+        "${STAT_BIN[@]}" -f "%p" "$1"
+    else
+        "${STAT_BIN[@]}" --format "%a" "$1"
+    fi
+}
+
+function get_user_and_group() {
+    if [ "$(uname)" = "Darwin" ]; then
+        stat -f "%u:%g" "$1"
+    else
+        "${STAT_BIN[@]}" --format "%u:%g" "$1"
+    fi
+}
+
+function check_content_type() {
+    local INFO_STR
+    TEMPNAME="$(mktemp)"
+    s3_head "${TEST_BUCKET_1}/$1" --dump-header "$TEMPNAME"
+    INFO_STR=$(sed -n 's/^Content-Type: //pi' "$TEMPNAME" | tr -d '\r\n')
+    rm -f "$TEMPNAME"
+    if [ "${INFO_STR}" != "$2" ]
+    then
+        echo "Expected Content-Type: $2 but got: ${INFO_STR}"
+        return 1
+    fi
+}
+
+function get_disk_avail_size() {
+    local DISK_AVAIL_SIZE
+    read -r _ _ _ DISK_AVAIL_SIZE _ < <(BLOCKSIZE=$((1024 * 1024)) df "$1" | tail -n 1)
+    echo "${DISK_AVAIL_SIZE}"
+}
+
+function s3_head() {
+    local S3_PATH=$1
+    shift
+    curl --aws-sigv4 "aws:amz:$S3_ENDPOINT:s3" --user "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" \
+        --cacert "$S3PROXY_CACERT_FILE" --fail --silent \
+        "$@" \
+        --head "$S3_URL/$S3_PATH"
+}
+
+function s3_mb() {
+    local S3_BUCKET=$1
+    curl --aws-sigv4 "aws:amz:$S3_ENDPOINT:s3" --user "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" \
+        --cacert "$S3PROXY_CACERT_FILE" --fail --silent \
+        --request PUT "$S3_URL/$S3_BUCKET"
+}
+
+function s3_cp() {
+    local S3_PATH=$1
+    shift
+    TEMPNAME="$(mktemp)"
+    cat > "$TEMPNAME"
+    # TODO: use filenames instead of stdin?
+    curl --aws-sigv4 "aws:amz:$S3_ENDPOINT:s3" --user "$AWS_ACCESS_KEY_ID:$AWS_SECRET_ACCESS_KEY" \
+        --cacert "$S3PROXY_CACERT_FILE" --fail --silent \
+        --header "Content-Length: $(wc -c < "$TEMPNAME")" \
+        "$@" \
+        --request PUT --data-binary "@$TEMPNAME" "$S3_URL/$S3_PATH"
+    rm -f "$TEMPNAME"
+}
+
+function wait_for_port() {
+    local PORT="$1"
+    for _ in $(seq 30); do
+        if exec 3<>"/dev/tcp/127.0.0.1/${PORT}";
+        then
+            exec 3<&-  # Close for read
+            exec 3>&-  # Close for write
+            break
+        fi
+        sleep 1
+    done
+}
+
+function s3fs_args() {
+    if [ "$(uname)" = "Darwin" ]; then
+        ps -o args -p "${S3FS_PID}" | tail -n +2
+    else
+        ps -o args -p "${S3FS_PID}" --no-headers
+    fi
+}
+
+#
+# $1:    sleep seconds
+# $2:    OS type(ex. 'Darwin', unset(means all os type))
+#
+# [NOTE] macos fuse-t
+# macos fuse-t mounts over NFS, and the mtime/ctime/atime attribute
+# values are in seconds(not m/u/n-sec).
+# Therefore, unlike tests on other OSs, we have to wait at least 1
+# second.
+# This function is called primarily for this purpose.
+#
+function wait_ostype() {
+    if [ -z "$2" ] || uname | grep -q "$2"; then
+        if [ -n "$1" ] && ! (echo "$1" | grep -q '[^0-9]'); then
+            sleep "$1"
+        fi
+    fi
+}
+
+#
+# Avoid extended attribute errors when copying on macos(fuse-t)
+#
+# [NOTE][FIXME]
+# This avoids an error that occurs when copying (cp command) on macos
+# (fuse-t) stating that extended attributes cannot be copied and the
+# exit code becomes anything other than 0.
+#Even if this error occurs, the copy itself is successful.
+#
+# This issue is currently(2024/11/7) still in the process of being
+# fixed, so we will wait and see.
+# This issue only occurred in the test_multipart_mix test with the
+# nocopyapi option, but in macos-13 Github Actions, it occurs in
+# some tests that use the use_xattr option.
+#
+function cp_avoid_xattr_err() {
+    if uname | grep -q Darwin; then
+        if ! cp "$@"; then
+            return $?
+        fi
+    else
+        local CP_RESULT="";
+        if ! CP_RESULT=$(cp "$@" 2>&1); then
+            local CP_EXITCODE=$?
+            if ! echo "${CP_RESULT}" | grep -q -i "Result too large"; then
+                return "${CP_EXITCODE}"
+            fi
+            echo "[FIXME: MACOS] ${CP_RESULT}"
+        fi
+    fi
+    return 0
+}
+
+#
+# Local variables:
+# tab-width: 4
+# c-basic-offset: 4
+# End:
+# vim600: expandtab sw=4 ts=4 fdm=marker
+# vim<600: expandtab sw=4 ts=4
+#

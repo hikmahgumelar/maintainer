@@ -1,0 +1,29 @@
+FROM debian:bookworm
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    devscripts \
+    debhelper \
+    lintian \
+    fakeroot \
+    git wget curl dput quilt \
+    libfuse-dev \
+    libcurl4-openssl-dev \
+    libxml2-dev \
+    automake autoconf pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN echo "deb-src http://deb.debian.org/debian sid main" >> /etc/apt/sources.list
+
+# Buat user packager
+RUN adduser --disabled-password --gecos "" packager
+
+# Volume untuk persist hasil build
+VOLUME /home/packager/output
+
+WORKDIR /home/packager
+USER packager
+
+CMD ["/bin/bash"]

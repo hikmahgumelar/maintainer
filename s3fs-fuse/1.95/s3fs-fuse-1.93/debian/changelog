@@ -1,0 +1,161 @@
+s3fs-fuse (1.93-1build3) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- William Grant <wgrant@ubuntu.com>  Mon, 01 Apr 2024 18:57:30 +1100
+
+s3fs-fuse (1.93-1build2) noble; urgency=medium
+
+  * No-change rebuild against libcurl3t64-gnutls
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sat, 16 Mar 2024 07:22:08 +0000
+
+s3fs-fuse (1.93-1build1) noble; urgency=medium
+
+  * No-change rebuild against libgnutls30t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 10 Mar 2024 02:12:55 +0000
+
+s3fs-fuse (1.93-1) unstable; urgency=medium
+
+  [ Mattia Rizzolo ]
+  * New upstream release 1.93.  LP: #2020602
+    + Fix issue with restrictive IAM policy.  LP: #2003081
+  * Fix watchfile for github.
+  * Bump copyright years.
+  * Bump Standards-Version to 4.6.2, no changes needed.
+  * Take over the package from Andrii, as I haven't heard from him in years.
+
+  [ Charles Plessy ]
+  * Replace transition package mime-support with media-types.  Closes: #1009768
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sun, 03 Sep 2023 15:15:34 +0530
+
+s3fs-fuse (1.90-1) unstable; urgency=medium
+
+  * New upstream release 1.90.  LP: #1940587
+  * Bump Standards-Version to 4.6.0, no changes needed.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sat, 21 Aug 2021 16:30:18 +0200
+
+s3fs-fuse (1.89-1) unstable; urgency=medium
+
+  * New upstream release 1.89.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Thu, 25 Feb 2021 20:24:56 +0100
+
+s3fs-fuse (1.88-2) unstable; urgency=medium
+
+  [ Andrew Gaul ]
+  * d/control: Fix incorrect file size limitation in the long description.
+    See https://github.com/s3fs-fuse/s3fs-fuse/issues/1527
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sun, 21 Feb 2021 16:33:19 +0100
+
+s3fs-fuse (1.88-1) unstable; urgency=medium
+
+  * New upstream release 1.88.
+  * Bump Standards-Version to 4.5.1.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Thu, 14 Jan 2021 18:08:07 +0100
+
+s3fs-fuse (1.87-1) unstable; urgency=medium
+
+  * New upstream release 1.87.  LP: #1891124
+    https://github.com/s3fs-fuse/s3fs-fuse/releases/tag/v1.87
+  * Bump debhelper compat level to 13.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Tue, 11 Aug 2020 09:38:23 +0200
+
+s3fs-fuse (1.86-1) unstable; urgency=medium
+
+  * New upstream release 1.86.  LP: #1862023
+  * Remove patch applied upstream.
+  * d/copyright: Update.
+  * d/control: Bump Standards-Version to 4.5.0, no changes needed.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sat, 22 Feb 2020 16:00:57 +0100
+
+s3fs-fuse (1.85-1) unstable; urgency=medium
+
+  [ Mattia Rizzolo ]
+  * New upstream release 1.85.  Closes: #949032; LP: #1828849
+    + Plug many memory leaks.  LP: #1802912
+  * Add patch from upstream to fix cross-compiling.  Closes: #923581
+
+  [ Andrii Senkovych ]
+  * d/gbp.conf: revert to default upstream tag name format.
+
+  [ Ondřej Nový ]
+  * d/copyright: Change Format URL to correct one
+
+  [ Debian Janitor ]
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Repository, Repository-Browse.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Fri, 17 Jan 2020 19:32:06 +0100
+
+s3fs-fuse (1.84-1) unstable; urgency=medium
+
+  * New upstream release 1.84.
+  * Update uscan rules.
+  * Update maintainer's name spelling and e-mail address.
+  * d/control: raise compat level to 11.
+  * d/rules: remove trailing whitespace.
+  * d/control: Update Vcs-* fields to point to salsa.d.o.
+  * d/control: add Rules-Requires-Root header, set to no.
+  * Bump Standards-Version to 4.2.0.
+
+ -- Andrii Senkovych <andrii@senkovych.com>  Mon, 20 Aug 2018 14:15:32 +0300
+
+s3fs-fuse (1.82-1) unstable; urgency=medium
+
+  [ Andriy Senkovych ]
+  * Import new upstream release 1.82.
+  * gbp.conf: update tagging rules.
+
+  [ Mattia Rizzolo ]
+  * Bump Standards-Version to 4.1.1, no changes needed.
+  * Update copyright.
+
+ -- Andriy Senkovych <jolly_roger@itblog.org.ua>  Tue, 28 Nov 2017 12:01:17 +0100
+
+s3fs-fuse (1.80-2) unstable; urgency=medium
+
+  * Bump debhelper compat level to 10.
+    Drop explicit '--with autoreconf' option, now default.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Fri, 11 Nov 2016 23:22:57 +0000
+
+s3fs-fuse (1.80-1) unstable; urgency=medium
+
+  * Import new upstream release 1.80.
+  * Drop patch fixing typo, applied upstream.
+  * Bump Standards-Version to 3.9.8, no changes needed.
+  * Update copyright.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sun, 12 Jun 2016 15:06:32 +0000
+
+s3fs-fuse (1.79+git90-g8f11507-2) unstable; urgency=medium
+
+  [ Andriy Senkovych ]
+  * Update Vcs-* fields to point to collab-maint repository.
+  * Add some comments to gbp.conf.
+
+  [ Mattia Rizzolo ]
+  * debian/control:
+    + Build only for {linux,kfreebsd}-any since fuse is not available on hurd.
+    + Use my @debian.org email address.
+    + Bump Standards-Version to 3.9.7, no changes needed.
+    + Use https in Vcs-Git.
+  * Stop building s3fs-dbg package, nowadays we have automatic debug packages.
+  * Add patch to fix typo s/returing/returning/.
+
+ -- Mattia Rizzolo <mattia@debian.org>  Sat, 02 Apr 2016 15:32:26 +0000
+
+s3fs-fuse (1.79+git90-g8f11507-1) unstable; urgency=low
+
+  * Initial release. (Closes: #601789)
+
+ -- Andriy Senkovych <jolly_roger@itblog.org.ua>  Tue, 07 Oct 2014 16:18:29 +0300

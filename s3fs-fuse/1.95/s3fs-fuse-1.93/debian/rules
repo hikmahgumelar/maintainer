@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- --with-gnutls
+
+override_dh_auto_test:
+	@echo Tests disabled as they require credentals in ~/.passwd-s3fs.

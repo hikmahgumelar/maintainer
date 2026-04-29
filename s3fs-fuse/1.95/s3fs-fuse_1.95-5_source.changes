@@ -1,0 +1,29 @@
+Format: 1.8
+Date: Fri, 24 Apr 2026 14:15:09 +0000
+Source: s3fs-fuse
+Architecture: source
+Version: 1.95-5
+Distribution: unstable
+Urgency: medium
+Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Changed-By: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Changes:
+ s3fs-fuse (1.95-5) unstable; urgency=medium
+ .
+   * Remove incorrect Closes: entry for bug #1134438.
+   * Reupload package to mentors after packaging cleanup.
+   * Drop deprecated kfreebsd-any architecture.
+   * Fix lintian and changelog cleanup.
+   * Bump Standards-Version to 4.7.4; no changes needed.
+Checksums-Sha1:
+ 9e51c4d9c93a02cb1c6ad7cbd81e528edb248056 1090 s3fs-fuse_1.95-5.dsc
+ 91c112fef800ad390b750d30fa72c13ed02e48cf 3696 s3fs-fuse_1.95-5.debian.tar.xz
+ b024d83f84cbfd0c9ac5d2a535d2e64098fd065f 6590 s3fs-fuse_1.95-5_source.buildinfo
+Checksums-Sha256:
+ b31872aa65aa9dec3d6e8a46ce6d778befbce9fb15836b5ceec7130571f3f73e 1090 s3fs-fuse_1.95-5.dsc
+ aef8ca61b7f994ed9338568702a7e72087cc5053875954690ce0c05393904725 3696 s3fs-fuse_1.95-5.debian.tar.xz
+ 648a79d09589a728241ba5621430ac5edc3092543925252e151b10dffd4ef736 6590 s3fs-fuse_1.95-5_source.buildinfo
+Files:
+ 293b42b396b3e803aaf1aa95931e6efd 1090 utils optional s3fs-fuse_1.95-5.dsc
+ d374003b246d262c858a6a2f9150824e 3696 utils optional s3fs-fuse_1.95-5.debian.tar.xz
+ 67faada5ebd6124efdca2bf71bbd0188 6590 utils optional s3fs-fuse_1.95-5_source.buildinfo
