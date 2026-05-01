@@ -1,7 +1,6 @@
 Source: s3fs-fuse
 Section: utils
 Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
-XSBC-Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
 Build-Depends:
  debhelper-compat (= 13),
  libcurl4-gnutls-dev,
@@ -12,8 +11,8 @@ Build-Depends:
  pkgconf,
 Standards-Version: 4.7.4
 Homepage: https://github.com/s3fs-fuse/s3fs-fuse
-Vcs-Git: https://salsa.debian.org/debian/s3fs-fuse.git -b debian
-Vcs-Browser: https://salsa.debian.org/debian/s3fs-fuse
+Vcs-Git: https://salsa.debian.org/hikmahgumelar/s3fs-fuse.git -b debian
+Vcs-Browser: https://salsa.debian.org/hikmahgumelar/s3fs-fuse
 
 Package: s3fs-fuse
 Architecture: any

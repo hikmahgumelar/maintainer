@@ -1,5 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: s3fs-fuse
+Upstream-Contact: https://github.com/s3fs-fuse/s3fs-fuse/issues
 Source: https://github.com/s3fs-fuse/s3fs-fuse/releases
 
 Files: *
@@ -11,6 +12,7 @@ License: GPL-2+
 Files: debian/*
 Copyright: 2014-2017 Andriy Senkovych <jolly_roger@itblog.org.ua>
            2016-2023 Mattia Rizzolo <mattia@debian.org>
+           2026 Hikmah Gumelar <hikmahgumelar@gmail.com>
 License: GPL-2+
 
 Files: autogen.sh

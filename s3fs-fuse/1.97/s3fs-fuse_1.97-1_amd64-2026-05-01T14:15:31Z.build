@@ -1,0 +1,36 @@
+sbuild (Debian sbuild) 0.91.8 (14 April 2026) on 7b0ee6a48965
+
++==============================================================================+
+| s3fs-fuse 1.97-1 (amd64)                     Fri, 01 May 2026 14:15:31 +0000 |
++==============================================================================+
+
+Package: s3fs-fuse
+Version: 1.97-1
+Source Version: 1.97-1
+Distribution: unstable
+Machine Architecture: amd64
+Host Architecture: amd64
+Build Architecture: amd64
+Build Type: binary
+
+I: No tarballs found in /root/.cache/sbuild
+I: Creating chroot on-demand by running:
+mmdebstrap --variant=buildd --arch=amd64 --skip=output/mknod --format=tar unstable -
+I: Unpacking tarball from STDIN to /tmp/tmp.sbuild.opPgzFw4ID...
+I: automatically chosen mode: root
+I: chroot architecture amd64 is equal to the host's architecture
+I: finding correct signed-by value...
+I: using /tmp/mmdebstrap.khD_m9KXKp as tempdir
+I: skipping output/mknod as requested for ./dev/console
+I: skipping output/mknod as requested for ./dev/full
+I: skipping output/mknod as requested for ./dev/null
+I: skipping output/mknod as requested for ./dev/ptmx
+I: skipping output/mknod as requested for ./dev/random
+I: skipping output/mknod as requested for ./dev/tty
+I: skipping output/mknod as requested for ./dev/urandom
+I: skipping output/mknod as requested for ./dev/zero
+I: running apt-get update...
+I: downloading packages with apt...
+I: extracting archives...
+I: installing essential packages...
+I: installing remaining packages inside the chroot...

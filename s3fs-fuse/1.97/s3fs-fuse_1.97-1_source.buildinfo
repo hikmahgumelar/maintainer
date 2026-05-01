@@ -1,23 +1,19 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
 Format: 1.0
 Source: s3fs-fuse
-Binary: s3fs-fuse s3fs-fuse-dbgsym
-Architecture: amd64 source
+Architecture: source
 Version: 1.97-1
 Checksums-Md5:
- 4e6b3e71233229cc68138e83e5f088e2 1069 s3fs-fuse_1.97-1.dsc
- 4aa8a750020f2960372f31f0381a54b9 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
- 048fd3ce01adb67fab9044082428397e 344892 s3fs-fuse_1.97-1_amd64.deb
+ 6c3fda666e73c9541bde50d407173c80 1985 s3fs-fuse_1.97-1.dsc
 Checksums-Sha1:
- 12e7d5f5dcf3c8391dec7b875ee99ecbfd0b69cb 1069 s3fs-fuse_1.97-1.dsc
- c1f9a6bd61d2a1f256fbd73ff98082a18f3cd11f 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
- 2f2cadf968c663a12e9cf0e86c135e38fb70972f 344892 s3fs-fuse_1.97-1_amd64.deb
+ c191ab556578570de206b77706c8aa184e5f21a6 1985 s3fs-fuse_1.97-1.dsc
 Checksums-Sha256:
- 674e919d4f1e5b4294274c17ae54a122f434c99eae5eb4469ff5ac317fc40247 1069 s3fs-fuse_1.97-1.dsc
- 11506f98fc7477314bb4d8bff014e6c611dae29d017a2b41727dc83416558ce8 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
- 4d6cc787dc312034d9d3ff8c625f70a06245a76eeff160bf6747ad2fd6bf287a 344892 s3fs-fuse_1.97-1_amd64.deb
+ 691fa73cee458079242465a9fed709b782e32dd425ea96ed86162d75881cd008 1985 s3fs-fuse_1.97-1.dsc
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Fri, 01 May 2026 14:15:09 +0000
+Build-Date: Fri, 01 May 2026 14:11:49 +0000
 Installed-Build-Depends:
  autoconf (= 2.72-6),
  automake (= 1:1.18.1-4),
@@ -235,3 +231,21 @@ Installed-Build-Depends:
 Environment:
  DEB_BUILD_OPTIONS="parallel=8"
  SOURCE_DATE_EPOCH="1777634162"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJMBAEBCgA2FiEE38HegDE6DhmYXXfAf1fXFxMITXYFAmn0tKoYHGhpa21haGd1
+bWVsYXJAZ21haWwuY29tAAoJEH9X1xcTCE12cKAP+QG5x+m+LdP5Q49xUxe08QKk
+kyNzEUkSfdK6ijYPN4R9u03SxPwzZg9sX1cIdLjcggILZ4ai7UD6DNin9tGT2obh
+31AK3DpJIisuWk2XAEOKE3QhiApwrQt8+puJwZxe100n6ILPYoH7mznTRDAShbKc
+8G58rczNDGDFbZD9dcEQvKK3j6aeoS5BnZdeqJynZKSthvpOmEwqgPxzheplzNLC
+vGtS75KrWKH4aBxlky1LXbaIbEpAipbWTidX64ppj+91KPHHbAKDW1MCN7VBARPd
+kEp7faUIM+zulPp3ReVKAvxmioMUrKMUA68Nrib47AgC1ewC5S5/goMggpppCAZo
+NRsvGOHKIuqNuGqtpgWftLXQ8GfAdAW3oW8lzzAoFKzpT63/3HtqnkX3XyjvtLWt
+uEGT19xVccx0y7oidQNGtyxaRN89p8ZNSII7nYC1qVqhxkrYyegewY63TNssPbO/
+hQ0Ne0ZyJm2bi6v/L/u5rmhEftMwhbJFEwiAK+F2yBlSTIao/FCDbGlFsU+AQ9pe
+lfWgDIiOokJtbh38E8jLRlYxjplFJ57vtV8OMBTvdEsUnIadU7Xgt+csJRXB+GMl
+GWg4K9mdwQ/s0rFs0dEtpJcfWS990wjUc3yfuR5aiGwaQmOLwtXbILjmRZBEqqub
+fSkHuVMfu3YkIRGGgK3x
+=iLJg
+-----END PGP SIGNATURE-----

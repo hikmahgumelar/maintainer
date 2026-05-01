@@ -1,11 +1,12 @@
 s3fs-fuse (1.97-1) unstable; urgency=medium
 
+  * Take over maintainership (ITA: #1134438)
   * New upstream release (1.97).
   * Refresh packaging for upstream changes.
   * Update Build-Depends for FUSE3 support.
   * Review build dependencies for new upstream requirements.
 
- -- Hikmah Gumelar  <hikmahgumelar@gmail.com>  Fri, 24 Apr 2026 15:25:02 +0000
+ -- Hikmah Gumelar <hikmahgumelar@gmail.com>  Fri, 1 May 2026 11:16:02 +0000
 
 s3fs-fuse (1.93-1build3) noble; urgency=medium
 
