@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Fri, 24 Apr 2026 15:25:02 +0000
+Source: s3fs-fuse
+Binary: s3fs-fuse s3fs-fuse-dbgsym
+Architecture: amd64
+Version: 1.97-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Changed-By: Hikmah Gumelar  <hikmahgumelar@gmail.com>
+Description:
+ s3fs-fuse  - FUSE-based file system backed by Amazon S3
+Changes:
+ s3fs-fuse (1.97-1) unstable; urgency=medium
+ .
+   * New upstream release (1.97).
+   * Refresh packaging for upstream changes.
+   * Update Build-Depends for FUSE3 support.
+   * Review build dependencies for new upstream requirements.
+Checksums-Sha1:
+ f5524c44e97ac077e3306fa99da9eda49e567734 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ bafc46293b4da752ad0572532149ec636802ac4e 7049 s3fs-fuse_1.97-1_amd64.buildinfo
+ 3159c32312b2b34e7f0118b12493a6363c4d473b 344408 s3fs-fuse_1.97-1_amd64.deb
+Checksums-Sha256:
+ edd0707bf75ead1a5a9f66ddd618e086f5882635b16530ae8ccc2a8d328dbdb4 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ ce98b3e596d67e15bf37804bff693e29f2565661191027a025d23261811ab6c2 7049 s3fs-fuse_1.97-1_amd64.buildinfo
+ f6a90b4fee31315a63e79a7e7fdd121ea5f7eb416b99c489f62941fc7e35668f 344408 s3fs-fuse_1.97-1_amd64.deb
+Files:
+ f713523c91be7295b2bd6923191722c7 4104544 debug optional s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ dc060a7152a336e0ae78f1b205d555a8 7049 utils optional s3fs-fuse_1.97-1_amd64.buildinfo
+ d8155f0a264b4680082d60c620715c14 344408 utils optional s3fs-fuse_1.97-1_amd64.deb
+Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
