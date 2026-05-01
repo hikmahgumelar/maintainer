@@ -1,0 +1,1596 @@
+sbuild (Debian sbuild) 0.91.8 (14 April 2026) on 29329217d7b3
+
++==============================================================================+
+| s3fs-fuse 1.97-1 (amd64)                     Fri, 01 May 2026 10:27:15 +0000 |
++==============================================================================+
+
+Package: s3fs-fuse
+Version: 1.97-1
+Source Version: 1.97-1
+Distribution: unstable
+Machine Architecture: amd64
+Host Architecture: amd64
+Build Architecture: amd64
+Build Type: binary
+
+I: No tarballs found in /root/.cache/sbuild
+I: Creating chroot on-demand by running:
+mmdebstrap --variant=buildd --arch=amd64 --skip=output/mknod --format=tar unstable -
+I: Unpacking tarball from STDIN to /tmp/tmp.sbuild.7czuom_LwU...
+I: automatically chosen mode: root
+I: chroot architecture amd64 is equal to the host's architecture
+I: finding correct signed-by value...
+I: using /tmp/mmdebstrap.FkMMlD5jyz as tempdir
+I: skipping output/mknod as requested for ./dev/console
+I: skipping output/mknod as requested for ./dev/full
+I: skipping output/mknod as requested for ./dev/null
+I: skipping output/mknod as requested for ./dev/ptmx
+I: skipping output/mknod as requested for ./dev/random
+I: skipping output/mknod as requested for ./dev/tty
+I: skipping output/mknod as requested for ./dev/urandom
+I: skipping output/mknod as requested for ./dev/zero
+I: running apt-get update...
+I: downloading packages with apt...
+I: extracting archives...
+I: installing essential packages...
+I: installing remaining packages inside the chroot...
+I: cleaning package lists and apt cache...
+I: creating tarball...
+I: done
+I: removing tempdir /tmp/mmdebstrap.FkMMlD5jyz...
+I: success in 111.5568 seconds
+I: The chroot directory at /tmp/tmp.sbuild.7czuom_LwU will be removed at the end of the build
+I: To avoid creating a new chroot from scratch every time, either:
+I:  - place a chroot tarball at /root/.cache/sbuild/unstable-amd64.tar and update it manually, for example by running: mmdebstrap --variant=buildd --arch=amd64 --skip=output/mknod --format=tar unstable /root/.cache/sbuild/unstable-amd64.tar 
+I:  - or let sbuild take care of this via the setting UNSHARE_MMDEBSTRAP_KEEP_TARBALL by adding '$unshare_mmdebstrap_keep_tarball = 1;' to your ~/.config/sbuild/config.pl.
+I:  - or completely disable this behaviour via the setting UNSHARE_MMDEBSTRAP_AUTO_CREATE by adding '$unshare_mmdebstrap_auto_create = 0;' to your ~/.config/sbuild/config.pl.
+I: Refer to UNSHARE_MMDEBSTRAP_KEEP_TARBALL in sbuild.conf(5) for more information
+I: Setting up the chroot...
+I: Creating chroot session...
+I: Setting up log color...
+I: Setting up apt archive...
+
++------------------------------------------------------------------------------+
+| Update chroot                                Fri, 01 May 2026 10:29:14 +0000 |
++------------------------------------------------------------------------------+
+
+Get:1 http://deb.debian.org/debian unstable InRelease [189 kB]
+Get:2 http://deb.debian.org/debian unstable/main amd64 Packages [10.4 MB]
+Fetched 10.6 MB in 5s (2279 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Calculating upgrade...
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+
++------------------------------------------------------------------------------+
+| Fetch source files                           Fri, 01 May 2026 10:29:21 +0000 |
++------------------------------------------------------------------------------+
+
+
+Local sources
+-------------
+
+/packaging/s3fs-fuse_1.97-1.dsc exists in /packaging; copying to chroot
+
++------------------------------------------------------------------------------+
+| Install package build dependencies           Fri, 01 May 2026 10:29:24 +0000 |
++------------------------------------------------------------------------------+
+
+
+Setup apt archive
+-----------------
+
+Merged Build-Depends: debhelper-compat (= 13), libcurl4-gnutls-dev, libfuse3-dev, libgcrypt20-dev, libgnutls28-dev, libxml2-dev, pkgconf, build-essential
+Filtered Build-Depends: debhelper-compat (= 13), libcurl4-gnutls-dev, libfuse3-dev, libgcrypt20-dev, libgnutls28-dev, libxml2-dev, pkgconf, build-essential
+dpkg-deb: building package 'sbuild-build-depends-main-dummy' in '/build/reproducible-path/resolver-ngNKB3/apt_archive/sbuild-build-depends-main-dummy.deb'.
+Ign:1 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ InRelease
+Get:2 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Release [609 B]
+Ign:3 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Release.gpg
+Get:4 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Sources [691 B]
+Get:5 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Packages [730 B]
+Fetched 2030 B in 0s (33.2 kB/s)
+Reading package lists...
+Reading package lists...
+
+Install main build dependencies (apt-based resolver)
+----------------------------------------------------
+
+Installing build dependencies
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Solving dependencies...
+The following additional packages will be installed:
+  autoconf automake autopoint autotools-dev bsdextrautils comerr-dev debhelper
+  dh-autoreconf dh-strip-nondeterminism dwz file gettext gettext-base
+  groff-base intltool-debian krb5-multidev libarchive-zip-perl libbrotli-dev
+  libbrotli1 libcom-err2 libcurl3t64-gnutls libcurl4-gnutls-dev
+  libdebhelper-perl libelf1t64 libevent-2.1-7t64 libffi8
+  libfile-stripnondeterminism-perl libfuse3-4 libfuse3-dev libgcrypt20
+  libgcrypt20-dev libgmp-dev libgmpxx4ldbl libgnutls-dane0t64 libgnutls28-dev
+  libgnutls30t64 libgpg-error-dev libgpg-error0 libgssapi-krb5-2 libgssrpc4t64
+  libidn2-0 libidn2-dev libk5crypto3 libkadm5clnt-mit12 libkadm5srv-mit12
+  libkdb5-10t64 libkeyutils1 libkrb5-3 libkrb5-dev libkrb5support0 libldap-dev
+  libldap2 liblzma-dev libmagic-mgc libmagic1t64 libnghttp2-14 libnghttp2-dev
+  libnghttp3-9 libnghttp3-dev libngtcp2-16 libngtcp2-crypto-gnutls-dev
+  libngtcp2-crypto-gnutls8 libngtcp2-dev libp11-kit-dev libp11-kit0
+  libpcre2-16-0 libpcre2-32-0 libpcre2-dev libpcre2-posix3 libpipeline1
+  libpkgconf7 libpsl-dev libpsl5t64 librtmp-dev librtmp1 libsasl2-2
+  libsasl2-modules-db libselinux-dev libsepol-dev libsepol2 libssh2-1-dev
+  libssh2-1t64 libssl-dev libtasn1-6 libtasn1-6-dev libtool libuchardet0
+  libunbound8 libunistring5 libxml2-16 libxml2-dev libzstd-dev m4 man-db
+  nettle-dev pkgconf pkgconf-bin po-debconf sensible-utils zlib1g-dev
+Suggested packages:
+  autoconf-archive gnu-standards autoconf-doc doc-base dh-make gettext-doc
+  libasprintf-dev libgettextpo-dev gnulib-l10n groff krb5-doc libcurl4-doc
+  libidn-dev fuse3 rng-tools libgcrypt-bin libgcrypt20-doc gmp-doc
+  libgmp10-doc libmpfr-dev dns-root-data gnutls-bin gnutls-doc krb5-user
+  liblzma-doc libnghttp2-doc p11-kit-doc libssl-doc libtool-doc gfortran
+  | fortran95-compiler m4-doc apparmor less www-browser libmail-box-perl
+Recommended packages:
+  curl | wget | lynx ca-certificates libarchive-cpio-perl libgpg-error-l10n
+  krb5-locales libldap-common publicsuffix libsasl2-modules libtasn1-doc
+  libltdl-dev libmail-sendmail-perl
+The following NEW packages will be installed:
+  autoconf automake autopoint autotools-dev bsdextrautils comerr-dev debhelper
+  dh-autoreconf dh-strip-nondeterminism dwz file gettext gettext-base
+  groff-base intltool-debian krb5-multidev libarchive-zip-perl libbrotli-dev
+  libbrotli1 libcom-err2 libcurl3t64-gnutls libcurl4-gnutls-dev
+  libdebhelper-perl libelf1t64 libevent-2.1-7t64 libffi8
+  libfile-stripnondeterminism-perl libfuse3-4 libfuse3-dev libgcrypt20
+  libgcrypt20-dev libgmp-dev libgmpxx4ldbl libgnutls-dane0t64 libgnutls28-dev
+  libgnutls30t64 libgpg-error-dev libgpg-error0 libgssapi-krb5-2 libgssrpc4t64
+  libidn2-0 libidn2-dev libk5crypto3 libkadm5clnt-mit12 libkadm5srv-mit12
+  libkdb5-10t64 libkeyutils1 libkrb5-3 libkrb5-dev libkrb5support0 libldap-dev
+  libldap2 liblzma-dev libmagic-mgc libmagic1t64 libnghttp2-14 libnghttp2-dev
+  libnghttp3-9 libnghttp3-dev libngtcp2-16 libngtcp2-crypto-gnutls-dev
+  libngtcp2-crypto-gnutls8 libngtcp2-dev libp11-kit-dev libp11-kit0
+  libpcre2-16-0 libpcre2-32-0 libpcre2-dev libpcre2-posix3 libpipeline1
+  libpkgconf7 libpsl-dev libpsl5t64 librtmp-dev librtmp1 libsasl2-2
+  libsasl2-modules-db libselinux-dev libsepol-dev libsepol2 libssh2-1-dev
+  libssh2-1t64 libssl-dev libtasn1-6 libtasn1-6-dev libtool libuchardet0
+  libunbound8 libunistring5 libxml2-16 libxml2-dev libzstd-dev m4 man-db
+  nettle-dev pkgconf pkgconf-bin po-debconf sbuild-build-depends-main-dummy
+  sensible-utils zlib1g-dev
+0 upgraded, 101 newly installed, 0 to remove and 0 not upgraded.
+Need to get 33.9 MB of archives.
+After this operation, 120 MB of additional disk space will be used.
+Get:1 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ sbuild-build-depends-main-dummy 0.invalid.0 [900 B]
+Get:2 http://deb.debian.org/debian unstable/main amd64 sensible-utils all 0.0.26 [27.0 kB]
+Get:3 http://deb.debian.org/debian unstable/main amd64 libmagic-mgc amd64 1:5.46-5+b2 [337 kB]
+Get:4 http://deb.debian.org/debian unstable/main amd64 libmagic1t64 amd64 1:5.46-5+b2 [109 kB]
+Ign:5 http://deb.debian.org/debian unstable/main amd64 file amd64 1:5.46-5+b2
+Get:6 http://deb.debian.org/debian unstable/main amd64 gettext-base amd64 0.23.2-2 [242 kB]
+Get:7 http://deb.debian.org/debian unstable/main amd64 libuchardet0 amd64 0.0.8-2+b2 [69.0 kB]
+Get:8 http://deb.debian.org/debian unstable/main amd64 groff-base amd64 1.24.1-1 [1336 kB]
+Get:9 http://deb.debian.org/debian unstable/main amd64 bsdextrautils amd64 2.42-5 [99.4 kB]
+Get:10 http://deb.debian.org/debian unstable/main amd64 libpipeline1 amd64 1.5.8-3 [49.2 kB]
+Get:11 http://deb.debian.org/debian unstable/main amd64 man-db amd64 2.13.1-1 [1469 kB]
+Get:12 http://deb.debian.org/debian unstable/main amd64 m4 amd64 1.4.21-1 [332 kB]
+Get:13 http://deb.debian.org/debian unstable/main amd64 autoconf all 2.72-6 [494 kB]
+Get:14 http://deb.debian.org/debian unstable/main amd64 autotools-dev all 20240727.1+nmu1 [60.0 kB]
+Get:15 http://deb.debian.org/debian unstable/main amd64 automake all 1:1.18.1-4 [877 kB]
+Get:5 http://deb.debian.org/debian unstable/main amd64 file amd64 1:5.46-5+b2 [42.6 kB]
+Get:16 http://deb.debian.org/debian unstable/main amd64 autopoint all 0.23.2-2 [770 kB]
+Get:17 http://deb.debian.org/debian unstable/main amd64 libcom-err2 amd64 1.47.4-1 [19.2 kB]
+Get:18 http://deb.debian.org/debian unstable/main amd64 comerr-dev amd64 2.1-1.47.4-1 [50.9 kB]
+Get:19 http://deb.debian.org/debian unstable/main amd64 libdebhelper-perl all 13.31 [75.7 kB]
+Get:20 http://deb.debian.org/debian unstable/main amd64 libtool all 2.5.4-11 [539 kB]
+Get:21 http://deb.debian.org/debian unstable/main amd64 dh-autoreconf all 22 [12.2 kB]
+Get:22 http://deb.debian.org/debian unstable/main amd64 libarchive-zip-perl all 1.68-1 [104 kB]
+Get:23 http://deb.debian.org/debian unstable/main amd64 libfile-stripnondeterminism-perl all 1.15.0-1 [19.9 kB]
+Get:24 http://deb.debian.org/debian unstable/main amd64 dh-strip-nondeterminism all 1.15.0-1 [8812 B]
+Get:25 http://deb.debian.org/debian unstable/main amd64 libelf1t64 amd64 0.195-1 [58.1 kB]
+Get:26 http://deb.debian.org/debian unstable/main amd64 dwz amd64 0.16-4 [108 kB]
+Get:27 http://deb.debian.org/debian unstable/main amd64 libunistring5 amd64 1.4.2-1 [480 kB]
+Get:28 http://deb.debian.org/debian unstable/main amd64 libxml2-16 amd64 2.15.2+dfsg-0.1 [641 kB]
+Get:29 http://deb.debian.org/debian unstable/main amd64 gettext amd64 0.23.2-2 [1684 kB]
+Get:30 http://deb.debian.org/debian unstable/main amd64 intltool-debian all 0.35.0+20060710.6 [22.9 kB]
+Get:31 http://deb.debian.org/debian unstable/main amd64 po-debconf all 1.0.22 [216 kB]
+Get:32 http://deb.debian.org/debian unstable/main amd64 debhelper all 13.31 [932 kB]
+Get:33 http://deb.debian.org/debian unstable/main amd64 libkrb5support0 amd64 1.22.1-2+b1 [31.0 kB]
+Get:34 http://deb.debian.org/debian unstable/main amd64 libk5crypto3 amd64 1.22.1-2+b1 [78.9 kB]
+Get:35 http://deb.debian.org/debian unstable/main amd64 libkeyutils1 amd64 1.6.3-6+b2 [9348 B]
+Get:36 http://deb.debian.org/debian unstable/main amd64 libkrb5-3 amd64 1.22.1-2+b1 [336 kB]
+Get:37 http://deb.debian.org/debian unstable/main amd64 libgssapi-krb5-2 amd64 1.22.1-2+b1 [137 kB]
+Get:38 http://deb.debian.org/debian unstable/main amd64 libgssrpc4t64 amd64 1.22.1-2+b1 [58.1 kB]
+Get:39 http://deb.debian.org/debian unstable/main amd64 libkadm5clnt-mit12 amd64 1.22.1-2+b1 [40.2 kB]
+Get:40 http://deb.debian.org/debian unstable/main amd64 libkdb5-10t64 amd64 1.22.1-2+b1 [41.2 kB]
+Get:41 http://deb.debian.org/debian unstable/main amd64 libkadm5srv-mit12 amd64 1.22.1-2+b1 [54.0 kB]
+Get:42 http://deb.debian.org/debian unstable/main amd64 krb5-multidev amd64 1.22.1-2+b1 [125 kB]
+Get:43 http://deb.debian.org/debian unstable/main amd64 libbrotli1 amd64 1.2.0-3 [320 kB]
+Get:44 http://deb.debian.org/debian unstable/main amd64 libbrotli-dev amd64 1.2.0-3 [324 kB]
+Get:45 http://deb.debian.org/debian unstable/main amd64 libnghttp3-9 amd64 1.15.0-1 [67.2 kB]
+Get:46 http://deb.debian.org/debian unstable/main amd64 libngtcp2-16 amd64 1.22.1-1 [133 kB]
+Get:47 http://deb.debian.org/debian unstable/main amd64 libidn2-0 amd64 2.3.8-4+b2 [109 kB]
+Get:48 http://deb.debian.org/debian unstable/main amd64 libffi8 amd64 3.5.2-4 [25.2 kB]
+Get:49 http://deb.debian.org/debian unstable/main amd64 libp11-kit0 amd64 0.26.2-2 [470 kB]
+Get:50 http://deb.debian.org/debian unstable/main amd64 libtasn1-6 amd64 4.21.0-2+b1 [49.3 kB]
+Get:51 http://deb.debian.org/debian unstable/main amd64 libgnutls30t64 amd64 3.8.13-1 [1546 kB]
+Get:52 http://deb.debian.org/debian unstable/main amd64 libsasl2-modules-db amd64 2.1.28+dfsg1-11 [17.2 kB]
+Get:53 http://deb.debian.org/debian unstable/main amd64 libsasl2-2 amd64 2.1.28+dfsg1-11 [55.2 kB]
+Get:54 http://deb.debian.org/debian unstable/main amd64 libldap2 amd64 2.6.10+dfsg-1+b2 [188 kB]
+Get:55 http://deb.debian.org/debian unstable/main amd64 libnghttp2-14 amd64 1.69.0-1 [89.0 kB]
+Get:56 http://deb.debian.org/debian unstable/main amd64 libngtcp2-crypto-gnutls8 amd64 1.22.1-1 [20.8 kB]
+Get:57 http://deb.debian.org/debian unstable/main amd64 libpsl5t64 amd64 0.21.5-1 [59.9 kB]
+Get:58 http://deb.debian.org/debian unstable/main amd64 libssh2-1t64 amd64 1.11.1-2 [244 kB]
+Get:59 http://deb.debian.org/debian unstable/main amd64 libcurl3t64-gnutls amd64 8.20.0-1 [403 kB]
+Get:60 http://deb.debian.org/debian unstable/main amd64 libevent-2.1-7t64 amd64 2.1.12-stable-10+b2 [184 kB]
+Get:61 http://deb.debian.org/debian unstable/main amd64 libunbound8 amd64 1.24.2-1+b1 [608 kB]
+Get:62 http://deb.debian.org/debian unstable/main amd64 libgnutls-dane0t64 amd64 3.8.13-1 [496 kB]
+Get:63 http://deb.debian.org/debian unstable/main amd64 libidn2-dev amd64 2.3.8-4+b2 [102 kB]
+Get:64 http://deb.debian.org/debian unstable/main amd64 libp11-kit-dev amd64 0.26.2-2 [223 kB]
+Get:65 http://deb.debian.org/debian unstable/main amd64 libtasn1-6-dev amd64 4.21.0-2+b1 [98.6 kB]
+Get:66 http://deb.debian.org/debian unstable/main amd64 libgmpxx4ldbl amd64 2:6.3.0+dfsg-5+b2 [328 kB]
+Get:67 http://deb.debian.org/debian unstable/main amd64 libgmp-dev amd64 2:6.3.0+dfsg-5+b2 [641 kB]
+Get:68 http://deb.debian.org/debian unstable/main amd64 nettle-dev amd64 3.10.2-1+b1 [1321 kB]
+Get:69 http://deb.debian.org/debian unstable/main amd64 libgnutls28-dev amd64 3.8.13-1 [1479 kB]
+Get:70 http://deb.debian.org/debian unstable/main amd64 libkrb5-dev amd64 1.22.1-2+b1 [14.0 kB]
+Get:71 http://deb.debian.org/debian unstable/main amd64 libldap-dev amd64 2.6.10+dfsg-1+b2 [305 kB]
+Get:72 http://deb.debian.org/debian unstable/main amd64 libpkgconf7 amd64 2.5.1-4 [47.8 kB]
+Get:73 http://deb.debian.org/debian unstable/main amd64 pkgconf-bin amd64 2.5.1-4 [35.9 kB]
+Get:74 http://deb.debian.org/debian unstable/main amd64 pkgconf amd64 2.5.1-4 [33.6 kB]
+Get:75 http://deb.debian.org/debian unstable/main amd64 libnghttp2-dev amd64 1.69.0-1 [128 kB]
+Get:76 http://deb.debian.org/debian unstable/main amd64 libnghttp3-dev amd64 1.15.0-1 [94.5 kB]
+Get:77 http://deb.debian.org/debian unstable/main amd64 libngtcp2-crypto-gnutls-dev amd64 1.22.1-1 [20.9 kB]
+Get:78 http://deb.debian.org/debian unstable/main amd64 libngtcp2-dev amd64 1.22.1-1 [192 kB]
+Get:79 http://deb.debian.org/debian unstable/main amd64 libpsl-dev amd64 0.21.5-1 [80.5 kB]
+Get:80 http://deb.debian.org/debian unstable/main amd64 librtmp1 amd64 2.6-1 [60.3 kB]
+Get:81 http://deb.debian.org/debian unstable/main amd64 zlib1g-dev amd64 1:1.3.dfsg+really1.3.2-3 [918 kB]
+Get:82 http://deb.debian.org/debian unstable/main amd64 librtmp-dev amd64 2.6-1 [69.7 kB]
+Get:83 http://deb.debian.org/debian unstable/main amd64 libssl-dev amd64 3.6.2-1 [3019 kB]
+Get:84 http://deb.debian.org/debian unstable/main amd64 libssh2-1-dev amd64 1.11.1-2 [393 kB]
+Get:85 http://deb.debian.org/debian unstable/main amd64 libzstd-dev amd64 1.5.7+dfsg-3+b2 [372 kB]
+Get:86 http://deb.debian.org/debian unstable/main amd64 libcurl4-gnutls-dev amd64 8.20.0-1 [528 kB]
+Get:87 http://deb.debian.org/debian unstable/main amd64 libfuse3-4 amd64 3.18.2-2 [103 kB]
+Get:88 http://deb.debian.org/debian unstable/main amd64 libsepol2 amd64 3.10-1 [307 kB]
+Get:89 http://deb.debian.org/debian unstable/main amd64 libsepol-dev amd64 3.10-1 [377 kB]
+Get:90 http://deb.debian.org/debian unstable/main amd64 libpcre2-16-0 amd64 10.46-1+b2 [280 kB]
+Get:91 http://deb.debian.org/debian unstable/main amd64 libpcre2-32-0 amd64 10.46-1+b2 [267 kB]
+Get:92 http://deb.debian.org/debian unstable/main amd64 libpcre2-posix3 amd64 10.46-1+b2 [63.3 kB]
+Get:93 http://deb.debian.org/debian unstable/main amd64 libpcre2-dev amd64 10.46-1+b2 [846 kB]
+Get:94 http://deb.debian.org/debian unstable/main amd64 libselinux-dev amd64 3.10-1 [170 kB]
+Get:95 http://deb.debian.org/debian unstable/main amd64 libfuse3-dev amd64 3.18.2-2 [160 kB]
+Get:96 http://deb.debian.org/debian unstable/main amd64 libgpg-error0 amd64 1.59-4 [88.5 kB]
+Get:97 http://deb.debian.org/debian unstable/main amd64 libgcrypt20 amd64 1.12.2-1 [903 kB]
+Get:98 http://deb.debian.org/debian unstable/main amd64 libgpg-error-dev amd64 1.59-4 [149 kB]
+Get:99 http://deb.debian.org/debian unstable/main amd64 libgcrypt20-dev amd64 1.12.2-1 [950 kB]
+Get:100 http://deb.debian.org/debian unstable/main amd64 liblzma-dev amd64 5.8.3-1 [369 kB]
+Get:101 http://deb.debian.org/debian unstable/main amd64 libxml2-dev amd64 2.15.2+dfsg-0.1 [745 kB]
+Preconfiguring packages ...
+Fetched 33.9 MB in 2min 2s (278 kB/s)
+Selecting previously unselected package sensible-utils.
+(Reading database ... 11889 files and directories currently installed.)
+Preparing to unpack .../000-sensible-utils_0.0.26_all.deb ...
+Unpacking sensible-utils (0.0.26) ...
+Selecting previously unselected package libmagic-mgc.
+Preparing to unpack .../001-libmagic-mgc_1%3a5.46-5+b2_amd64.deb ...
+Unpacking libmagic-mgc (1:5.46-5+b2) ...
+Selecting previously unselected package libmagic1t64:amd64.
+Preparing to unpack .../002-libmagic1t64_1%3a5.46-5+b2_amd64.deb ...
+Unpacking libmagic1t64:amd64 (1:5.46-5+b2) ...
+Selecting previously unselected package file.
+Preparing to unpack .../003-file_1%3a5.46-5+b2_amd64.deb ...
+Unpacking file (1:5.46-5+b2) ...
+Selecting previously unselected package gettext-base.
+Preparing to unpack .../004-gettext-base_0.23.2-2_amd64.deb ...
+Unpacking gettext-base (0.23.2-2) ...
+Selecting previously unselected package libuchardet0:amd64.
+Preparing to unpack .../005-libuchardet0_0.0.8-2+b2_amd64.deb ...
+Unpacking libuchardet0:amd64 (0.0.8-2+b2) ...
+Selecting previously unselected package groff-base.
+Preparing to unpack .../006-groff-base_1.24.1-1_amd64.deb ...
+Unpacking groff-base (1.24.1-1) ...
+Selecting previously unselected package bsdextrautils.
+Preparing to unpack .../007-bsdextrautils_2.42-5_amd64.deb ...
+Unpacking bsdextrautils (2.42-5) ...
+Selecting previously unselected package libpipeline1:amd64.
+Preparing to unpack .../008-libpipeline1_1.5.8-3_amd64.deb ...
+Unpacking libpipeline1:amd64 (1.5.8-3) ...
+Selecting previously unselected package man-db.
+Preparing to unpack .../009-man-db_2.13.1-1_amd64.deb ...
+Unpacking man-db (2.13.1-1) ...
+Selecting previously unselected package m4.
+Preparing to unpack .../010-m4_1.4.21-1_amd64.deb ...
+Unpacking m4 (1.4.21-1) ...
+Selecting previously unselected package autoconf.
+Preparing to unpack .../011-autoconf_2.72-6_all.deb ...
+Unpacking autoconf (2.72-6) ...
+Selecting previously unselected package autotools-dev.
+Preparing to unpack .../012-autotools-dev_20240727.1+nmu1_all.deb ...
+Unpacking autotools-dev (20240727.1+nmu1) ...
+Selecting previously unselected package automake.
+Preparing to unpack .../013-automake_1%3a1.18.1-4_all.deb ...
+Unpacking automake (1:1.18.1-4) ...
+Selecting previously unselected package autopoint.
+Preparing to unpack .../014-autopoint_0.23.2-2_all.deb ...
+Unpacking autopoint (0.23.2-2) ...
+Selecting previously unselected package libcom-err2:amd64.
+Preparing to unpack .../015-libcom-err2_1.47.4-1_amd64.deb ...
+Unpacking libcom-err2:amd64 (1.47.4-1) ...
+Selecting previously unselected package comerr-dev:amd64.
+Preparing to unpack .../016-comerr-dev_2.1-1.47.4-1_amd64.deb ...
+Unpacking comerr-dev:amd64 (2.1-1.47.4-1) ...
+Selecting previously unselected package libdebhelper-perl.
+Preparing to unpack .../017-libdebhelper-perl_13.31_all.deb ...
+Unpacking libdebhelper-perl (13.31) ...
+Selecting previously unselected package libtool.
+Preparing to unpack .../018-libtool_2.5.4-11_all.deb ...
+Unpacking libtool (2.5.4-11) ...
+Selecting previously unselected package dh-autoreconf.
+Preparing to unpack .../019-dh-autoreconf_22_all.deb ...
+Unpacking dh-autoreconf (22) ...
+Selecting previously unselected package libarchive-zip-perl.
+Preparing to unpack .../020-libarchive-zip-perl_1.68-1_all.deb ...
+Unpacking libarchive-zip-perl (1.68-1) ...
+Selecting previously unselected package libfile-stripnondeterminism-perl.
+Preparing to unpack .../021-libfile-stripnondeterminism-perl_1.15.0-1_all.deb ...
+Unpacking libfile-stripnondeterminism-perl (1.15.0-1) ...
+Selecting previously unselected package dh-strip-nondeterminism.
+Preparing to unpack .../022-dh-strip-nondeterminism_1.15.0-1_all.deb ...
+Unpacking dh-strip-nondeterminism (1.15.0-1) ...
+Selecting previously unselected package libelf1t64:amd64.
+Preparing to unpack .../023-libelf1t64_0.195-1_amd64.deb ...
+Unpacking libelf1t64:amd64 (0.195-1) ...
+Selecting previously unselected package dwz.
+Preparing to unpack .../024-dwz_0.16-4_amd64.deb ...
+Unpacking dwz (0.16-4) ...
+Selecting previously unselected package libunistring5:amd64.
+Preparing to unpack .../025-libunistring5_1.4.2-1_amd64.deb ...
+Unpacking libunistring5:amd64 (1.4.2-1) ...
+Selecting previously unselected package libxml2-16:amd64.
+Preparing to unpack .../026-libxml2-16_2.15.2+dfsg-0.1_amd64.deb ...
+Unpacking libxml2-16:amd64 (2.15.2+dfsg-0.1) ...
+Selecting previously unselected package gettext.
+Preparing to unpack .../027-gettext_0.23.2-2_amd64.deb ...
+Unpacking gettext (0.23.2-2) ...
+Selecting previously unselected package intltool-debian.
+Preparing to unpack .../028-intltool-debian_0.35.0+20060710.6_all.deb ...
+Unpacking intltool-debian (0.35.0+20060710.6) ...
+Selecting previously unselected package po-debconf.
+Preparing to unpack .../029-po-debconf_1.0.22_all.deb ...
+Unpacking po-debconf (1.0.22) ...
+Selecting previously unselected package debhelper.
+Preparing to unpack .../030-debhelper_13.31_all.deb ...
+Unpacking debhelper (13.31) ...
+Selecting previously unselected package libkrb5support0:amd64.
+Preparing to unpack .../031-libkrb5support0_1.22.1-2+b1_amd64.deb ...
+Unpacking libkrb5support0:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libk5crypto3:amd64.
+Preparing to unpack .../032-libk5crypto3_1.22.1-2+b1_amd64.deb ...
+Unpacking libk5crypto3:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libkeyutils1:amd64.
+Preparing to unpack .../033-libkeyutils1_1.6.3-6+b2_amd64.deb ...
+Unpacking libkeyutils1:amd64 (1.6.3-6+b2) ...
+Selecting previously unselected package libkrb5-3:amd64.
+Preparing to unpack .../034-libkrb5-3_1.22.1-2+b1_amd64.deb ...
+Unpacking libkrb5-3:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libgssapi-krb5-2:amd64.
+Preparing to unpack .../035-libgssapi-krb5-2_1.22.1-2+b1_amd64.deb ...
+Unpacking libgssapi-krb5-2:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libgssrpc4t64:amd64.
+Preparing to unpack .../036-libgssrpc4t64_1.22.1-2+b1_amd64.deb ...
+Unpacking libgssrpc4t64:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libkadm5clnt-mit12:amd64.
+Preparing to unpack .../037-libkadm5clnt-mit12_1.22.1-2+b1_amd64.deb ...
+Unpacking libkadm5clnt-mit12:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libkdb5-10t64:amd64.
+Preparing to unpack .../038-libkdb5-10t64_1.22.1-2+b1_amd64.deb ...
+Unpacking libkdb5-10t64:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libkadm5srv-mit12:amd64.
+Preparing to unpack .../039-libkadm5srv-mit12_1.22.1-2+b1_amd64.deb ...
+Unpacking libkadm5srv-mit12:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package krb5-multidev:amd64.
+Preparing to unpack .../040-krb5-multidev_1.22.1-2+b1_amd64.deb ...
+Unpacking krb5-multidev:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libbrotli1:amd64.
+Preparing to unpack .../041-libbrotli1_1.2.0-3_amd64.deb ...
+Unpacking libbrotli1:amd64 (1.2.0-3) ...
+Selecting previously unselected package libbrotli-dev:amd64.
+Preparing to unpack .../042-libbrotli-dev_1.2.0-3_amd64.deb ...
+Unpacking libbrotli-dev:amd64 (1.2.0-3) ...
+Selecting previously unselected package libnghttp3-9:amd64.
+Preparing to unpack .../043-libnghttp3-9_1.15.0-1_amd64.deb ...
+Unpacking libnghttp3-9:amd64 (1.15.0-1) ...
+Selecting previously unselected package libngtcp2-16:amd64.
+Preparing to unpack .../044-libngtcp2-16_1.22.1-1_amd64.deb ...
+Unpacking libngtcp2-16:amd64 (1.22.1-1) ...
+Selecting previously unselected package libidn2-0:amd64.
+Preparing to unpack .../045-libidn2-0_2.3.8-4+b2_amd64.deb ...
+Unpacking libidn2-0:amd64 (2.3.8-4+b2) ...
+Selecting previously unselected package libffi8:amd64.
+Preparing to unpack .../046-libffi8_3.5.2-4_amd64.deb ...
+Unpacking libffi8:amd64 (3.5.2-4) ...
+Selecting previously unselected package libp11-kit0:amd64.
+Preparing to unpack .../047-libp11-kit0_0.26.2-2_amd64.deb ...
+Unpacking libp11-kit0:amd64 (0.26.2-2) ...
+Selecting previously unselected package libtasn1-6:amd64.
+Preparing to unpack .../048-libtasn1-6_4.21.0-2+b1_amd64.deb ...
+Unpacking libtasn1-6:amd64 (4.21.0-2+b1) ...
+Selecting previously unselected package libgnutls30t64:amd64.
+Preparing to unpack .../049-libgnutls30t64_3.8.13-1_amd64.deb ...
+Unpacking libgnutls30t64:amd64 (3.8.13-1) ...
+Selecting previously unselected package libsasl2-modules-db:amd64.
+Preparing to unpack .../050-libsasl2-modules-db_2.1.28+dfsg1-11_amd64.deb ...
+Unpacking libsasl2-modules-db:amd64 (2.1.28+dfsg1-11) ...
+Selecting previously unselected package libsasl2-2:amd64.
+Preparing to unpack .../051-libsasl2-2_2.1.28+dfsg1-11_amd64.deb ...
+Unpacking libsasl2-2:amd64 (2.1.28+dfsg1-11) ...
+Selecting previously unselected package libldap2:amd64.
+Preparing to unpack .../052-libldap2_2.6.10+dfsg-1+b2_amd64.deb ...
+Unpacking libldap2:amd64 (2.6.10+dfsg-1+b2) ...
+Selecting previously unselected package libnghttp2-14:amd64.
+Preparing to unpack .../053-libnghttp2-14_1.69.0-1_amd64.deb ...
+Unpacking libnghttp2-14:amd64 (1.69.0-1) ...
+Selecting previously unselected package libngtcp2-crypto-gnutls8:amd64.
+Preparing to unpack .../054-libngtcp2-crypto-gnutls8_1.22.1-1_amd64.deb ...
+Unpacking libngtcp2-crypto-gnutls8:amd64 (1.22.1-1) ...
+Selecting previously unselected package libpsl5t64:amd64.
+Preparing to unpack .../055-libpsl5t64_0.21.5-1_amd64.deb ...
+Unpacking libpsl5t64:amd64 (0.21.5-1) ...
+Selecting previously unselected package libssh2-1t64:amd64.
+Preparing to unpack .../056-libssh2-1t64_1.11.1-2_amd64.deb ...
+Unpacking libssh2-1t64:amd64 (1.11.1-2) ...
+Selecting previously unselected package libcurl3t64-gnutls:amd64.
+Preparing to unpack .../057-libcurl3t64-gnutls_8.20.0-1_amd64.deb ...
+Unpacking libcurl3t64-gnutls:amd64 (8.20.0-1) ...
+Selecting previously unselected package libevent-2.1-7t64:amd64.
+Preparing to unpack .../058-libevent-2.1-7t64_2.1.12-stable-10+b2_amd64.deb ...
+Unpacking libevent-2.1-7t64:amd64 (2.1.12-stable-10+b2) ...
+Selecting previously unselected package libunbound8:amd64.
+Preparing to unpack .../059-libunbound8_1.24.2-1+b1_amd64.deb ...
+Unpacking libunbound8:amd64 (1.24.2-1+b1) ...
+Selecting previously unselected package libgnutls-dane0t64:amd64.
+Preparing to unpack .../060-libgnutls-dane0t64_3.8.13-1_amd64.deb ...
+Unpacking libgnutls-dane0t64:amd64 (3.8.13-1) ...
+Selecting previously unselected package libidn2-dev:amd64.
+Preparing to unpack .../061-libidn2-dev_2.3.8-4+b2_amd64.deb ...
+Unpacking libidn2-dev:amd64 (2.3.8-4+b2) ...
+Selecting previously unselected package libp11-kit-dev:amd64.
+Preparing to unpack .../062-libp11-kit-dev_0.26.2-2_amd64.deb ...
+Unpacking libp11-kit-dev:amd64 (0.26.2-2) ...
+Selecting previously unselected package libtasn1-6-dev:amd64.
+Preparing to unpack .../063-libtasn1-6-dev_4.21.0-2+b1_amd64.deb ...
+Unpacking libtasn1-6-dev:amd64 (4.21.0-2+b1) ...
+Selecting previously unselected package libgmpxx4ldbl:amd64.
+Preparing to unpack .../064-libgmpxx4ldbl_2%3a6.3.0+dfsg-5+b2_amd64.deb ...
+Unpacking libgmpxx4ldbl:amd64 (2:6.3.0+dfsg-5+b2) ...
+Selecting previously unselected package libgmp-dev:amd64.
+Preparing to unpack .../065-libgmp-dev_2%3a6.3.0+dfsg-5+b2_amd64.deb ...
+Unpacking libgmp-dev:amd64 (2:6.3.0+dfsg-5+b2) ...
+Selecting previously unselected package nettle-dev:amd64.
+Preparing to unpack .../066-nettle-dev_3.10.2-1+b1_amd64.deb ...
+Unpacking nettle-dev:amd64 (3.10.2-1+b1) ...
+Selecting previously unselected package libgnutls28-dev:amd64.
+Preparing to unpack .../067-libgnutls28-dev_3.8.13-1_amd64.deb ...
+Unpacking libgnutls28-dev:amd64 (3.8.13-1) ...
+Selecting previously unselected package libkrb5-dev:amd64.
+Preparing to unpack .../068-libkrb5-dev_1.22.1-2+b1_amd64.deb ...
+Unpacking libkrb5-dev:amd64 (1.22.1-2+b1) ...
+Selecting previously unselected package libldap-dev:amd64.
+Preparing to unpack .../069-libldap-dev_2.6.10+dfsg-1+b2_amd64.deb ...
+Unpacking libldap-dev:amd64 (2.6.10+dfsg-1+b2) ...
+Selecting previously unselected package libpkgconf7:amd64.
+Preparing to unpack .../070-libpkgconf7_2.5.1-4_amd64.deb ...
+Unpacking libpkgconf7:amd64 (2.5.1-4) ...
+Selecting previously unselected package pkgconf-bin.
+Preparing to unpack .../071-pkgconf-bin_2.5.1-4_amd64.deb ...
+Unpacking pkgconf-bin (2.5.1-4) ...
+Selecting previously unselected package pkgconf:amd64.
+Preparing to unpack .../072-pkgconf_2.5.1-4_amd64.deb ...
+Unpacking pkgconf:amd64 (2.5.1-4) ...
+Selecting previously unselected package libnghttp2-dev:amd64.
+Preparing to unpack .../073-libnghttp2-dev_1.69.0-1_amd64.deb ...
+Unpacking libnghttp2-dev:amd64 (1.69.0-1) ...
+Selecting previously unselected package libnghttp3-dev:amd64.
+Preparing to unpack .../074-libnghttp3-dev_1.15.0-1_amd64.deb ...
+Unpacking libnghttp3-dev:amd64 (1.15.0-1) ...
+Selecting previously unselected package libngtcp2-crypto-gnutls-dev:amd64.
+Preparing to unpack .../075-libngtcp2-crypto-gnutls-dev_1.22.1-1_amd64.deb ...
+Unpacking libngtcp2-crypto-gnutls-dev:amd64 (1.22.1-1) ...
+Selecting previously unselected package libngtcp2-dev:amd64.
+Preparing to unpack .../076-libngtcp2-dev_1.22.1-1_amd64.deb ...
+Unpacking libngtcp2-dev:amd64 (1.22.1-1) ...
+Selecting previously unselected package libpsl-dev:amd64.
+Preparing to unpack .../077-libpsl-dev_0.21.5-1_amd64.deb ...
+Unpacking libpsl-dev:amd64 (0.21.5-1) ...
+Selecting previously unselected package librtmp1:amd64.
+Preparing to unpack .../078-librtmp1_2.6-1_amd64.deb ...
+Unpacking librtmp1:amd64 (2.6-1) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../079-zlib1g-dev_1%3a1.3.dfsg+really1.3.2-3_amd64.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.3.dfsg+really1.3.2-3) ...
+Selecting previously unselected package librtmp-dev:amd64.
+Preparing to unpack .../080-librtmp-dev_2.6-1_amd64.deb ...
+Unpacking librtmp-dev:amd64 (2.6-1) ...
+Selecting previously unselected package libssl-dev:amd64.
+Preparing to unpack .../081-libssl-dev_3.6.2-1_amd64.deb ...
+Unpacking libssl-dev:amd64 (3.6.2-1) ...
+Selecting previously unselected package libssh2-1-dev:amd64.
+Preparing to unpack .../082-libssh2-1-dev_1.11.1-2_amd64.deb ...
+Unpacking libssh2-1-dev:amd64 (1.11.1-2) ...
+Selecting previously unselected package libzstd-dev:amd64.
+Preparing to unpack .../083-libzstd-dev_1.5.7+dfsg-3+b2_amd64.deb ...
+Unpacking libzstd-dev:amd64 (1.5.7+dfsg-3+b2) ...
+Selecting previously unselected package libcurl4-gnutls-dev:amd64.
+Preparing to unpack .../084-libcurl4-gnutls-dev_8.20.0-1_amd64.deb ...
+Unpacking libcurl4-gnutls-dev:amd64 (8.20.0-1) ...
+Selecting previously unselected package libfuse3-4:amd64.
+Preparing to unpack .../085-libfuse3-4_3.18.2-2_amd64.deb ...
+Unpacking libfuse3-4:amd64 (3.18.2-2) ...
+Selecting previously unselected package libsepol2:amd64.
+Preparing to unpack .../086-libsepol2_3.10-1_amd64.deb ...
+Unpacking libsepol2:amd64 (3.10-1) ...
+Selecting previously unselected package libsepol-dev:amd64.
+Preparing to unpack .../087-libsepol-dev_3.10-1_amd64.deb ...
+Unpacking libsepol-dev:amd64 (3.10-1) ...
+Selecting previously unselected package libpcre2-16-0:amd64.
+Preparing to unpack .../088-libpcre2-16-0_10.46-1+b2_amd64.deb ...
+Unpacking libpcre2-16-0:amd64 (10.46-1+b2) ...
+Selecting previously unselected package libpcre2-32-0:amd64.
+Preparing to unpack .../089-libpcre2-32-0_10.46-1+b2_amd64.deb ...
+Unpacking libpcre2-32-0:amd64 (10.46-1+b2) ...
+Selecting previously unselected package libpcre2-posix3:amd64.
+Preparing to unpack .../090-libpcre2-posix3_10.46-1+b2_amd64.deb ...
+Unpacking libpcre2-posix3:amd64 (10.46-1+b2) ...
+Selecting previously unselected package libpcre2-dev:amd64.
+Preparing to unpack .../091-libpcre2-dev_10.46-1+b2_amd64.deb ...
+Unpacking libpcre2-dev:amd64 (10.46-1+b2) ...
+Selecting previously unselected package libselinux-dev:amd64.
+Preparing to unpack .../092-libselinux-dev_3.10-1_amd64.deb ...
+Unpacking libselinux-dev:amd64 (3.10-1) ...
+Selecting previously unselected package libfuse3-dev:amd64.
+Preparing to unpack .../093-libfuse3-dev_3.18.2-2_amd64.deb ...
+Unpacking libfuse3-dev:amd64 (3.18.2-2) ...
+Selecting previously unselected package libgpg-error0:amd64.
+Preparing to unpack .../094-libgpg-error0_1.59-4_amd64.deb ...
+Unpacking libgpg-error0:amd64 (1.59-4) ...
+Selecting previously unselected package libgcrypt20:amd64.
+Preparing to unpack .../095-libgcrypt20_1.12.2-1_amd64.deb ...
+Unpacking libgcrypt20:amd64 (1.12.2-1) ...
+Selecting previously unselected package libgpg-error-dev:amd64.
+Preparing to unpack .../096-libgpg-error-dev_1.59-4_amd64.deb ...
+Unpacking libgpg-error-dev:amd64 (1.59-4) ...
+Selecting previously unselected package libgcrypt20-dev:amd64.
+Preparing to unpack .../097-libgcrypt20-dev_1.12.2-1_amd64.deb ...
+Unpacking libgcrypt20-dev:amd64 (1.12.2-1) ...
+Selecting previously unselected package liblzma-dev:amd64.
+Preparing to unpack .../098-liblzma-dev_5.8.3-1_amd64.deb ...
+Unpacking liblzma-dev:amd64 (5.8.3-1) ...
+Selecting previously unselected package libxml2-dev:amd64.
+Preparing to unpack .../099-libxml2-dev_2.15.2+dfsg-0.1_amd64.deb ...
+Unpacking libxml2-dev:amd64 (2.15.2+dfsg-0.1) ...
+Selecting previously unselected package sbuild-build-depends-main-dummy.
+Preparing to unpack .../100-sbuild-build-depends-main-dummy_0.invalid.0_amd64.deb ...
+Unpacking sbuild-build-depends-main-dummy (0.invalid.0) ...
+Setting up libpipeline1:amd64 (1.5.8-3) ...
+Setting up libkeyutils1:amd64 (1.6.3-6+b2) ...
+Setting up libzstd-dev:amd64 (1.5.7+dfsg-3+b2) ...
+Setting up bsdextrautils (2.42-5) ...
+Setting up libgpg-error0:amd64 (1.59-4) ...
+Setting up libmagic-mgc (1:5.46-5+b2) ...
+Setting up libarchive-zip-perl (1.68-1) ...
+Setting up libxml2-16:amd64 (2.15.2+dfsg-0.1) ...
+Setting up libdebhelper-perl (13.31) ...
+Setting up libbrotli1:amd64 (1.2.0-3) ...
+Setting up libpkgconf7:amd64 (2.5.1-4) ...
+Setting up libmagic1t64:amd64 (1:5.46-5+b2) ...
+Setting up libnghttp2-14:amd64 (1.69.0-1) ...
+Setting up gettext-base (0.23.2-2) ...
+Setting up m4 (1.4.21-1) ...
+Setting up libevent-2.1-7t64:amd64 (2.1.12-stable-10+b2) ...
+Setting up libgcrypt20:amd64 (1.12.2-1) ...
+Setting up libcom-err2:amd64 (1.47.4-1) ...
+Setting up file (1:5.46-5+b2) ...
+Setting up libpcre2-16-0:amd64 (10.46-1+b2) ...
+Setting up libelf1t64:amd64 (0.195-1) ...
+Setting up libkrb5support0:amd64 (1.22.1-2+b1) ...
+Setting up libsasl2-modules-db:amd64 (2.1.28+dfsg1-11) ...
+Setting up autotools-dev (20240727.1+nmu1) ...
+Setting up libpcre2-32-0:amd64 (10.46-1+b2) ...
+Setting up libunbound8:amd64 (1.24.2-1+b1) ...
+Setting up libgmpxx4ldbl:amd64 (2:6.3.0+dfsg-5+b2) ...
+Setting up libgpg-error-dev:amd64 (1.59-4) ...
+Setting up comerr-dev:amd64 (2.1-1.47.4-1) ...
+Setting up libunistring5:amd64 (1.4.2-1) ...
+Setting up libssl-dev:amd64 (3.6.2-1) ...
+Setting up autopoint (0.23.2-2) ...
+Setting up libsepol2:amd64 (3.10-1) ...
+Setting up libsepol-dev:amd64 (3.10-1) ...
+Setting up pkgconf-bin (2.5.1-4) ...
+Setting up libk5crypto3:amd64 (1.22.1-2+b1) ...
+Setting up libsasl2-2:amd64 (2.1.28+dfsg1-11) ...
+Setting up autoconf (2.72-6) ...
+Setting up libnghttp3-9:amd64 (1.15.0-1) ...
+Setting up libnghttp3-dev:amd64 (1.15.0-1) ...
+Setting up liblzma-dev:amd64 (5.8.3-1) ...
+Setting up zlib1g-dev:amd64 (1:1.3.dfsg+really1.3.2-3) ...
+Setting up libffi8:amd64 (3.5.2-4) ...
+Setting up libpcre2-posix3:amd64 (10.46-1+b2) ...
+Setting up dwz (0.16-4) ...
+Setting up sensible-utils (0.0.26) ...
+Setting up libuchardet0:amd64 (0.0.8-2+b2) ...
+Setting up libtasn1-6:amd64 (4.21.0-2+b1) ...
+Setting up libngtcp2-16:amd64 (1.22.1-1) ...
+Setting up libkrb5-3:amd64 (1.22.1-2+b1) ...
+Setting up libssh2-1t64:amd64 (1.11.1-2) ...
+Setting up libfuse3-4:amd64 (3.18.2-2) ...
+Setting up libtasn1-6-dev:amd64 (4.21.0-2+b1) ...
+Setting up libldap2:amd64 (2.6.10+dfsg-1+b2) ...
+Setting up libbrotli-dev:amd64 (1.2.0-3) ...
+Setting up automake (1:1.18.1-4) ...
+update-alternatives: using /usr/bin/automake-1.18 to provide /usr/bin/automake (automake) in auto mode
+Setting up libfile-stripnondeterminism-perl (1.15.0-1) ...
+Setting up gettext (0.23.2-2) ...
+Setting up libgmp-dev:amd64 (2:6.3.0+dfsg-5+b2) ...
+Setting up libpcre2-dev:amd64 (10.46-1+b2) ...
+Setting up nettle-dev:amd64 (3.10.2-1+b1) ...
+Setting up libtool (2.5.4-11) ...
+Setting up libidn2-0:amd64 (2.3.8-4+b2) ...
+Setting up libngtcp2-dev:amd64 (1.22.1-1) ...
+Setting up pkgconf:amd64 (2.5.1-4) ...
+Setting up intltool-debian (0.35.0+20060710.6) ...
+Setting up dh-autoreconf (22) ...
+Setting up libxml2-dev:amd64 (2.15.2+dfsg-0.1) ...
+Setting up libgcrypt20-dev:amd64 (1.12.2-1) ...
+Setting up libldap-dev:amd64 (2.6.10+dfsg-1+b2) ...
+Setting up libp11-kit0:amd64 (0.26.2-2) ...
+Setting up libgssapi-krb5-2:amd64 (1.22.1-2+b1) ...
+Setting up libssh2-1-dev:amd64 (1.11.1-2) ...
+Setting up libidn2-dev:amd64 (2.3.8-4+b2) ...
+Setting up dh-strip-nondeterminism (1.15.0-1) ...
+Setting up groff-base (1.24.1-1) ...
+Setting up libselinux-dev:amd64 (3.10-1) ...
+Setting up libfuse3-dev:amd64 (3.18.2-2) ...
+Setting up libp11-kit-dev:amd64 (0.26.2-2) ...
+Setting up libgnutls30t64:amd64 (3.8.13-1) ...
+Setting up libnghttp2-dev:amd64 (1.69.0-1) ...
+Setting up po-debconf (1.0.22) ...
+Setting up libpsl5t64:amd64 (0.21.5-1) ...
+Setting up man-db (2.13.1-1) ...
+Not building database; man-db/auto-update is not 'true'.
+Setting up libpsl-dev:amd64 (0.21.5-1) ...
+Setting up libgnutls-dane0t64:amd64 (3.8.13-1) ...
+Setting up librtmp1:amd64 (2.6-1) ...
+Setting up libgssrpc4t64:amd64 (1.22.1-2+b1) ...
+Setting up libngtcp2-crypto-gnutls8:amd64 (1.22.1-1) ...
+Setting up libkadm5clnt-mit12:amd64 (1.22.1-2+b1) ...
+Setting up libgnutls28-dev:amd64 (3.8.13-1) ...
+Setting up libkdb5-10t64:amd64 (1.22.1-2+b1) ...
+Setting up libcurl3t64-gnutls:amd64 (8.20.0-1) ...
+Setting up debhelper (13.31) ...
+Setting up libngtcp2-crypto-gnutls-dev:amd64 (1.22.1-1) ...
+Setting up librtmp-dev:amd64 (2.6-1) ...
+Setting up libkadm5srv-mit12:amd64 (1.22.1-2+b1) ...
+Setting up krb5-multidev:amd64 (1.22.1-2+b1) ...
+Setting up libkrb5-dev:amd64 (1.22.1-2+b1) ...
+Setting up libcurl4-gnutls-dev:amd64 (8.20.0-1) ...
+Setting up sbuild-build-depends-main-dummy (0.invalid.0) ...
+Processing triggers for libc-bin (2.42-15) ...
+
++------------------------------------------------------------------------------+
+| Check architectures                          Fri, 01 May 2026 10:31:48 +0000 |
++------------------------------------------------------------------------------+
+
+Arch check ok (amd64 included in any)
+
++------------------------------------------------------------------------------+
+| Build environment                            Fri, 01 May 2026 10:31:48 +0000 |
++------------------------------------------------------------------------------+
+
+Kernel: Linux 6.17.0-20-generic #20~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 19 01:28:37 UTC 2 amd64 (x86_64)
+Toolchain package versions: binutils_2.46-3 dpkg-dev_1.23.7 g++-15_15.2.0-17 gcc-15_15.2.0-17 libc6-dev_2.42-15 libstdc++-15-dev_15.2.0-17 libstdc++6_16-20260425-1 linux-libc-dev_7.0.3-1
+Package versions: apt_3.2.0 autoconf_2.72-6 automake_1:1.18.1-4 autopoint_0.23.2-2 autotools-dev_20240727.1+nmu1 base-files_14 base-passwd_3.6.8 bash_5.3-2 binutils_2.46-3 binutils-common_2.46-3 binutils-x86-64-linux-gnu_2.46-3 bsdextrautils_2.42-5 build-essential_12.12 bzip2_1.0.8-6+b2 comerr-dev_2.1-1.47.4-1 coreutils_9.10-1 cpp_4:15.2.0-5+b1 cpp-15_15.2.0-17 cpp-15-x86-64-linux-gnu_15.2.0-17 cpp-x86-64-linux-gnu_4:15.2.0-5+b1 dash_0.5.12-12 debconf_1.5.92 debhelper_13.31 debian-archive-keyring_2025.1 debianutils_5.23.2 dh-autoreconf_22 dh-strip-nondeterminism_1.15.0-1 diffutils_1:3.12-1 dpkg_1.23.7 dpkg-dev_1.23.7 dwz_0.16-4 file_1:5.46-5+b2 findutils_4.10.0-4 g++_4:15.2.0-5+b1 g++-15_15.2.0-17 g++-15-x86-64-linux-gnu_15.2.0-17 g++-x86-64-linux-gnu_4:15.2.0-5+b1 gcc_4:15.2.0-5+b1 gcc-15_15.2.0-17 gcc-15-base_15.2.0-17 gcc-15-x86-64-linux-gnu_15.2.0-17 gcc-16-base_16-20260425-1 gcc-x86-64-linux-gnu_4:15.2.0-5+b1 gettext_0.23.2-2 gettext-base_0.23.2-2 grep_3.12-1 groff-base_1.24.1-1 gzip_1.13-1 hostname_3.25 init-system-helpers_1.69 intltool-debian_0.35.0+20060710.6 krb5-multidev_1.22.1-2+b1 libacl1_2.3.2-3 libapt-pkg7.0_3.2.0 libarchive-zip-perl_1.68-1 libasan8_16-20260425-1 libatomic1_16-20260425-1 libattr1_1:2.5.2-4 libaudit-common_1:4.1.2-1 libaudit1_1:4.1.2-1+b1 libbinutils_2.46-3 libblkid1_2.42-5 libbrotli-dev_1.2.0-3 libbrotli1_1.2.0-3 libbz2-1.0_1.0.8-6+b2 libc-bin_2.42-15 libc-dev-bin_2.42-15 libc-gconv-modules-extra_2.42-15 libc6_2.42-15 libc6-dev_2.42-15 libcap-ng0_0.9.3-1 libcc1-0_16-20260425-1 libcom-err2_1.47.4-1 libcrypt1_1:4.5.1-1+b1 libctf-nobfd0_2.46-3 libctf0_2.46-3 libcurl3t64-gnutls_8.20.0-1 libcurl4-gnutls-dev_8.20.0-1 libdb5.3t64_5.3.28+dfsg2-11+b1 libdebconfclient0_0.282+b3 libdebhelper-perl_13.31 libdpkg-perl_1.23.7 libelf1t64_0.195-1 libevent-2.1-7t64_2.1.12-stable-10+b2 libffi8_3.5.2-4 libfile-stripnondeterminism-perl_1.15.0-1 libfuse3-4_3.18.2-2 libfuse3-dev_3.18.2-2 libgcc-15-dev_15.2.0-17 libgcc-s1_16-20260425-1 libgcrypt20_1.12.2-1 libgcrypt20-dev_1.12.2-1 libgdbm-compat4t64_1.26-1+b2 libgdbm6t64_1.26-1+b2 libgmp-dev_2:6.3.0+dfsg-5+b2 libgmp10_2:6.3.0+dfsg-5+b2 libgmpxx4ldbl_2:6.3.0+dfsg-5+b2 libgnutls-dane0t64_3.8.13-1 libgnutls28-dev_3.8.13-1 libgnutls30t64_3.8.13-1 libgomp1_16-20260425-1 libgpg-error-dev_1.59-4 libgpg-error0_1.59-4 libgprofng0_2.46-3 libgssapi-krb5-2_1.22.1-2+b1 libgssrpc4t64_1.22.1-2+b1 libhogweed6t64_3.10.2-1+b1 libhwasan0_16-20260425-1 libidn2-0_2.3.8-4+b2 libidn2-dev_2.3.8-4+b2 libisl23_0.27-2 libitm1_16-20260425-1 libjansson4_2.14-2+b4 libk5crypto3_1.22.1-2+b1 libkadm5clnt-mit12_1.22.1-2+b1 libkadm5srv-mit12_1.22.1-2+b1 libkdb5-10t64_1.22.1-2+b1 libkeyutils1_1.6.3-6+b2 libkrb5-3_1.22.1-2+b1 libkrb5-dev_1.22.1-2+b1 libkrb5support0_1.22.1-2+b1 libldap-dev_2.6.10+dfsg-1+b2 libldap2_2.6.10+dfsg-1+b2 liblsan0_16-20260425-1 liblz4-1_1.10.0-10 liblzma-dev_5.8.3-1 liblzma5_5.8.3-1 libmagic-mgc_1:5.46-5+b2 libmagic1t64_1:5.46-5+b2 libmd0_1.1.0-2+b2 libmount1_2.42-5 libmpc3_1.3.1-3 libmpfr6_4.2.2-3 libnettle8t64_3.10.2-1+b1 libnghttp2-14_1.69.0-1 libnghttp2-dev_1.69.0-1 libnghttp3-9_1.15.0-1 libnghttp3-dev_1.15.0-1 libngtcp2-16_1.22.1-1 libngtcp2-crypto-gnutls-dev_1.22.1-1 libngtcp2-crypto-gnutls8_1.22.1-1 libngtcp2-dev_1.22.1-1 libp11-kit-dev_0.26.2-2 libp11-kit0_0.26.2-2 libpam-modules_1.7.0-5+b2 libpam-modules-bin_1.7.0-5+b2 libpam-runtime_1.7.0-5 libpam0g_1.7.0-5+b2 libpcre2-16-0_10.46-1+b2 libpcre2-32-0_10.46-1+b2 libpcre2-8-0_10.46-1+b2 libpcre2-dev_10.46-1+b2 libpcre2-posix3_10.46-1+b2 libperl5.40_5.40.1-7+b1 libpipeline1_1.5.8-3 libpkgconf7_2.5.1-4 libpsl-dev_0.21.5-1 libpsl5t64_0.21.5-1 libquadmath0_16-20260425-1 librtmp-dev_2.6-1 librtmp1_2.6-1 libsasl2-2_2.1.28+dfsg1-11 libsasl2-modules-db_2.1.28+dfsg1-11 libseccomp2_2.6.0-2+b1 libselinux-dev_3.10-1 libselinux1_3.10-1 libsepol-dev_3.10-1 libsepol2_3.10-1 libsframe3_2.46-3 libsmartcols1_2.42-5 libssh2-1-dev_1.11.1-2 libssh2-1t64_1.11.1-2 libssl-dev_3.6.2-1 libssl3t64_3.6.2-1 libstdc++-15-dev_15.2.0-17 libstdc++6_16-20260425-1 libsystemd0_260.1-1 libtasn1-6_4.21.0-2+b1 libtasn1-6-dev_4.21.0-2+b1 libtinfo6_6.6+20251231-1+b1 libtool_2.5.4-11 libtsan2_16-20260425-1 libubsan1_16-20260425-1 libuchardet0_0.0.8-2+b2 libudev1_260.1-1 libunbound8_1.24.2-1+b1 libunistring5_1.4.2-1 libuuid1_2.42-5 libxml2-16_2.15.2+dfsg-0.1 libxml2-dev_2.15.2+dfsg-0.1 libxxhash0_0.8.3-2+b2 libzstd-dev_1.5.7+dfsg-3+b2 libzstd1_1.5.7+dfsg-3+b2 linux-libc-dev_7.0.3-1 m4_1.4.21-1 make_4.4.1-3 man-db_2.13.1-1 mawk_1.3.4.20260302-1 ncurses-base_6.6+20251231-1 ncurses-bin_6.6+20251231-1+b1 nettle-dev_3.10.2-1+b1 openssl-provider-legacy_3.6.2-1 patch_2.8-2 perl_5.40.1-7+b1 perl-base_5.40.1-7+b1 perl-modules-5.40_5.40.1-7 pkgconf_2.5.1-4 pkgconf-bin_2.5.1-4 po-debconf_1.0.22 rpcsvc-proto_1.4.3-1 sbuild-build-depends-main-dummy_0.invalid.0 sed_4.9-3 sensible-utils_0.0.26 sqv_1.3.0-5+b1 sysvinit-utils_3.18-1 tar_1.35+dfsg-4 util-linux_2.42-5 xz-utils_5.8.3-1 zlib1g_1:1.3.dfsg+really1.3.2-3 zlib1g-dev_1:1.3.dfsg+really1.3.2-3
+
++------------------------------------------------------------------------------+
+| Build                                        Fri, 01 May 2026 10:31:48 +0000 |
++------------------------------------------------------------------------------+
+
+
+Unpack source
+-------------
+
+Format: 3.0 (quilt)
+Source: s3fs-fuse
+Binary: s3fs-fuse
+Architecture: any
+Version: 1.97-1
+Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Homepage: https://github.com/s3fs-fuse/s3fs-fuse
+Standards-Version: 4.7.4
+Vcs-Browser: https://salsa.debian.org/debian/s3fs-fuse
+Vcs-Git: https://salsa.debian.org/debian/s3fs-fuse.git -b debian
+Build-Depends: debhelper-compat (= 13), libcurl4-gnutls-dev, libfuse3-dev, libgcrypt20-dev, libgnutls28-dev, libxml2-dev, pkgconf
+Package-List:
+ s3fs-fuse deb utils optional arch=any
+Checksums-Sha1:
+ 75438ef284a50f236233f9f32765c4338eacb0e0 307251 s3fs-fuse_1.97.orig.tar.gz
+ b6d850edbb234da8f6d9d54a5567b1b043baf393 3640 s3fs-fuse_1.97-1.debian.tar.xz
+Checksums-Sha256:
+ 28413457cbf923b9b81e546caffabb8edd5c18f263e698ad86f564fd4b5b344d 307251 s3fs-fuse_1.97.orig.tar.gz
+ 187304868f132b4fe1ab1f006a95694fafe9659f8aa61fde6f78077096c94db1 3640 s3fs-fuse_1.97-1.debian.tar.xz
+Files:
+ 6f8bd7c602eee555cd9a07b9eb07e096 307251 s3fs-fuse_1.97.orig.tar.gz
+ 42c248bf2c84f6a4046234451a971a00 3640 s3fs-fuse_1.97-1.debian.tar.xz
+Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
+
+dpkg-source: warning: extracting unsigned source package (s3fs-fuse_1.97-1.dsc)
+dpkg-source: info: extracting s3fs-fuse in /build/reproducible-path/s3fs-fuse-1.97
+dpkg-source: info: unpacking s3fs-fuse_1.97.orig.tar.gz
+dpkg-source: info: unpacking s3fs-fuse_1.97-1.debian.tar.xz
+
+clean up apt cache
+------------------
+
+
+Check disk space
+----------------
+
+Sufficient free space for build
+
+User Environment
+----------------
+
+APT_CONFIG=/var/lib/sbuild/apt.conf
+HOME=/sbuild-nonexistent
+LC_ALL=C.UTF-8
+LOGNAME=sbuild
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+SHELL=/bin/sh
+USER=sbuild
+
+dpkg-buildpackage
+-----------------
+
+Command: dpkg-buildpackage --sanitize-env -us -uc -b
+dpkg-buildpackage: info: source package s3fs-fuse
+dpkg-buildpackage: info: source version 1.97-1
+dpkg-buildpackage: info: source distribution unstable
+dpkg-buildpackage: info: source changed by Hikmah Gumelar  <hikmahgumelar@gmail.com>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean
+   dh_clean
+ debian/rules binary
+dh binary
+   dh_update_autotools_config
+   dh_autoreconf
+autoreconf: export WARNINGS=
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force 
+autoreconf: configure.ac: tracing
+autoreconf: configure.ac: not using Libtool
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: /usr/bin/autoconf --force
+configure.ac:24: warning: The macro 'AC_CONFIG_HEADER' is obsolete.
+configure.ac:24: You should run autoupdate.
+./lib/autoconf/status.m4:719: AC_CONFIG_HEADER is expanded from...
+configure.ac:24: the top level
+autoreconf: running: /usr/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:30: installing './compile'
+configure.ac:26: installing './config.guess'
+configure.ac:26: installing './config.sub'
+configure.ac:27: installing './install-sh'
+configure.ac:27: installing './missing'
+src/Makefile.am: installing './depcomp'
+parallel-tests: installing './test-driver'
+autoreconf: Leaving directory '.'
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97'
+dh_auto_configure -- --with-gnutls
+	./configure --build=x86_64-linux-gnu --prefix=/usr --includedir=\${prefix}/include --mandir=\${prefix}/share/man --infodir=\${prefix}/share/info --sysconfdir=/etc --localstatedir=/var --disable-option-checking --disable-silent-rules --libdir=\${prefix}/lib/x86_64-linux-gnu --runstatedir=/run --disable-maintainer-mode --disable-dependency-tracking --with-gnutls
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether sleep supports fractional seconds... yes
+checking filesystem timestamp resolution... 0.01
+checking whether build environment is sane... yes
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking xargs -n works... yes
+checking whether UID '999' is supported by ustar format... yes
+checking whether GID '999' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking for g++... g++
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether the compiler supports GNU C++... yes
+checking whether g++ accepts -g... yes
+checking for g++ option to enable C++11 features... none needed
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of g++... none
+checking for gcc... gcc
+checking whether the compiler supports GNU C... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to enable C11 features... none needed
+checking whether gcc understands -c and -o together... yes
+checking dependency style of gcc... none
+checking for stdio.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
+checking for unistd.h... yes
+checking for sys/xattr.h... yes
+checking for attr/xattr.h... no
+checking for sys/extattr.h... no
+checking for fallocate... yes
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for fuse-t >= ... no
+checking for fuse3 >= 3.0.0... yes
+checking s3fs build with nettle(GnuTLS)... no
+checking s3fs build with OpenSSL... no
+checking s3fs build with GnuTLS... yes
+checking s3fs build with NSS... no
+checking compile s3fs with... GnuTLS-gcrypt
+checking for gcry_control in -lgnutls... no
+checking for gcry_control in -lgcrypt... yes
+checking for fuse3 >= 3.0.0 libcurl >= 7.0 libxml-2.0 >= 2.6 gnutls >= 2.12.0 ... yes
+checking gnutls is build with... gcrypt
+checking for malloc_trim... yes
+checking for library containing clock_gettime... none required
+checking for clock_gettime... yes
+checking pthread mutex recursive... PTHREAD_MUTEX_RECURSIVE
+checking checking CURLOPT_TCP_KEEPALIVE... yes
+checking checking CURLOPT_SSL_ENABLE_ALPN... yes
+checking checking CURLOPT_KEEP_SENDING_ON_ERROR... yes
+checking for dlopen, dlclose, dlerror, dlsym in -ldl... yes
+checking for git... no
+checking github short commit hash... 
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating src/Makefile
+config.status: creating test/Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/man/s3fs.1
+config.status: creating config.h
+config.status: executing depfiles commands
+make[1]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
+   dh_auto_build
+	make -j8
+make[1]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97'
+make  all-recursive
+make[2]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97'
+Making all in src
+make[3]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/src'
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3fs.o s3fs.cpp
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3fs_global.o s3fs_global.cpp
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3fs_help.o s3fs_help.cpp
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3fs_logger.o s3fs_logger.cpp
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3fs_xml.o s3fs_xml.cpp
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o metaheader.o metaheader.cpp
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o mpu_util.o mpu_util.cpp
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o curl.o curl.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o curl_share.o curl_share.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o curl_util.o curl_util.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3objlist.o s3objlist.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o cache.o cache.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o cache_node.o cache_node.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o string_util.o string_util.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3fs_cred.o s3fs_cred.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3fs_util.o s3fs_util.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o s3fs_threadreqs.o s3fs_threadreqs.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o fdcache.o fdcache.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o fdcache_entity.o fdcache_entity.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o fdcache_page.o fdcache_page.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o fdcache_stat.o fdcache_stat.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o fdcache_auto.o fdcache_auto.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o fdcache_fdinfo.o fdcache_fdinfo.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o fdcache_pseudofd.o fdcache_pseudofd.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o fdcache_untreated.o fdcache_untreated.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o filetimes.o filetimes.cpp
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o addhead.o addhead.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o sighandlers.o sighandlers.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o threadpoolman.o threadpoolman.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o syncfiller.o syncfiller.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o common_auth.o common_auth.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o gnutls_auth.o gnutls_auth.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o test_curl_util.o test_curl_util.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o test_page_list.o test_page_list.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o test_string_util.o test_string_util.cpp
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o test_page_list fdcache_page.o s3fs_global.o s3fs_logger.o string_util.o test_page_list.o  -ldl -lgnutls -lgcrypt 
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o test_curl_util common_auth.o curl_util.o string_util.o test_curl_util.o s3fs_global.o s3fs_logger.o  gnutls_auth.o  -lfuse3 -lpthread -lcurl -lxml2 -lgnutls -ldl -lgnutls -lgcrypt 
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o test_string_util string_util.o test_string_util.o s3fs_logger.o  -ldl -lgnutls -lgcrypt 
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o s3fs s3fs.o s3fs_global.o s3fs_help.o s3fs_logger.o s3fs_xml.o metaheader.o mpu_util.o curl.o curl_share.o curl_util.o s3objlist.o cache.o cache_node.o string_util.o s3fs_cred.o s3fs_util.o s3fs_threadreqs.o fdcache.o fdcache_entity.o fdcache_page.o fdcache_stat.o fdcache_auto.o fdcache_fdinfo.o fdcache_pseudofd.o fdcache_untreated.o filetimes.o addhead.o sighandlers.o threadpoolman.o syncfiller.o common_auth.o  gnutls_auth.o  -lfuse3 -lpthread -lcurl -lxml2 -lgnutls -ldl -lgnutls -lgcrypt 
+make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/src'
+Making all in test
+make[3]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/test'
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o junk_data.o junk_data.cc
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o write_multiblock.o write_multiblock.cc
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o mknod_test.o mknod_test.cc
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o truncate_read_file.o truncate_read_file.cc
+g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o cr_filename.o cr_filename.cc
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+<command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o truncate_read_file truncate_read_file.o  -ldl -lgnutls -lgcrypt 
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o cr_filename cr_filename.o  -ldl -lgnutls -lgcrypt 
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o junk_data junk_data.o  -ldl -lgnutls -lgcrypt 
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o mknod_test mknod_test.o  -ldl -lgnutls -lgcrypt 
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o write_multiblock write_multiblock.o  -ldl -lgnutls -lgcrypt 
+make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/test'
+Making all in doc
+make[3]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/doc'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/doc'
+make[3]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97'
+make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
+make[2]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
+make[1]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97'
+Tests disabled as they require credentals in /sbuild-nonexistent/.passwd-s3fs.
+make[1]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+   dh_auto_install --destdir=debian/s3fs-fuse/
+	make -j8 install DESTDIR=/build/reproducible-path/s3fs-fuse-1.97/debian/s3fs-fuse AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97'
+Making install in src
+make[2]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/src'
+make[3]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/src'
+make[3]: Nothing to be done for 'install-data-am'.
+ /usr/bin/mkdir -p '/build/reproducible-path/s3fs-fuse-1.97/debian/s3fs-fuse/usr/bin'
+  /usr/bin/install -c s3fs '/build/reproducible-path/s3fs-fuse-1.97/debian/s3fs-fuse/usr/bin'
+make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/src'
+make[2]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/src'
+Making install in test
+make[2]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/test'
+make[3]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/test'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/test'
+make[2]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/test'
+Making install in doc
+make[2]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/doc'
+make[3]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97/doc'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/build/reproducible-path/s3fs-fuse-1.97/debian/s3fs-fuse/usr/share/man/man1'
+ /usr/bin/install -c -m 644 man/s3fs.1 '/build/reproducible-path/s3fs-fuse-1.97/debian/s3fs-fuse/usr/share/man/man1'
+make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/doc'
+make[2]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/doc'
+make[2]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97'
+make[3]: Entering directory '/build/reproducible-path/s3fs-fuse-1.97'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
+make[2]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
+make[1]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
+   dh_installdocs
+   dh_installchangelogs
+   dh_installman
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_dwz -a
+   dh_strip -a
+   dh_makeshlibs -a
+   dh_shlibdeps -a
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 's3fs-fuse-dbgsym' in '../s3fs-fuse-dbgsym_1.97-1_amd64.deb'.
+dpkg-deb: building package 's3fs-fuse' in '../s3fs-fuse_1.97-1_amd64.deb'.
+ dpkg-genbuildinfo --build=binary -O../s3fs-fuse_1.97-1_amd64.buildinfo
+ dpkg-genchanges --build=binary -O../s3fs-fuse_1.97-1_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)
+--------------------------------------------------------------------------------
+Build finished at 2026-05-01T10:32:33Z
+
+Finished
+--------
+
+I: Built successfully
+
++------------------------------------------------------------------------------+
+| Changes                                      Fri, 01 May 2026 10:32:35 +0000 |
++------------------------------------------------------------------------------+
+
+
+s3fs-fuse_1.97-1_amd64.changes:
+-------------------------------
+
+Format: 1.8
+Date: Fri, 24 Apr 2026 15:25:02 +0000
+Source: s3fs-fuse
+Binary: s3fs-fuse s3fs-fuse-dbgsym
+Architecture: amd64
+Version: 1.97-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Changed-By: Hikmah Gumelar  <hikmahgumelar@gmail.com>
+Description:
+ s3fs-fuse  - FUSE-based file system backed by Amazon S3
+Changes:
+ s3fs-fuse (1.97-1) unstable; urgency=medium
+ .
+   * New upstream release (1.97).
+   * Refresh packaging for upstream changes.
+   * Update Build-Depends for FUSE3 support.
+   * Review build dependencies for new upstream requirements.
+Checksums-Sha1:
+ f5524c44e97ac077e3306fa99da9eda49e567734 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ bafc46293b4da752ad0572532149ec636802ac4e 7049 s3fs-fuse_1.97-1_amd64.buildinfo
+ 3159c32312b2b34e7f0118b12493a6363c4d473b 344408 s3fs-fuse_1.97-1_amd64.deb
+Checksums-Sha256:
+ edd0707bf75ead1a5a9f66ddd618e086f5882635b16530ae8ccc2a8d328dbdb4 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ ce98b3e596d67e15bf37804bff693e29f2565661191027a025d23261811ab6c2 7049 s3fs-fuse_1.97-1_amd64.buildinfo
+ f6a90b4fee31315a63e79a7e7fdd121ea5f7eb416b99c489f62941fc7e35668f 344408 s3fs-fuse_1.97-1_amd64.deb
+Files:
+ f713523c91be7295b2bd6923191722c7 4104544 debug optional s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ dc060a7152a336e0ae78f1b205d555a8 7049 utils optional s3fs-fuse_1.97-1_amd64.buildinfo
+ d8155f0a264b4680082d60c620715c14 344408 utils optional s3fs-fuse_1.97-1_amd64.deb
+Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
+
++------------------------------------------------------------------------------+
+| Buildinfo                                    Fri, 01 May 2026 10:32:36 +0000 |
++------------------------------------------------------------------------------+
+
+Format: 1.0
+Source: s3fs-fuse
+Binary: s3fs-fuse s3fs-fuse-dbgsym
+Architecture: amd64
+Version: 1.97-1
+Checksums-Md5:
+ f713523c91be7295b2bd6923191722c7 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ d8155f0a264b4680082d60c620715c14 344408 s3fs-fuse_1.97-1_amd64.deb
+Checksums-Sha1:
+ f5524c44e97ac077e3306fa99da9eda49e567734 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ 3159c32312b2b34e7f0118b12493a6363c4d473b 344408 s3fs-fuse_1.97-1_amd64.deb
+Checksums-Sha256:
+ edd0707bf75ead1a5a9f66ddd618e086f5882635b16530ae8ccc2a8d328dbdb4 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ f6a90b4fee31315a63e79a7e7fdd121ea5f7eb416b99c489f62941fc7e35668f 344408 s3fs-fuse_1.97-1_amd64.deb
+Build-Origin: Debian
+Build-Architecture: amd64
+Build-Date: Fri, 01 May 2026 10:32:33 +0000
+Build-Path: /build/reproducible-path/s3fs-fuse-1.97
+Installed-Build-Depends:
+ autoconf (= 2.72-6),
+ automake (= 1:1.18.1-4),
+ autopoint (= 0.23.2-2),
+ autotools-dev (= 20240727.1+nmu1),
+ base-files (= 14),
+ base-passwd (= 3.6.8),
+ bash (= 5.3-2),
+ binutils (= 2.46-3),
+ binutils-common (= 2.46-3),
+ binutils-x86-64-linux-gnu (= 2.46-3),
+ bsdextrautils (= 2.42-5),
+ build-essential (= 12.12),
+ bzip2 (= 1.0.8-6+b2),
+ comerr-dev (= 2.1-1.47.4-1),
+ coreutils (= 9.10-1),
+ cpp (= 4:15.2.0-5+b1),
+ cpp-15 (= 15.2.0-17),
+ cpp-15-x86-64-linux-gnu (= 15.2.0-17),
+ cpp-x86-64-linux-gnu (= 4:15.2.0-5+b1),
+ dash (= 0.5.12-12),
+ debconf (= 1.5.92),
+ debhelper (= 13.31),
+ debianutils (= 5.23.2),
+ dh-autoreconf (= 22),
+ dh-strip-nondeterminism (= 1.15.0-1),
+ diffutils (= 1:3.12-1),
+ dpkg (= 1.23.7),
+ dpkg-dev (= 1.23.7),
+ dwz (= 0.16-4),
+ file (= 1:5.46-5+b2),
+ findutils (= 4.10.0-4),
+ g++ (= 4:15.2.0-5+b1),
+ g++-15 (= 15.2.0-17),
+ g++-15-x86-64-linux-gnu (= 15.2.0-17),
+ g++-x86-64-linux-gnu (= 4:15.2.0-5+b1),
+ gcc (= 4:15.2.0-5+b1),
+ gcc-15 (= 15.2.0-17),
+ gcc-15-base (= 15.2.0-17),
+ gcc-15-x86-64-linux-gnu (= 15.2.0-17),
+ gcc-16-base (= 16-20260425-1),
+ gcc-x86-64-linux-gnu (= 4:15.2.0-5+b1),
+ gettext (= 0.23.2-2),
+ gettext-base (= 0.23.2-2),
+ grep (= 3.12-1),
+ groff-base (= 1.24.1-1),
+ gzip (= 1.13-1),
+ hostname (= 3.25),
+ init-system-helpers (= 1.69),
+ intltool-debian (= 0.35.0+20060710.6),
+ krb5-multidev (= 1.22.1-2+b1),
+ libacl1 (= 2.3.2-3),
+ libarchive-zip-perl (= 1.68-1),
+ libasan8 (= 16-20260425-1),
+ libatomic1 (= 16-20260425-1),
+ libattr1 (= 1:2.5.2-4),
+ libaudit-common (= 1:4.1.2-1),
+ libaudit1 (= 1:4.1.2-1+b1),
+ libbinutils (= 2.46-3),
+ libblkid1 (= 2.42-5),
+ libbrotli-dev (= 1.2.0-3),
+ libbrotli1 (= 1.2.0-3),
+ libbz2-1.0 (= 1.0.8-6+b2),
+ libc-bin (= 2.42-15),
+ libc-dev-bin (= 2.42-15),
+ libc-gconv-modules-extra (= 2.42-15),
+ libc6 (= 2.42-15),
+ libc6-dev (= 2.42-15),
+ libcap-ng0 (= 0.9.3-1),
+ libcc1-0 (= 16-20260425-1),
+ libcom-err2 (= 1.47.4-1),
+ libcrypt1 (= 1:4.5.1-1+b1),
+ libctf-nobfd0 (= 2.46-3),
+ libctf0 (= 2.46-3),
+ libcurl3t64-gnutls (= 8.20.0-1),
+ libcurl4-gnutls-dev (= 8.20.0-1),
+ libdb5.3t64 (= 5.3.28+dfsg2-11+b1),
+ libdebconfclient0 (= 0.282+b3),
+ libdebhelper-perl (= 13.31),
+ libdpkg-perl (= 1.23.7),
+ libelf1t64 (= 0.195-1),
+ libevent-2.1-7t64 (= 2.1.12-stable-10+b2),
+ libffi8 (= 3.5.2-4),
+ libfile-stripnondeterminism-perl (= 1.15.0-1),
+ libfuse3-4 (= 3.18.2-2),
+ libfuse3-dev (= 3.18.2-2),
+ libgcc-15-dev (= 15.2.0-17),
+ libgcc-s1 (= 16-20260425-1),
+ libgcrypt20 (= 1.12.2-1),
+ libgcrypt20-dev (= 1.12.2-1),
+ libgdbm-compat4t64 (= 1.26-1+b2),
+ libgdbm6t64 (= 1.26-1+b2),
+ libgmp-dev (= 2:6.3.0+dfsg-5+b2),
+ libgmp10 (= 2:6.3.0+dfsg-5+b2),
+ libgmpxx4ldbl (= 2:6.3.0+dfsg-5+b2),
+ libgnutls-dane0t64 (= 3.8.13-1),
+ libgnutls28-dev (= 3.8.13-1),
+ libgnutls30t64 (= 3.8.13-1),
+ libgomp1 (= 16-20260425-1),
+ libgpg-error-dev (= 1.59-4),
+ libgpg-error0 (= 1.59-4),
+ libgprofng0 (= 2.46-3),
+ libgssapi-krb5-2 (= 1.22.1-2+b1),
+ libgssrpc4t64 (= 1.22.1-2+b1),
+ libhogweed6t64 (= 3.10.2-1+b1),
+ libhwasan0 (= 16-20260425-1),
+ libidn2-0 (= 2.3.8-4+b2),
+ libidn2-dev (= 2.3.8-4+b2),
+ libisl23 (= 0.27-2),
+ libitm1 (= 16-20260425-1),
+ libjansson4 (= 2.14-2+b4),
+ libk5crypto3 (= 1.22.1-2+b1),
+ libkadm5clnt-mit12 (= 1.22.1-2+b1),
+ libkadm5srv-mit12 (= 1.22.1-2+b1),
+ libkdb5-10t64 (= 1.22.1-2+b1),
+ libkeyutils1 (= 1.6.3-6+b2),
+ libkrb5-3 (= 1.22.1-2+b1),
+ libkrb5-dev (= 1.22.1-2+b1),
+ libkrb5support0 (= 1.22.1-2+b1),
+ libldap-dev (= 2.6.10+dfsg-1+b2),
+ libldap2 (= 2.6.10+dfsg-1+b2),
+ liblsan0 (= 16-20260425-1),
+ liblzma-dev (= 5.8.3-1),
+ liblzma5 (= 5.8.3-1),
+ libmagic-mgc (= 1:5.46-5+b2),
+ libmagic1t64 (= 1:5.46-5+b2),
+ libmd0 (= 1.1.0-2+b2),
+ libmount1 (= 2.42-5),
+ libmpc3 (= 1.3.1-3),
+ libmpfr6 (= 4.2.2-3),
+ libnettle8t64 (= 3.10.2-1+b1),
+ libnghttp2-14 (= 1.69.0-1),
+ libnghttp2-dev (= 1.69.0-1),
+ libnghttp3-9 (= 1.15.0-1),
+ libnghttp3-dev (= 1.15.0-1),
+ libngtcp2-16 (= 1.22.1-1),
+ libngtcp2-crypto-gnutls-dev (= 1.22.1-1),
+ libngtcp2-crypto-gnutls8 (= 1.22.1-1),
+ libngtcp2-dev (= 1.22.1-1),
+ libp11-kit-dev (= 0.26.2-2),
+ libp11-kit0 (= 0.26.2-2),
+ libpam-modules (= 1.7.0-5+b2),
+ libpam-modules-bin (= 1.7.0-5+b2),
+ libpam-runtime (= 1.7.0-5),
+ libpam0g (= 1.7.0-5+b2),
+ libpcre2-16-0 (= 10.46-1+b2),
+ libpcre2-32-0 (= 10.46-1+b2),
+ libpcre2-8-0 (= 10.46-1+b2),
+ libpcre2-dev (= 10.46-1+b2),
+ libpcre2-posix3 (= 10.46-1+b2),
+ libperl5.40 (= 5.40.1-7+b1),
+ libpipeline1 (= 1.5.8-3),
+ libpkgconf7 (= 2.5.1-4),
+ libpsl-dev (= 0.21.5-1),
+ libpsl5t64 (= 0.21.5-1),
+ libquadmath0 (= 16-20260425-1),
+ librtmp-dev (= 2.6-1),
+ librtmp1 (= 2.6-1),
+ libsasl2-2 (= 2.1.28+dfsg1-11),
+ libsasl2-modules-db (= 2.1.28+dfsg1-11),
+ libseccomp2 (= 2.6.0-2+b1),
+ libselinux-dev (= 3.10-1),
+ libselinux1 (= 3.10-1),
+ libsepol-dev (= 3.10-1),
+ libsepol2 (= 3.10-1),
+ libsframe3 (= 2.46-3),
+ libsmartcols1 (= 2.42-5),
+ libssh2-1-dev (= 1.11.1-2),
+ libssh2-1t64 (= 1.11.1-2),
+ libssl-dev (= 3.6.2-1),
+ libssl3t64 (= 3.6.2-1),
+ libstdc++-15-dev (= 15.2.0-17),
+ libstdc++6 (= 16-20260425-1),
+ libsystemd0 (= 260.1-1),
+ libtasn1-6 (= 4.21.0-2+b1),
+ libtasn1-6-dev (= 4.21.0-2+b1),
+ libtinfo6 (= 6.6+20251231-1+b1),
+ libtool (= 2.5.4-11),
+ libtsan2 (= 16-20260425-1),
+ libubsan1 (= 16-20260425-1),
+ libuchardet0 (= 0.0.8-2+b2),
+ libudev1 (= 260.1-1),
+ libunbound8 (= 1.24.2-1+b1),
+ libunistring5 (= 1.4.2-1),
+ libuuid1 (= 2.42-5),
+ libxml2-16 (= 2.15.2+dfsg-0.1),
+ libxml2-dev (= 2.15.2+dfsg-0.1),
+ libzstd-dev (= 1.5.7+dfsg-3+b2),
+ libzstd1 (= 1.5.7+dfsg-3+b2),
+ linux-libc-dev (= 7.0.3-1),
+ m4 (= 1.4.21-1),
+ make (= 4.4.1-3),
+ man-db (= 2.13.1-1),
+ mawk (= 1.3.4.20260302-1),
+ ncurses-base (= 6.6+20251231-1),
+ ncurses-bin (= 6.6+20251231-1+b1),
+ nettle-dev (= 3.10.2-1+b1),
+ openssl-provider-legacy (= 3.6.2-1),
+ patch (= 2.8-2),
+ perl (= 5.40.1-7+b1),
+ perl-base (= 5.40.1-7+b1),
+ perl-modules-5.40 (= 5.40.1-7),
+ pkgconf (= 2.5.1-4),
+ pkgconf-bin (= 2.5.1-4),
+ po-debconf (= 1.0.22),
+ rpcsvc-proto (= 1.4.3-1),
+ sed (= 4.9-3),
+ sensible-utils (= 0.0.26),
+ sysvinit-utils (= 3.18-1),
+ tar (= 1.35+dfsg-4),
+ util-linux (= 2.42-5),
+ xz-utils (= 5.8.3-1),
+ zlib1g (= 1:1.3.dfsg+really1.3.2-3),
+ zlib1g-dev (= 1:1.3.dfsg+really1.3.2-3)
+Environment:
+ DEB_BUILD_OPTIONS="parallel=8"
+ LANG="C.UTF-8"
+ LC_COLLATE="C.UTF-8"
+ LC_CTYPE="C.UTF-8"
+ SOURCE_DATE_EPOCH="1777044302"
+
+
++------------------------------------------------------------------------------+
+| Package contents                             Fri, 01 May 2026 10:32:36 +0000 |
++------------------------------------------------------------------------------+
+
+
+s3fs-fuse-dbgsym_1.97-1_amd64.deb
+---------------------------------
+
+ new Debian package, version 2.0.
+ size 4104544 bytes: control archive=556 bytes.
+     401 bytes,    13 lines      control
+     106 bytes,     1 lines      md5sums
+ Package: s3fs-fuse-dbgsym
+ Source: s3fs-fuse
+ Version: 1.97-1
+ Auto-Built-Package: debug-symbols
+ Architecture: amd64
+ Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+ Installed-Size: 4342
+ Depends: s3fs-fuse (= 1.97-1)
+ Section: debug
+ Priority: optional
+ Description: debug symbols for s3fs-fuse
+ Build-Ids: 3a90898485b3817fb297c6f136dab452e054b5a5
+ Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
+
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/lib/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/lib/debug/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/lib/debug/.build-id/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/lib/debug/.build-id/3a/
+-rw-r--r-- root/root   4435008 2026-04-24 15:25 ./usr/lib/debug/.build-id/3a/90898485b3817fb297c6f136dab452e054b5a5.debug
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/doc/
+lrwxrwxrwx root/root         0 2026-04-24 15:25 ./usr/share/doc/s3fs-fuse-dbgsym -> s3fs-fuse
+
+
+s3fs-fuse_1.97-1_amd64.deb
+--------------------------
+
+ new Debian package, version 2.0.
+ size 344408 bytes: control archive=968 bytes.
+     882 bytes,    19 lines      control
+     327 bytes,     5 lines      md5sums
+ Package: s3fs-fuse
+ Version: 1.97-1
+ Architecture: amd64
+ Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+ Installed-Size: 917
+ Depends: libc6 (>= 2.38), libcurl3t64-gnutls (>= 7.16.2), libfuse3-4 (>= 3.17.2), libgcrypt20 (>= 1.12.0), libgnutls30t64 (>= 3.7.2), libstdc++6 (>= 12), libxml2-16 (>= 2.14.1)
+ Section: utils
+ Priority: optional
+ Homepage: https://github.com/s3fs-fuse/s3fs-fuse
+ Description: FUSE-based file system backed by Amazon S3
+  s3fs is a FUSE filesystem that allows you to mount an Amazon S3 bucket
+  as a local filesystem. It stores files natively and transparently in
+  S3 (i.e., you can use other programs to access the same files).
+  .
+  Maximum file size is 5 TB when using multipart upload.
+  .
+  s3fs is stable and is being used in a number of production environments,
+  for example for  rsync backups to s3.
+ Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
+
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/bin/
+-rwxr-xr-x root/root    903456 2026-04-24 15:25 ./usr/bin/s3fs
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/doc/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/doc/s3fs-fuse/
+-rw-r--r-- root/root       735 2026-04-24 15:25 ./usr/share/doc/s3fs-fuse/changelog.Debian.gz
+-rw-r--r-- root/root     11189 2025-12-07 20:44 ./usr/share/doc/s3fs-fuse/changelog.gz
+-rw-r--r-- root/root      1719 2026-04-24 15:24 ./usr/share/doc/s3fs-fuse/copyright
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/man/
+drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/man/man1/
+-rw-r--r-- root/root     11261 2026-04-24 15:25 ./usr/share/man/man1/s3fs.1.gz
+
+
+lintian
+-------
+
+
+Setup apt archive
+-----------------
+
+Merged Build-Depends: lintian
+Filtered Build-Depends: lintian
+dpkg-deb: building package 'sbuild-build-depends-lintian-dummy' in '/build/reproducible-path/resolver-ngNKB3/apt_archive/sbuild-build-depends-lintian-dummy.deb'.
+Ign:1 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ InRelease
+Get:2 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Release [615 B]
+Ign:3 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Release.gpg
+Get:4 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Sources [1273 B]
+Get:5 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Packages [1342 B]
+Hit:6 http://deb.debian.org/debian unstable InRelease
+Get:7 http://deb.debian.org/debian unstable/main amd64 Packages [10.4 MB]
+Fetched 10.4 MB in 6s (1739 kB/s)
+Reading package lists...
+
+Install lintian build dependencies (apt-based resolver)
+-------------------------------------------------------
+
+Installing build dependencies
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Solving dependencies...
+The following additional packages will be installed:
+  appstream ca-certificates diffstat gpg gpgconf iso-codes libaliased-perl
+  libappstream5 libapt-pkg-perl libassuan9 libb-hooks-endofscope-perl
+  libb-hooks-op-check-perl libberkeleydb-perl libcapture-tiny-perl
+  libcgi-pm-perl libclass-data-inheritable-perl libclass-inspector-perl
+  libclass-method-modifiers-perl libclass-xsaccessor-perl libclone-perl
+  libconfig-tiny-perl libconst-fast-perl libcpanel-json-xs-perl
+  libdata-dpath-perl libdata-messagepack-perl libdata-optlist-perl
+  libdata-validate-domain-perl libdata-validate-ip-perl
+  libdata-validate-uri-perl libdevel-callchecker-perl libdevel-size-perl
+  libdevel-stacktrace-perl libdynaloader-functions-perl
+  libemail-address-xs-perl libencode-locale-perl libexception-class-perl
+  libfile-basedir-perl libfile-find-rule-perl libfile-libmagic-perl
+  libfile-listing-perl libfile-sharedir-perl libfont-ttf-perl libfyaml0
+  libglib2.0-0t64 libhtml-form-perl libhtml-html5-entities-perl
+  libhtml-parser-perl libhtml-tagset-perl libhtml-tokeparser-simple-perl
+  libhtml-tree-perl libhttp-cookies-perl libhttp-date-perl
+  libhttp-message-perl libhttp-negotiate-perl libimport-into-perl
+  libio-html-perl libio-interactive-perl libio-socket-ssl-perl
+  libio-string-perl libipc-run3-perl libipc-system-simple-perl
+  libiterator-perl libiterator-util-perl libjson-maybexs-perl libksba8
+  liblist-compare-perl liblist-someutils-perl liblist-utilsby-perl
+  liblwp-mediatypes-perl liblwp-protocol-https-perl liblz1 liblzo2-2
+  libmarkdown2 libmldbm-perl libmodule-implementation-perl
+  libmodule-runtime-perl libmoo-perl libmoox-aliases-perl libmouse-perl
+  libnamespace-clean-perl libncursesw6 libnet-domain-tld-perl libnet-http-perl
+  libnet-ipv6addr-perl libnet-netmask-perl libnet-ssleay-perl
+  libnetaddr-ip-perl libnpth0t64 libnumber-compare-perl libpackage-stash-perl
+  libparams-classify-perl libparams-util-perl libpath-tiny-perl
+  libperlio-gzip-perl libperlio-utf8-strict-perl libproc-processtable-perl
+  libproc2-0 libreadline8t64 libregexp-wildcards-perl librole-tiny-perl
+  libsereal-decoder-perl libsereal-encoder-perl libsort-versions-perl
+  libsqlite3-0 libstemmer0d libstrictures-perl libsub-exporter-perl
+  libsub-exporter-progressive-perl libsub-identify-perl libsub-install-perl
+  libsub-name-perl libsub-quote-perl libsyntax-keyword-try-perl
+  libterm-readkey-perl libtext-charwidth-perl libtext-glob-perl
+  libtext-levenshteinxs-perl libtext-markdown-discount-perl
+  libtext-wrapi18n-perl libtext-xslate-perl libtime-duration-perl
+  libtime-moment-perl libtimedate-perl libtry-tiny-perl libunicode-utf8-perl
+  liburi-perl libvariable-magic-perl libwww-mechanize-perl libwww-perl
+  libwww-robotrules-perl libxml-libxml-perl libxml-namespacesupport-perl
+  libxml-sax-base-perl libxml-sax-perl libxmlb2 libxs-parse-keyword-perl
+  libyaml-0-2 libyaml-libyaml-perl lintian lzop netbase openssl patchutils
+  perl-openssl-defaults plzip procps readline-common shared-mime-info t1utils
+  ucf unzip
+Suggested packages:
+  apt-config-icons isoquery libxml-parser-perl low-memory-monitor
+  libdata-dump-perl libcrypt-ssleay-perl libscalar-number-perl
+  libbareword-filehandles-perl libindirect-perl libmultidimensional-perl
+  libbusiness-isbn-perl libmime-base32-perl libregexp-ipv6-perl
+  libauthen-ntlm-perl binutils-multiarch libtext-template-perl python3
+  readline-doc zip
+Recommended packages:
+  gnupg libcgi-fast-perl libglib2.0-data xdg-user-dirs libhtml-format-perl
+  libio-compress-brotli-perl liblist-someutils-xs-perl libfreezethaw-perl
+  libgpm2 libmath-base85-perl libsocket6-perl libpackage-stash-xs-perl
+  libxstring-perl libdata-dump-perl libhttp-daemon-perl libmailtools-perl
+  libxml-sax-expat-perl psmisc linux-sysctl-defaults
+The following NEW packages will be installed:
+  appstream ca-certificates diffstat gpg gpgconf iso-codes libaliased-perl
+  libappstream5 libapt-pkg-perl libassuan9 libb-hooks-endofscope-perl
+  libb-hooks-op-check-perl libberkeleydb-perl libcapture-tiny-perl
+  libcgi-pm-perl libclass-data-inheritable-perl libclass-inspector-perl
+  libclass-method-modifiers-perl libclass-xsaccessor-perl libclone-perl
+  libconfig-tiny-perl libconst-fast-perl libcpanel-json-xs-perl
+  libdata-dpath-perl libdata-messagepack-perl libdata-optlist-perl
+  libdata-validate-domain-perl libdata-validate-ip-perl
+  libdata-validate-uri-perl libdevel-callchecker-perl libdevel-size-perl
+  libdevel-stacktrace-perl libdynaloader-functions-perl
+  libemail-address-xs-perl libencode-locale-perl libexception-class-perl
+  libfile-basedir-perl libfile-find-rule-perl libfile-libmagic-perl
+  libfile-listing-perl libfile-sharedir-perl libfont-ttf-perl libfyaml0
+  libglib2.0-0t64 libhtml-form-perl libhtml-html5-entities-perl
+  libhtml-parser-perl libhtml-tagset-perl libhtml-tokeparser-simple-perl
+  libhtml-tree-perl libhttp-cookies-perl libhttp-date-perl
+  libhttp-message-perl libhttp-negotiate-perl libimport-into-perl
+  libio-html-perl libio-interactive-perl libio-socket-ssl-perl
+  libio-string-perl libipc-run3-perl libipc-system-simple-perl
+  libiterator-perl libiterator-util-perl libjson-maybexs-perl libksba8
+  liblist-compare-perl liblist-someutils-perl liblist-utilsby-perl
+  liblwp-mediatypes-perl liblwp-protocol-https-perl liblz1 liblzo2-2
+  libmarkdown2 libmldbm-perl libmodule-implementation-perl
+  libmodule-runtime-perl libmoo-perl libmoox-aliases-perl libmouse-perl
+  libnamespace-clean-perl libncursesw6 libnet-domain-tld-perl libnet-http-perl
+  libnet-ipv6addr-perl libnet-netmask-perl libnet-ssleay-perl
+  libnetaddr-ip-perl libnpth0t64 libnumber-compare-perl libpackage-stash-perl
+  libparams-classify-perl libparams-util-perl libpath-tiny-perl
+  libperlio-gzip-perl libperlio-utf8-strict-perl libproc-processtable-perl
+  libproc2-0 libreadline8t64 libregexp-wildcards-perl librole-tiny-perl
+  libsereal-decoder-perl libsereal-encoder-perl libsort-versions-perl
+  libsqlite3-0 libstemmer0d libstrictures-perl libsub-exporter-perl
+  libsub-exporter-progressive-perl libsub-identify-perl libsub-install-perl
+  libsub-name-perl libsub-quote-perl libsyntax-keyword-try-perl
+  libterm-readkey-perl libtext-charwidth-perl libtext-glob-perl
+  libtext-levenshteinxs-perl libtext-markdown-discount-perl
+  libtext-wrapi18n-perl libtext-xslate-perl libtime-duration-perl
+  libtime-moment-perl libtimedate-perl libtry-tiny-perl libunicode-utf8-perl
+  liburi-perl libvariable-magic-perl libwww-mechanize-perl libwww-perl
+  libwww-robotrules-perl libxml-libxml-perl libxml-namespacesupport-perl
+  libxml-sax-base-perl libxml-sax-perl libxmlb2 libxs-parse-keyword-perl
+  libyaml-0-2 libyaml-libyaml-perl lintian lzop netbase openssl patchutils
+  perl-openssl-defaults plzip procps readline-common
+  sbuild-build-depends-lintian-dummy shared-mime-info t1utils ucf unzip
+0 upgraded, 152 newly installed, 0 to remove and 0 not upgraded.
+Need to get 19.0 MB of archives.
+After this operation, 77.8 MB of additional disk space will be used.
+Get:1 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ sbuild-build-depends-lintian-dummy 0.invalid.0 [828 B]
+Get:2 http://deb.debian.org/debian unstable/main amd64 netbase all 6.5 [12.4 kB]
+Get:3 http://deb.debian.org/debian unstable/main amd64 libncursesw6 amd64 6.6+20251231-1+b1 [136 kB]
+Get:4 http://deb.debian.org/debian unstable/main amd64 libproc2-0 amd64 2:4.0.4-9+b2 [63.8 kB]
+Get:5 http://deb.debian.org/debian unstable/main amd64 procps amd64 2:4.0.4-9+b2 [880 kB]
+Get:6 http://deb.debian.org/debian unstable/main amd64 readline-common all 8.3-4 [74.8 kB]
+Get:7 http://deb.debian.org/debian unstable/main amd64 openssl amd64 3.6.2-1 [1517 kB]
+Get:8 http://deb.debian.org/debian unstable/main amd64 ca-certificates all 20260223 [158 kB]
+Get:9 http://deb.debian.org/debian unstable/main amd64 libtext-charwidth-perl amd64 0.04-11+b5 [9532 B]
+Get:10 http://deb.debian.org/debian unstable/main amd64 libtext-wrapi18n-perl all 0.06-10 [8808 B]
+Get:11 http://deb.debian.org/debian unstable/main amd64 ucf all 3.0053 [41.9 kB]
+Get:12 http://deb.debian.org/debian unstable/main amd64 libglib2.0-0t64 amd64 2.88.0-1 [1536 kB]

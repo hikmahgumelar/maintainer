@@ -1,4 +1,0 @@
-version=4
-
-https://github.com/s3fs-fuse/s3fs-fuse/tags \
-  (?:.*?/)?v?@ANY_VERSION@@ARCHIVE_EXT@

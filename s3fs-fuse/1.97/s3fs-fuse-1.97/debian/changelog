@@ -2,7 +2,6 @@ s3fs-fuse (1.97-1) unstable; urgency=medium
 
   * New upstream release (1.97).
   * Refresh packaging for upstream changes.
-  * Prepare transition from FUSE2 to FUSE3.
   * Update Build-Depends for FUSE3 support.
   * Review build dependencies for new upstream requirements.
 
