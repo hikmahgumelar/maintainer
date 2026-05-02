@@ -1,0 +1,95 @@
+tart (3.10-4) unstable; urgency=medium
+
+  * Take over maintenance (ITA: #1135355).
+  * Refresh packaging.
+  * Fix lintian warnings:
+    - Update debian/watch to version 4
+    - Fix DEP-5 copyright format
+    - Bump Standards-Version to 4.7.4
+    - Clean up debian/control (remove redundant fields)
+
+ -- Hikmah Gumelar <hikmahgumelar@gmail.com>  Fri, 01 May 2026 15:19:04 +0000
+
+tart (3.10-3) unstable; urgency=medium
+
+  * QA upload.
+  * d/p/0002-Don-t-redefine-bool.patch: Fix FTBFS with GCC 15.
+    (Closes: #1097969)
+
+ -- Sergio Durigan Junior <sergiodj@debian.org>  Sat, 27 Sep 2025 13:29:52 -0400
+
+tart (3.10-2) unstable; urgency=medium
+
+  * QA upload.
+  * Orphan the package. (See #990614)
+  * Refresh packaging:
+    + debhelper compat level 13. (Closes: #965837)
+    + Standards-Version 4.7.0.
+  * debian/rules: Use dh sequencer.
+  * debian/patches/0001-Modernize-autotools.patch: Add patch to modernize
+    autotools files.
+
+ -- Boyuan Yang <byang@debian.org>  Thu, 01 Aug 2024 19:51:33 -0400
+
+tart (3.10-1) unstable; urgency=medium
+
+  * New Upstream release.
+  * Bump Standards-Version to 3.9.5 (No changes required).
+  * Switch to source/format 3.0 (quilt) although no patches required.
+
+ -- Colin Tuckley <colint@debian.org>  Mon, 08 Sep 2014 09:22:36 +0100
+
+tart (3.09-2) unstable; urgency=low
+
+  * Bump Standards-Version to 3.9.4 (No changes required).
+  * Add build-arch & build-indep to debian/rules
+  * Add dpkg buildflags to debian/rules
+
+ -- Colin Tuckley <colint@debian.org>  Sun, 12 May 2013 16:22:14 +0100
+
+tart (3.09-1) unstable; urgency=low
+
+  * New Upstream Version.
+  * Bump Standards-Version (No changes required).
+
+ -- Colin Tuckley <colint@debian.org>  Tue, 01 Jun 2010 15:32:01 +0100
+
+tart (3.07-5) unstable; urgency=low
+
+  * Bump Standards-Version (No changes required).
+  * Update Homepage field and similar refs as upstream
+    has moved to SourceForge.
+  * Added watch file.
+
+ -- Colin Tuckley <colint@debian.org>  Sat, 02 Jan 2010 11:55:13 +0000
+
+tart (3.07-4) unstable; urgency=low
+
+  * Update upstream web address.
+  * Update maintainer Email address.
+  * Bump Standards-Version (No changes required).
+  * Add Homepage field to debian/control.
+
+ -- Colin Tuckley <colint@debian.org>  Fri, 22 Feb 2008 11:59:23 +0000
+
+tart (3.07-3) unstable; urgency=low
+
+  * prevent final binary from being stripped by removing -s option
+    from install in src/Makefile.in Closes: #438096
+
+ -- Colin Tuckley <colin@tuckley.org>  Wed, 15 Aug 2007 14:07:49 +0100
+
+tart (3.07-2) unstable; urgency=low
+
+  * added missing endif in debian/rules
+  * bump Standards-Version to 3.7.2 (No changes required)
+  * remove unused include for sys.h in main.c Closes: #427600
+
+ -- Colin Tuckley <colin@tuckley.org>  Tue, 05 Jun 2007 13:15:36 +0100
+
+tart (3.07-1) unstable; urgency=low
+
+  * Regularised the case of various filenames
+  * Initial release Closes: #313569
+
+ -- Colin Tuckley <colin@tuckley.org>  Thu, 16 Jun 2005 11:02:32 +0100

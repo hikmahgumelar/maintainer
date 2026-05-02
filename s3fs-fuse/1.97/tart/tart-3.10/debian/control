@@ -1,0 +1,22 @@
+Source: tart
+Section: mail
+Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.7.4
+Homepage: http://sourceforge.net/projects/linuxtart/
+Vcs-Git: https://salsa.debian.org/debian/tart.git
+Vcs-Browser: https://salsa.debian.org/debian/tart
+
+Package: tart
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: versatile and feature-rich email signature generator
+ TaRT (The Automatic Random Tagline) features include random taglines,
+ optional daemon functionality, display of current date,
+ custom layout of signature, and "special date" tagline text.
+ The command line syntax is simple and well explained.
+ TaRT is designed to be run as a stand-alone daemon, from crontab,
+ or in your login script.

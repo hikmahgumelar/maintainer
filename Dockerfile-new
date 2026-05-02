@@ -1,9 +1,10 @@
-FROM debian:bookworm
+FROM hikmahgumelar/s3fuse:1.97
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
     build-essential \
+    reportbug \
     devscripts \
     debhelper \
     lintian \

@@ -2,18 +2,18 @@
 Hash: SHA512
 
 Format: 1.0
-Source: s3fs-fuse
+Source: tart
 Architecture: source
-Version: 1.97-1
+Version: 3.10-4
 Checksums-Md5:
- 265b9c0adba802df8668217c60d36559 1985 s3fs-fuse_1.97-1.dsc
+ f47492747f1cd8d264f9a9813d12285b 1818 tart_3.10-4.dsc
 Checksums-Sha1:
- e301e829733fd636d76aa0150d18eb51e34d9d9a 1985 s3fs-fuse_1.97-1.dsc
+ 442517bdb59a9ac86445d4655970eec316d13239 1818 tart_3.10-4.dsc
 Checksums-Sha256:
- 23ec2f518e77cf24770388885e6307ab075240cbd6cc005fa6a4da20fb0176e7 1985 s3fs-fuse_1.97-1.dsc
+ 4ff0120b919d4e952b354bd6da184aa58c20f5ba3b1346cbda24c18cec0e9fa5 1818 tart_3.10-4.dsc
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Sat, 02 May 2026 11:04:11 +0000
+Build-Date: Sat, 02 May 2026 09:54:42 +0000
 Installed-Build-Depends:
  autoconf (= 2.72-6),
  automake (= 1:1.18.1-4),
@@ -28,7 +28,6 @@ Installed-Build-Depends:
  bsdextrautils (= 2.42-5),
  build-essential (= 12.12),
  bzip2 (= 1.0.8-6+b2),
- comerr-dev (= 2.1-1.47.4-1),
  coreutils (= 9.10-1),
  cpp (= 4:15.2.0-5+b1),
  cpp-15 (= 15.2.0-17),
@@ -64,7 +63,6 @@ Installed-Build-Depends:
  hostname (= 3.25),
  init-system-helpers (= 1.69),
  intltool-debian (= 0.35.0+20060710.6),
- krb5-multidev (= 1.22.1-2+b1),
  libacl1 (= 2.3.2-3),
  libarchive-zip-perl (= 1.68-1),
  libasan8 (= 16-20260425-1),
@@ -74,8 +72,6 @@ Installed-Build-Depends:
  libaudit1 (= 1:4.1.2-1+b1),
  libbinutils (= 2.46-3),
  libblkid1 (= 2.42-5),
- libbrotli-dev (= 1.2.0-3),
- libbrotli1 (= 1.2.0-3),
  libbz2-1.0 (= 1.0.8-6+b2),
  libc-bin (= 2.42-15),
  libc-dev-bin (= 2.42-15),
@@ -84,59 +80,27 @@ Installed-Build-Depends:
  libc6-dev (= 2.42-15),
  libcap-ng0 (= 0.9.3-1),
  libcc1-0 (= 16-20260425-1),
- libcom-err2 (= 1.47.4-1),
  libcrypt1 (= 1:4.5.1-1+b1),
  libctf-nobfd0 (= 2.46-3),
  libctf0 (= 2.46-3),
- libcurl3t64-gnutls (= 8.20.0-1),
- libcurl4-gnutls-dev (= 8.20.0-1),
  libdb5.3t64 (= 5.3.28+dfsg2-11+b1),
  libdebconfclient0 (= 0.282+b2),
  libdebhelper-perl (= 13.31),
  libdpkg-perl (= 1.23.7),
  libelf1t64 (= 0.195-1),
- libevent-2.1-7t64 (= 2.1.12-stable-10+b2),
- libffi8 (= 3.5.2-4),
  libfile-stripnondeterminism-perl (= 1.15.0-1),
- libfuse3-4 (= 3.18.2-2),
- libfuse3-dev (= 3.18.2-2),
  libgcc-15-dev (= 15.2.0-17),
  libgcc-s1 (= 16-20260425-1),
- libgcrypt20 (= 1.12.2-1),
- libgcrypt20-dev (= 1.12.2-1),
  libgdbm-compat4t64 (= 1.26-1+b2),
  libgdbm6t64 (= 1.26-1+b2),
- libgmp-dev (= 2:6.3.0+dfsg-5+b2),
  libgmp10 (= 2:6.3.0+dfsg-5+b2),
- libgmpxx4ldbl (= 2:6.3.0+dfsg-5+b2),
- libgnutls-dane0t64 (= 3.8.13-1),
- libgnutls28-dev (= 3.8.13-1),
- libgnutls30t64 (= 3.8.13-1),
  libgomp1 (= 16-20260425-1),
- libgpg-error-dev (= 1.59-4),
- libgpg-error0 (= 1.59-4),
  libgprofng0 (= 2.46-3),
- libgssapi-krb5-2 (= 1.22.1-2+b1),
- libgssrpc4t64 (= 1.22.1-2+b1),
- libhogweed6t64 (= 3.10.2-1+b1),
  libhwasan0 (= 16-20260425-1),
- libidn2-0 (= 2.3.8-4+b2),
- libidn2-dev (= 2.3.8-4+b2),
  libisl23 (= 0.27-2),
  libitm1 (= 16-20260425-1),
  libjansson4 (= 2.14-2+b4),
- libk5crypto3 (= 1.22.1-2+b1),
- libkadm5clnt-mit12 (= 1.22.1-2+b1),
- libkadm5srv-mit12 (= 1.22.1-2+b1),
- libkdb5-10t64 (= 1.22.1-2+b1),
- libkeyutils1 (= 1.6.3-6+b2),
- libkrb5-3 (= 1.22.1-2+b1),
- libkrb5-dev (= 1.22.1-2+b1),
- libkrb5support0 (= 1.22.1-2+b1),
- libldap-dev (= 2.6.10+dfsg-1+b2),
- libldap2 (= 2.6.10+dfsg-1+b2),
  liblsan0 (= 16-20260425-1),
- liblzma-dev (= 5.8.3-1),
  liblzma5 (= 5.8.3-1),
  libmagic-mgc (= 1:5.46-5+b2),
  libmagic1t64 (= 1:5.46-5+b2),
@@ -144,64 +108,31 @@ Installed-Build-Depends:
  libmount1 (= 2.42-5),
  libmpc3 (= 1.3.1-3),
  libmpfr6 (= 4.2.2-3),
- libnettle8t64 (= 3.10.2-1+b1),
- libnghttp2-14 (= 1.69.0-1),
- libnghttp2-dev (= 1.69.0-1),
- libnghttp3-9 (= 1.15.0-1),
- libnghttp3-dev (= 1.15.0-1),
- libngtcp2-16 (= 1.22.1-1),
- libngtcp2-crypto-gnutls-dev (= 1.22.1-1),
- libngtcp2-crypto-gnutls8 (= 1.22.1-1),
- libngtcp2-dev (= 1.22.1-1),
- libp11-kit-dev (= 0.26.2-2),
- libp11-kit0 (= 0.26.2-2),
  libpam-modules (= 1.7.0-5+b1),
  libpam-modules-bin (= 1.7.0-5+b1),
  libpam-runtime (= 1.7.0-5),
  libpam0g (= 1.7.0-5+b1),
- libpcre2-16-0 (= 10.46-1+b2),
- libpcre2-32-0 (= 10.46-1+b2),
  libpcre2-8-0 (= 10.46-1+b2),
- libpcre2-dev (= 10.46-1+b2),
- libpcre2-posix3 (= 10.46-1+b2),
  libperl5.40 (= 5.40.1-7+b1),
  libpipeline1 (= 1.5.8-3),
- libpkgconf7 (= 2.5.1-4),
- libpsl-dev (= 0.21.5-1),
- libpsl5t64 (= 0.21.5-1),
  libquadmath0 (= 16-20260425-1),
- librtmp-dev (= 2.6-1),
- librtmp1 (= 2.6-1),
- libsasl2-2 (= 2.1.28+dfsg1-11),
- libsasl2-modules-db (= 2.1.28+dfsg1-11),
  libseccomp2 (= 2.6.0-2+b1),
- libselinux-dev (= 3.10-1),
  libselinux1 (= 3.10-1),
- libsepol-dev (= 3.10-1),
- libsepol2 (= 3.10-1),
  libsframe3 (= 2.46-3),
  libsmartcols1 (= 2.42-5),
- libssh2-1-dev (= 1.11.1-2),
- libssh2-1t64 (= 1.11.1-2),
- libssl-dev (= 3.6.2-1),
  libssl3t64 (= 3.6.2-1),
  libstdc++-15-dev (= 15.2.0-17),
  libstdc++6 (= 16-20260425-1),
  libsystemd0 (= 260.1-1),
- libtasn1-6 (= 4.21.0-2+b1),
- libtasn1-6-dev (= 4.21.0-2+b1),
  libtinfo6 (= 6.6+20251231-1+b1),
  libtool (= 2.5.4-11),
  libtsan2 (= 16-20260425-1),
  libubsan1 (= 16-20260425-1),
  libuchardet0 (= 0.0.8-2+b2),
  libudev1 (= 260.1-1),
- libunbound8 (= 1.24.2-1+b1),
  libunistring5 (= 1.4.2-1),
  libuuid1 (= 2.42-5),
  libxml2-16 (= 2.15.2+dfsg-0.1),
- libxml2-dev (= 2.15.2+dfsg-0.1),
- libzstd-dev (= 1.5.7+dfsg-3+b2),
  libzstd1 (= 1.5.7+dfsg-3+b2),
  linux-libc-dev (= 7.0.3-1),
  m4 (= 1.4.21-1),
@@ -210,14 +141,11 @@ Installed-Build-Depends:
  mawk (= 1.3.4.20260302-1),
  ncurses-base (= 6.6+20251231-1),
  ncurses-bin (= 6.6+20251231-1+b1),
- nettle-dev (= 3.10.2-1+b1),
  openssl-provider-legacy (= 3.6.2-1),
  patch (= 2.8-2),
  perl (= 5.40.1-7+b1),
  perl-base (= 5.40.1-7+b1),
  perl-modules-5.40 (= 5.40.1-7),
- pkgconf (= 2.5.1-4),
- pkgconf-bin (= 2.5.1-4),
  po-debconf (= 1.0.22),
  rpcsvc-proto (= 1.4.3-1),
  sed (= 4.9-2),
@@ -226,26 +154,25 @@ Installed-Build-Depends:
  tar (= 1.35+dfsg-4),
  util-linux (= 2.42-5),
  xz-utils (= 5.8.3-1),
- zlib1g (= 1:1.3.dfsg+really1.3.2-3),
- zlib1g-dev (= 1:1.3.dfsg+really1.3.2-3)
+ zlib1g (= 1:1.3.dfsg+really1.3.2-3)
 Environment:
  DEB_BUILD_OPTIONS="parallel=8"
- SOURCE_DATE_EPOCH="1777634162"
+ SOURCE_DATE_EPOCH="1777648744"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQJMBAEBCgA2FiEE38HegDE6DhmYXXfAf1fXFxMITXYFAmn12jAYHGhpa21haGd1
-bWVsYXJAZ21haWwuY29tAAoJEH9X1xcTCE123voQANOMk6aCnHWhgYqeltn0ZUkY
-BnrF3c86zULtg/zgCY3TaQ8FLkLhcpXBJYEOunkzDPAw3XpFj+ctfW/2fyRAH2ii
-RNz36IkctYpSi0QMOtDYYzg1lOrocnkAMQPjWJC/FWT5XrI/ts6B0G77T6JKGo7g
-tj8Ir0gmELyu5zBOQutcZMOoxV5YzCbNapZuaDOhJE/BhcIKpreYxzRlBQgt+4VR
-fg2aFV37CWX0E7GvDRcDkNcT8HErHJSsj5GILzPwJf44dlCeFPYndY2y8dM1pAbs
-RwEBW4N+NtFwkHA/Y0Uk0Jw0KSbueLcSMTfrnyQSHvg5Z0JXMOHBv8turLFxkAFV
-W6M3x1oXMaJ9OTvJ+CuiUgPc57KAFUW722EtpxZu2JjpJLpRiuEZ3Fw6Z6Z3XFXs
-hDSWbpNh9WRwyc/k9riKoJQ9qBIHUcqDDTRN9VMS83Cx6d61/8pthPxl6Q3iRyKP
-viq95SMpBKDd1RYpbfPPYstia2rknkPs5Cdg23WdESgHh5gi5rUTWDILZbc4sqEa
-ApvEnB7lBXUWeJQVWPhTvnuVXOloT7WBDl+nrIUXcgIk1VVfI9aF2jphUZGdWXxt
-jIBTepQ4+fDzlM6zY/UJQCnv+BZmipp/6w1HwejGtTMeDMq13RsfA3rZjF2ulLsO
-nmTGdroaKsP5B713YOe1
-=BA2o
+iQJMBAEBCgA2FiEE38HegDE6DhmYXXfAf1fXFxMITXYFAmn1yecYHGhpa21haGd1
+bWVsYXJAZ21haWwuY29tAAoJEH9X1xcTCE12U60P/2e7bOIW25IlrgIulX+wHYQj
+hQTtrSqGgFljM4v3RQdwGmbxvH7eNMvI5dYVtnTOJmGUByvUNAV3gmvOh26HW9k0
+0nKkBi5eZtAIMoKJ0XoXY1tEUYrysqUw/fBV7bsxIUsQMA0R0tzBsdL4W8Q2J3Rp
+a6tgppSSoMs8oQKNeO4PGBR1i3BDO2TcVw+qXKFX4emAIsNa7oCctCqJmsE3DAUS
+inzXqFhvtaI3Cby9omXT4yS5P+F7yniqShhG8YksVUtbfhT1otc60lyh+W0K7oNA
+NA7WTfpkZPb/gJ4opOxrDjvIQjqNfRyqjgqJ3bb/fT0+NCT26OZK1yddZuovl2G2
+r4yMayiTP7tmDdZaD33h9oyW6qcH699eXC4g6GLZqWVuDzMxHLNBX2L3kdhDNikN
+20JIvxDBFFcGTE1o7GeGbuvecwLrnQhDK+TLdYWPv1Hd1CpXceZU24pgU+e3zdB4
+uJuYirXRdanzsH5yHTRizWCmEvM5S4FBKbUkjY+HFvVBvIKwpAPOOmt9xlg0AT+P
+OP0nEbQToUwWMJeFXOhI1ki6DWwvNpXHQu6osHm9wg2HwrGYAoDexO5LwUfhFEEI
+JJ0e22Oc3Tsf1t4qMHZzT2dOW9I+e6aFJhnOaHhyTZ6f06d0dGvRV/d5lwjQ9JFg
+5lEL3zuA4zNsVVK4FlQZ
+=Y1jj
 -----END PGP SIGNATURE-----

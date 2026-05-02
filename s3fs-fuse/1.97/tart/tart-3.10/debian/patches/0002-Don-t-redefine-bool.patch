@@ -1,0 +1,27 @@
+From: Sergio Durigan Junior <sergiodj@debian.org>
+Date: Sat, 27 Sep 2025 13:28:13 -0400
+Subject: Don't redefine bool
+
+Fix FTBFS with GCC 15.
+
+Forwarded: no
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1097969
+---
+ src/IniFile.h | 4 ----
+ 1 file changed, 4 deletions(-)
+
+diff --git a/src/IniFile.h b/src/IniFile.h
+index 2420fbf..c2505e1 100644
+--- a/src/IniFile.h
++++ b/src/IniFile.h
+@@ -19,10 +19,6 @@
+ #define BUFSIZE 1024
+ #define ENTRYSIZE 1024
+ 
+-typedef enum {
+-	FALSE, TRUE
+-} bool;
+-
+ int InitIni(const char* filename);
+ int CloseIni(void);
+ int GetInt(const char* key, int def);

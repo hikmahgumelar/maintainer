@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 01 May 2026 15:19:04 +0000
+Source: tart
+Architecture: source
+Version: 3.10-4
+Distribution: unstable
+Urgency: medium
+Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Changed-By: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Changes:
+ tart (3.10-4) unstable; urgency=medium
+ .
+   * Take over maintenance (ITA: #1135355).
+   * Refresh packaging.
+   * Fix lintian warnings:
+     - Update debian/watch to version 4
+     - Fix DEP-5 copyright format
+     - Bump Standards-Version to 4.7.4
+     - Clean up debian/control (remove redundant fields)
+Checksums-Sha1:
+ 442517bdb59a9ac86445d4655970eec316d13239 1818 tart_3.10-4.dsc
+ c71b82d4bc8a10818830f6fa11fd02c8afbce744 5252 tart_3.10-4.debian.tar.xz
+ 15f585886b8a8b5b6881be359153218997a9a303 5281 tart_3.10-4_source.buildinfo
+Checksums-Sha256:
+ 4ff0120b919d4e952b354bd6da184aa58c20f5ba3b1346cbda24c18cec0e9fa5 1818 tart_3.10-4.dsc
+ 9c95646fba422f3198d67bae96b78e0aec7ccd723ae29c1d402e271771263c07 5252 tart_3.10-4.debian.tar.xz
+ 10658f952a75c542f71d93895642c53c6e0f8e41ea4c694a6583379a301eef51 5281 tart_3.10-4_source.buildinfo
+Files:
+ f47492747f1cd8d264f9a9813d12285b 1818 mail optional tart_3.10-4.dsc
+ 910a353150b39b67b67eb2c7e10c777d 5252 mail optional tart_3.10-4.debian.tar.xz
+ 9c81abeb56581e6a5e9acae6f144e30d 5281 mail optional tart_3.10-4_source.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQJMBAEBCgA2FiEE38HegDE6DhmYXXfAf1fXFxMITXYFAmn1yegYHGhpa21haGd1
+bWVsYXJAZ21haWwuY29tAAoJEH9X1xcTCE12CdkP/15Gff7Sxss/fA1oTd1vyXaw
+gV5Q5+gluos1a5ehnRIUEPbvrZLIeOiv+KeUcaDkGhRWgbyRbq+wrWyPYB+bwvbo
+OIYaQTDi5Uu0IF0AgUx46MtUN5Esu0H76QCeSqbaNynxW5P9O34FyLsMnTtAtxSC
+MLoyUv8kluQILcgrfh/quhkhxboJEaR2Ac3jUsehFJzDQoEL6yA7lo2EQfrd/aN4
+QUj/JExa08LjlLL3ExGk1ZZsSfFZv87zDCYS707uav5QHgpGvXy8L4OL8KxMr9K+
+iJAHWYnaauNlKl2Sc688W2f+TgNIX0c/EX9V5l92fE9LknQs1qTos0PTuJe2iq5x
+i+Y4dKXB1v5OY04LGKjQVyf1dCveiZp77Y97Y6MbWtprplXxNM2HaSTA2FmGbc2M
+gpmcOtq1eX8yJHp7SDK4Lm76EJddpIlqYniSYN5p5sWxsUZ0CVGxlpSdxWYLqauL
+Qf6BCBMJlL/j9pRv0pYI3kXgPP/OcXdlLrIIMiakCaYJ85tzArHeIbUEoExkwPS8
+fmIaEkEyPwxkSBh81tMCSoW2m9j5G1bL5XYwH9eBvzGKSsv+YuahvWxqEpbNZCy5
+LSXsS+8HHy9N4AeBbTjWsdZr7XFutbEFmY7Zt+YwRV8L3xll85ZraxFrZCBn78vP
+dS4lsQqoXm+40xXtSSt5
+=so1H
+-----END PGP SIGNATURE-----
