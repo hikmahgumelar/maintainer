@@ -19,35 +19,35 @@ Changes:
    * Update Build-Depends for FUSE3 support.
    * Review build dependencies for new upstream requirements.
 Checksums-Sha1:
- e301e829733fd636d76aa0150d18eb51e34d9d9a 1985 s3fs-fuse_1.97-1.dsc
+ 51ce6e46df70d2ac448b33245b7fe9cfb522305d 1985 s3fs-fuse_1.97-1.dsc
  75438ef284a50f236233f9f32765c4338eacb0e0 307251 s3fs-fuse_1.97.orig.tar.gz
  fc0d30ebaddb93094673b9b4c4f36f6dcd9e130e 3708 s3fs-fuse_1.97-1.debian.tar.xz
- fb36059fd452deab91ef18f6eeb3d0a0e2ba5872 7529 s3fs-fuse_1.97-1_source.buildinfo
+ ffc25b22d813591fb117d439803c8f283846b12a 7529 s3fs-fuse_1.97-1_source.buildinfo
 Checksums-Sha256:
- 23ec2f518e77cf24770388885e6307ab075240cbd6cc005fa6a4da20fb0176e7 1985 s3fs-fuse_1.97-1.dsc
+ 82639f0eff1a01ad1c4521062ebec05ba04250d14a621d8a65434712932f85f1 1985 s3fs-fuse_1.97-1.dsc
  28413457cbf923b9b81e546caffabb8edd5c18f263e698ad86f564fd4b5b344d 307251 s3fs-fuse_1.97.orig.tar.gz
  5c785e13c9e5aaa8d588b5ec7afb3e3f19e46102df1725452dc3e6924ad6bd29 3708 s3fs-fuse_1.97-1.debian.tar.xz
- 1cda8cab81bb1d12714e1da21706c58fd06a898e76a608fd6604804f5f6dcad7 7529 s3fs-fuse_1.97-1_source.buildinfo
+ c1bf5b2293f7fca036ee82d7af62cc29c64534e7efc76c3023aef674e9d19b17 7529 s3fs-fuse_1.97-1_source.buildinfo
 Files:
- 265b9c0adba802df8668217c60d36559 1985 utils optional s3fs-fuse_1.97-1.dsc
+ f54daad954d51a6bf1f2ea3166cd9974 1985 utils optional s3fs-fuse_1.97-1.dsc
  6f8bd7c602eee555cd9a07b9eb07e096 307251 utils optional s3fs-fuse_1.97.orig.tar.gz
  152a0711c18437291dac0e14dcc70089 3708 utils optional s3fs-fuse_1.97-1.debian.tar.xz
- 4f86df81bd4a21cd25c4f2c945f754ab 7529 utils optional s3fs-fuse_1.97-1_source.buildinfo
+ 4f3d66c0637c3bf2d377409871f047a6 7529 utils optional s3fs-fuse_1.97-1_source.buildinfo
 
 -----BEGIN PGP SIGNATURE-----
 
-iQJMBAEBCgA2FiEE38HegDE6DhmYXXfAf1fXFxMITXYFAmn12jEYHGhpa21haGd1
-bWVsYXJAZ21haWwuY29tAAoJEH9X1xcTCE12fJoP/0magYm8262GNS7BnRkckOBq
-iWcAUT0g7tIms2qXbJQ2GSyZv6GH4A1yZRjrvXTCF+UTDpJ2P6w3bYgXGBOp2elU
-5meAtTaThv1RrLcqkDUL2dMymMhETJOvXfclaIQCpWviOaWCMA9TDaiZBIm0uG/H
-8NMrb0ovD3yCgAVtpResiENo3fIhX+mjkLusQAhN931h4JVA49ky7RMhDtTNTpsk
-dDZD6m7UDhd761OXkb4kxNHCV1h5fpL5kdvGyr2UbOF9ELJA5p2eWVmbAoyr/ql5
-G1tMhfBxNgd7SRWSFiISOvqdSTKnP3KDCRQNrpg65wg2EERbAOn2IJX2gRSnBUb/
-Cm/1Bd4cChPtpv4i3kIg7vlaXDL177l+vCAT5/eeFP98ImXYQKUD1OtIZyDwInI1
-BaNYJ8vs/RZLo60ILNLMcbC6AetRLf8rlHjwWMLb53kSUmDRaufPFrQSuOCxlWUR
-IS26zyJundLJTLt0A1pHSM4tvdvN91p5ePNjjfGRLgA4J5z+aupCrAM9o7OtjN8J
-BJGYPt1vnYT6s+M25DsHmjBG9+3IXwi3vi7KtgZp8P7y/XJnpThabirL/KS71STr
-At2K4BN+2SoSdtB+m/R+aaDVQhOOFXzmSw1iqkcIoPg3R7GpZ1sLa/jv66Hf6uSb
-2NjPjlUfyzEzaNjA/+M+
-=FUwf
+iQJMBAEBCgA2FiEE38HegDE6DhmYXXfAf1fXFxMITXYFAmn2QZgYHGhpa21haGd1
+bWVsYXJAZ21haWwuY29tAAoJEH9X1xcTCE12udwQAOFfsNvYbhbNxbS0Uha/vEDn
+cH2AdJtS5eHE0vBCYKl4u8nQFTx4SYFukMLKfJUPgE+sTk5uDt9oxLMXxqImdoLZ
+FsIPyMTgdXjwgTjSMnTmFVJ4//8apckdBFMGjzLx1co1CcQOHptRkuGJCP5WoW98
+7rTyeHdYmAuYO+6oYNXbNtFyI98o3JxMLcNE7AT09IN+s4GqSm1W6lEyLaqJSxeA
+eRUmeU3gZqbUv6eTIu49xEdg+0xYjjlLpzJp3KiBR0Q96eH4PjyNEowwjTVudWnO
+7AwIbKpfxhs945ny6R7DZXmp/X9KTHOUCb23uuZJ7y712l5UEPEopjOynxG/BNQq
+yC50Guda/zIWD3PfJB01cAQtyXUuygX+kHtAVdsAvCrk5n/HmLra1t6dBAcQiTGg
+hrdUNjm5ihPkv3JkoWR57Mio4uARZtLdKnHA0FjmEO3XlOF1Il6rIhQn/zFkNTa5
+mR0CuSykMVgCZu2zejI7/1B4mae6o7xZmzWYCaYdeRMMGyQnn6AlpYE+8fCWTzp+
+o6gSj9PWI/TcsvJgsY9YggrxydnEoBQhf0H5/HM0rorv3RTgetFLxYdTOQgDTlTV
+i3YYbDEC/j33JzzNqe62Fq5FBx8YkCFXF/MzQJa+IzAKnA6x2i6etz2XhqC0BIbW
+LNV3ewtvLHIOMFBu0FDl
+=+Rd4
 -----END PGP SIGNATURE-----

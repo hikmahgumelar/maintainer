@@ -12,6 +12,9 @@ RUN apt-get update && apt-get install -y \
     git wget curl dput quilt \
     libfuse-dev \
     libcurl4-openssl-dev \
+    libgcrypt20-dev \
+    libcurl4-gnutls-dev \
+    libfuse3-dev \
     libxml2-dev \
     automake autoconf pkg-config \
     && rm -rf /var/lib/apt/lists/*
@@ -26,5 +29,5 @@ VOLUME /home/packager/output
 
 WORKDIR /home/packager
 USER packager
-
+RUN 
 CMD ["/bin/bash"]

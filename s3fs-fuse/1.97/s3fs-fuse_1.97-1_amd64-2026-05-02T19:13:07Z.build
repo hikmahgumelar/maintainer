@@ -1,7 +1,7 @@
-sbuild (Debian sbuild) 0.91.8 (14 April 2026) on 29329217d7b3
+sbuild (Debian sbuild) 0.91.8 (14 April 2026) on fa02b539820f
 
 +==============================================================================+
-| s3fs-fuse 1.97-1 (amd64)                     Fri, 01 May 2026 10:27:15 +0000 |
+| s3fs-fuse 1.97-1 (amd64)                     Sat, 02 May 2026 19:13:07 +0000 |
 +==============================================================================+
 
 Package: s3fs-fuse
@@ -16,11 +16,11 @@ Build Type: binary
 I: No tarballs found in /root/.cache/sbuild
 I: Creating chroot on-demand by running:
 mmdebstrap --variant=buildd --arch=amd64 --skip=output/mknod --format=tar unstable -
-I: Unpacking tarball from STDIN to /tmp/tmp.sbuild.7czuom_LwU...
+I: Unpacking tarball from STDIN to /tmp/tmp.sbuild.Drn7YJ4_fv...
 I: automatically chosen mode: root
 I: chroot architecture amd64 is equal to the host's architecture
 I: finding correct signed-by value...
-I: using /tmp/mmdebstrap.FkMMlD5jyz as tempdir
+I: using /tmp/mmdebstrap.TxP0lEJBRY as tempdir
 I: skipping output/mknod as requested for ./dev/console
 I: skipping output/mknod as requested for ./dev/full
 I: skipping output/mknod as requested for ./dev/null
@@ -37,9 +37,9 @@ I: installing remaining packages inside the chroot...
 I: cleaning package lists and apt cache...
 I: creating tarball...
 I: done
-I: removing tempdir /tmp/mmdebstrap.FkMMlD5jyz...
-I: success in 111.5568 seconds
-I: The chroot directory at /tmp/tmp.sbuild.7czuom_LwU will be removed at the end of the build
+I: removing tempdir /tmp/mmdebstrap.TxP0lEJBRY...
+I: success in 135.3733 seconds
+I: The chroot directory at /tmp/tmp.sbuild.Drn7YJ4_fv will be removed at the end of the build
 I: To avoid creating a new chroot from scratch every time, either:
 I:  - place a chroot tarball at /root/.cache/sbuild/unstable-amd64.tar and update it manually, for example by running: mmdebstrap --variant=buildd --arch=amd64 --skip=output/mknod --format=tar unstable /root/.cache/sbuild/unstable-amd64.tar 
 I:  - or let sbuild take care of this via the setting UNSHARE_MMDEBSTRAP_KEEP_TARBALL by adding '$unshare_mmdebstrap_keep_tarball = 1;' to your ~/.config/sbuild/config.pl.
@@ -51,12 +51,12 @@ I: Setting up log color...
 I: Setting up apt archive...
 
 +------------------------------------------------------------------------------+
-| Update chroot                                Fri, 01 May 2026 10:29:14 +0000 |
+| Update chroot                                Sat, 02 May 2026 19:15:27 +0000 |
 +------------------------------------------------------------------------------+
 
 Get:1 http://deb.debian.org/debian unstable InRelease [189 kB]
 Get:2 http://deb.debian.org/debian unstable/main amd64 Packages [10.4 MB]
-Fetched 10.6 MB in 5s (2279 kB/s)
+Fetched 10.6 MB in 35s (299 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -65,17 +65,17 @@ Calculating upgrade...
 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
 
 +------------------------------------------------------------------------------+
-| Fetch source files                           Fri, 01 May 2026 10:29:21 +0000 |
+| Fetch source files                           Sat, 02 May 2026 19:16:04 +0000 |
 +------------------------------------------------------------------------------+
 
 
 Local sources
 -------------
 
-/packaging/s3fs-fuse_1.97-1.dsc exists in /packaging; copying to chroot
+/packaging/s3fs-fuse/1.97/s3fs-fuse_1.97-1.dsc exists in /packaging/s3fs-fuse/1.97; copying to chroot
 
 +------------------------------------------------------------------------------+
-| Install package build dependencies           Fri, 01 May 2026 10:29:24 +0000 |
+| Install package build dependencies           Sat, 02 May 2026 19:16:06 +0000 |
 +------------------------------------------------------------------------------+
 
 
@@ -84,13 +84,13 @@ Setup apt archive
 
 Merged Build-Depends: debhelper-compat (= 13), libcurl4-gnutls-dev, libfuse3-dev, libgcrypt20-dev, libgnutls28-dev, libxml2-dev, pkgconf, build-essential
 Filtered Build-Depends: debhelper-compat (= 13), libcurl4-gnutls-dev, libfuse3-dev, libgcrypt20-dev, libgnutls28-dev, libxml2-dev, pkgconf, build-essential
-dpkg-deb: building package 'sbuild-build-depends-main-dummy' in '/build/reproducible-path/resolver-ngNKB3/apt_archive/sbuild-build-depends-main-dummy.deb'.
-Ign:1 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ InRelease
-Get:2 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Release [609 B]
-Ign:3 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Release.gpg
-Get:4 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Sources [691 B]
-Get:5 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Packages [730 B]
-Fetched 2030 B in 0s (33.2 kB/s)
+dpkg-deb: building package 'sbuild-build-depends-main-dummy' in '/build/reproducible-path/resolver-bEbiRc/apt_archive/sbuild-build-depends-main-dummy.deb'.
+Ign:1 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ InRelease
+Get:2 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ Release [609 B]
+Ign:3 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ Release.gpg
+Get:4 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ Sources [691 B]
+Get:5 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ Packages [730 B]
+Fetched 2030 B in 0s (0 B/s)
 Reading package lists...
 Reading package lists...
 
@@ -157,11 +157,11 @@ The following NEW packages will be installed:
 0 upgraded, 101 newly installed, 0 to remove and 0 not upgraded.
 Need to get 33.9 MB of archives.
 After this operation, 120 MB of additional disk space will be used.
-Get:1 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ sbuild-build-depends-main-dummy 0.invalid.0 [900 B]
+Get:1 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ sbuild-build-depends-main-dummy 0.invalid.0 [900 B]
 Get:2 http://deb.debian.org/debian unstable/main amd64 sensible-utils all 0.0.26 [27.0 kB]
 Get:3 http://deb.debian.org/debian unstable/main amd64 libmagic-mgc amd64 1:5.46-5+b2 [337 kB]
 Get:4 http://deb.debian.org/debian unstable/main amd64 libmagic1t64 amd64 1:5.46-5+b2 [109 kB]
-Ign:5 http://deb.debian.org/debian unstable/main amd64 file amd64 1:5.46-5+b2
+Get:5 http://deb.debian.org/debian unstable/main amd64 file amd64 1:5.46-5+b2 [42.6 kB]
 Get:6 http://deb.debian.org/debian unstable/main amd64 gettext-base amd64 0.23.2-2 [242 kB]
 Get:7 http://deb.debian.org/debian unstable/main amd64 libuchardet0 amd64 0.0.8-2+b2 [69.0 kB]
 Get:8 http://deb.debian.org/debian unstable/main amd64 groff-base amd64 1.24.1-1 [1336 kB]
@@ -172,7 +172,6 @@ Get:12 http://deb.debian.org/debian unstable/main amd64 m4 amd64 1.4.21-1 [332 k
 Get:13 http://deb.debian.org/debian unstable/main amd64 autoconf all 2.72-6 [494 kB]
 Get:14 http://deb.debian.org/debian unstable/main amd64 autotools-dev all 20240727.1+nmu1 [60.0 kB]
 Get:15 http://deb.debian.org/debian unstable/main amd64 automake all 1:1.18.1-4 [877 kB]
-Get:5 http://deb.debian.org/debian unstable/main amd64 file amd64 1:5.46-5+b2 [42.6 kB]
 Get:16 http://deb.debian.org/debian unstable/main amd64 autopoint all 0.23.2-2 [770 kB]
 Get:17 http://deb.debian.org/debian unstable/main amd64 libcom-err2 amd64 1.47.4-1 [19.2 kB]
 Get:18 http://deb.debian.org/debian unstable/main amd64 comerr-dev amd64 2.1-1.47.4-1 [50.9 kB]
@@ -260,7 +259,7 @@ Get:99 http://deb.debian.org/debian unstable/main amd64 libgcrypt20-dev amd64 1.
 Get:100 http://deb.debian.org/debian unstable/main amd64 liblzma-dev amd64 5.8.3-1 [369 kB]
 Get:101 http://deb.debian.org/debian unstable/main amd64 libxml2-dev amd64 2.15.2+dfsg-0.1 [745 kB]
 Preconfiguring packages ...
-Fetched 33.9 MB in 2min 2s (278 kB/s)
+Fetched 33.9 MB in 60s (563 kB/s)
 Selecting previously unselected package sensible-utils.
 (Reading database ... 11889 files and directories currently installed.)
 Preparing to unpack .../000-sensible-utils_0.0.26_all.deb ...
@@ -671,21 +670,21 @@ Setting up sbuild-build-depends-main-dummy (0.invalid.0) ...
 Processing triggers for libc-bin (2.42-15) ...
 
 +------------------------------------------------------------------------------+
-| Check architectures                          Fri, 01 May 2026 10:31:48 +0000 |
+| Check architectures                          Sat, 02 May 2026 19:17:22 +0000 |
 +------------------------------------------------------------------------------+
 
 Arch check ok (amd64 included in any)
 
 +------------------------------------------------------------------------------+
-| Build environment                            Fri, 01 May 2026 10:31:48 +0000 |
+| Build environment                            Sat, 02 May 2026 19:17:22 +0000 |
 +------------------------------------------------------------------------------+
 
 Kernel: Linux 6.17.0-20-generic #20~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 19 01:28:37 UTC 2 amd64 (x86_64)
 Toolchain package versions: binutils_2.46-3 dpkg-dev_1.23.7 g++-15_15.2.0-17 gcc-15_15.2.0-17 libc6-dev_2.42-15 libstdc++-15-dev_15.2.0-17 libstdc++6_16-20260425-1 linux-libc-dev_7.0.3-1
-Package versions: apt_3.2.0 autoconf_2.72-6 automake_1:1.18.1-4 autopoint_0.23.2-2 autotools-dev_20240727.1+nmu1 base-files_14 base-passwd_3.6.8 bash_5.3-2 binutils_2.46-3 binutils-common_2.46-3 binutils-x86-64-linux-gnu_2.46-3 bsdextrautils_2.42-5 build-essential_12.12 bzip2_1.0.8-6+b2 comerr-dev_2.1-1.47.4-1 coreutils_9.10-1 cpp_4:15.2.0-5+b1 cpp-15_15.2.0-17 cpp-15-x86-64-linux-gnu_15.2.0-17 cpp-x86-64-linux-gnu_4:15.2.0-5+b1 dash_0.5.12-12 debconf_1.5.92 debhelper_13.31 debian-archive-keyring_2025.1 debianutils_5.23.2 dh-autoreconf_22 dh-strip-nondeterminism_1.15.0-1 diffutils_1:3.12-1 dpkg_1.23.7 dpkg-dev_1.23.7 dwz_0.16-4 file_1:5.46-5+b2 findutils_4.10.0-4 g++_4:15.2.0-5+b1 g++-15_15.2.0-17 g++-15-x86-64-linux-gnu_15.2.0-17 g++-x86-64-linux-gnu_4:15.2.0-5+b1 gcc_4:15.2.0-5+b1 gcc-15_15.2.0-17 gcc-15-base_15.2.0-17 gcc-15-x86-64-linux-gnu_15.2.0-17 gcc-16-base_16-20260425-1 gcc-x86-64-linux-gnu_4:15.2.0-5+b1 gettext_0.23.2-2 gettext-base_0.23.2-2 grep_3.12-1 groff-base_1.24.1-1 gzip_1.13-1 hostname_3.25 init-system-helpers_1.69 intltool-debian_0.35.0+20060710.6 krb5-multidev_1.22.1-2+b1 libacl1_2.3.2-3 libapt-pkg7.0_3.2.0 libarchive-zip-perl_1.68-1 libasan8_16-20260425-1 libatomic1_16-20260425-1 libattr1_1:2.5.2-4 libaudit-common_1:4.1.2-1 libaudit1_1:4.1.2-1+b1 libbinutils_2.46-3 libblkid1_2.42-5 libbrotli-dev_1.2.0-3 libbrotli1_1.2.0-3 libbz2-1.0_1.0.8-6+b2 libc-bin_2.42-15 libc-dev-bin_2.42-15 libc-gconv-modules-extra_2.42-15 libc6_2.42-15 libc6-dev_2.42-15 libcap-ng0_0.9.3-1 libcc1-0_16-20260425-1 libcom-err2_1.47.4-1 libcrypt1_1:4.5.1-1+b1 libctf-nobfd0_2.46-3 libctf0_2.46-3 libcurl3t64-gnutls_8.20.0-1 libcurl4-gnutls-dev_8.20.0-1 libdb5.3t64_5.3.28+dfsg2-11+b1 libdebconfclient0_0.282+b3 libdebhelper-perl_13.31 libdpkg-perl_1.23.7 libelf1t64_0.195-1 libevent-2.1-7t64_2.1.12-stable-10+b2 libffi8_3.5.2-4 libfile-stripnondeterminism-perl_1.15.0-1 libfuse3-4_3.18.2-2 libfuse3-dev_3.18.2-2 libgcc-15-dev_15.2.0-17 libgcc-s1_16-20260425-1 libgcrypt20_1.12.2-1 libgcrypt20-dev_1.12.2-1 libgdbm-compat4t64_1.26-1+b2 libgdbm6t64_1.26-1+b2 libgmp-dev_2:6.3.0+dfsg-5+b2 libgmp10_2:6.3.0+dfsg-5+b2 libgmpxx4ldbl_2:6.3.0+dfsg-5+b2 libgnutls-dane0t64_3.8.13-1 libgnutls28-dev_3.8.13-1 libgnutls30t64_3.8.13-1 libgomp1_16-20260425-1 libgpg-error-dev_1.59-4 libgpg-error0_1.59-4 libgprofng0_2.46-3 libgssapi-krb5-2_1.22.1-2+b1 libgssrpc4t64_1.22.1-2+b1 libhogweed6t64_3.10.2-1+b1 libhwasan0_16-20260425-1 libidn2-0_2.3.8-4+b2 libidn2-dev_2.3.8-4+b2 libisl23_0.27-2 libitm1_16-20260425-1 libjansson4_2.14-2+b4 libk5crypto3_1.22.1-2+b1 libkadm5clnt-mit12_1.22.1-2+b1 libkadm5srv-mit12_1.22.1-2+b1 libkdb5-10t64_1.22.1-2+b1 libkeyutils1_1.6.3-6+b2 libkrb5-3_1.22.1-2+b1 libkrb5-dev_1.22.1-2+b1 libkrb5support0_1.22.1-2+b1 libldap-dev_2.6.10+dfsg-1+b2 libldap2_2.6.10+dfsg-1+b2 liblsan0_16-20260425-1 liblz4-1_1.10.0-10 liblzma-dev_5.8.3-1 liblzma5_5.8.3-1 libmagic-mgc_1:5.46-5+b2 libmagic1t64_1:5.46-5+b2 libmd0_1.1.0-2+b2 libmount1_2.42-5 libmpc3_1.3.1-3 libmpfr6_4.2.2-3 libnettle8t64_3.10.2-1+b1 libnghttp2-14_1.69.0-1 libnghttp2-dev_1.69.0-1 libnghttp3-9_1.15.0-1 libnghttp3-dev_1.15.0-1 libngtcp2-16_1.22.1-1 libngtcp2-crypto-gnutls-dev_1.22.1-1 libngtcp2-crypto-gnutls8_1.22.1-1 libngtcp2-dev_1.22.1-1 libp11-kit-dev_0.26.2-2 libp11-kit0_0.26.2-2 libpam-modules_1.7.0-5+b2 libpam-modules-bin_1.7.0-5+b2 libpam-runtime_1.7.0-5 libpam0g_1.7.0-5+b2 libpcre2-16-0_10.46-1+b2 libpcre2-32-0_10.46-1+b2 libpcre2-8-0_10.46-1+b2 libpcre2-dev_10.46-1+b2 libpcre2-posix3_10.46-1+b2 libperl5.40_5.40.1-7+b1 libpipeline1_1.5.8-3 libpkgconf7_2.5.1-4 libpsl-dev_0.21.5-1 libpsl5t64_0.21.5-1 libquadmath0_16-20260425-1 librtmp-dev_2.6-1 librtmp1_2.6-1 libsasl2-2_2.1.28+dfsg1-11 libsasl2-modules-db_2.1.28+dfsg1-11 libseccomp2_2.6.0-2+b1 libselinux-dev_3.10-1 libselinux1_3.10-1 libsepol-dev_3.10-1 libsepol2_3.10-1 libsframe3_2.46-3 libsmartcols1_2.42-5 libssh2-1-dev_1.11.1-2 libssh2-1t64_1.11.1-2 libssl-dev_3.6.2-1 libssl3t64_3.6.2-1 libstdc++-15-dev_15.2.0-17 libstdc++6_16-20260425-1 libsystemd0_260.1-1 libtasn1-6_4.21.0-2+b1 libtasn1-6-dev_4.21.0-2+b1 libtinfo6_6.6+20251231-1+b1 libtool_2.5.4-11 libtsan2_16-20260425-1 libubsan1_16-20260425-1 libuchardet0_0.0.8-2+b2 libudev1_260.1-1 libunbound8_1.24.2-1+b1 libunistring5_1.4.2-1 libuuid1_2.42-5 libxml2-16_2.15.2+dfsg-0.1 libxml2-dev_2.15.2+dfsg-0.1 libxxhash0_0.8.3-2+b2 libzstd-dev_1.5.7+dfsg-3+b2 libzstd1_1.5.7+dfsg-3+b2 linux-libc-dev_7.0.3-1 m4_1.4.21-1 make_4.4.1-3 man-db_2.13.1-1 mawk_1.3.4.20260302-1 ncurses-base_6.6+20251231-1 ncurses-bin_6.6+20251231-1+b1 nettle-dev_3.10.2-1+b1 openssl-provider-legacy_3.6.2-1 patch_2.8-2 perl_5.40.1-7+b1 perl-base_5.40.1-7+b1 perl-modules-5.40_5.40.1-7 pkgconf_2.5.1-4 pkgconf-bin_2.5.1-4 po-debconf_1.0.22 rpcsvc-proto_1.4.3-1 sbuild-build-depends-main-dummy_0.invalid.0 sed_4.9-3 sensible-utils_0.0.26 sqv_1.3.0-5+b1 sysvinit-utils_3.18-1 tar_1.35+dfsg-4 util-linux_2.42-5 xz-utils_5.8.3-1 zlib1g_1:1.3.dfsg+really1.3.2-3 zlib1g-dev_1:1.3.dfsg+really1.3.2-3
+Package versions: apt_3.3.0 autoconf_2.72-6 automake_1:1.18.1-4 autopoint_0.23.2-2 autotools-dev_20240727.1+nmu1 base-files_14 base-passwd_3.6.8 bash_5.3-2 binutils_2.46-3 binutils-common_2.46-3 binutils-x86-64-linux-gnu_2.46-3 bsdextrautils_2.42-5 build-essential_12.12 bzip2_1.0.8-6+b2 comerr-dev_2.1-1.47.4-1 coreutils_9.10-1 cpp_4:15.2.0-5+b1 cpp-15_15.2.0-17 cpp-15-x86-64-linux-gnu_15.2.0-17 cpp-x86-64-linux-gnu_4:15.2.0-5+b1 dash_0.5.12-12 debconf_1.5.92 debhelper_13.31 debian-archive-keyring_2025.1 debianutils_5.23.2 dh-autoreconf_22 dh-strip-nondeterminism_1.15.0-1 diffutils_1:3.12-1 dpkg_1.23.7 dpkg-dev_1.23.7 dwz_0.16-4 file_1:5.46-5+b2 findutils_4.10.0-4 g++_4:15.2.0-5+b1 g++-15_15.2.0-17 g++-15-x86-64-linux-gnu_15.2.0-17 g++-x86-64-linux-gnu_4:15.2.0-5+b1 gcc_4:15.2.0-5+b1 gcc-15_15.2.0-17 gcc-15-base_15.2.0-17 gcc-15-x86-64-linux-gnu_15.2.0-17 gcc-16-base_16-20260425-1 gcc-x86-64-linux-gnu_4:15.2.0-5+b1 gettext_0.23.2-2 gettext-base_0.23.2-2 grep_3.12-1 groff-base_1.24.1-1 gzip_1.13-1 hostname_3.25 init-system-helpers_1.69 intltool-debian_0.35.0+20060710.6 krb5-multidev_1.22.1-2+b1 libacl1_2.3.2-3 libapt-pkg7.0_3.3.0 libarchive-zip-perl_1.68-1 libasan8_16-20260425-1 libatomic1_16-20260425-1 libattr1_1:2.5.2-4 libaudit-common_1:4.1.2-1 libaudit1_1:4.1.2-1+b1 libbinutils_2.46-3 libblkid1_2.42-5 libbrotli-dev_1.2.0-3 libbrotli1_1.2.0-3 libbz2-1.0_1.0.8-6+b2 libc-bin_2.42-15 libc-dev-bin_2.42-15 libc-gconv-modules-extra_2.42-15 libc6_2.42-15 libc6-dev_2.42-15 libcap-ng0_0.9.3-1 libcc1-0_16-20260425-1 libcom-err2_1.47.4-1 libcrypt1_1:4.5.1-1+b1 libctf-nobfd0_2.46-3 libctf0_2.46-3 libcurl3t64-gnutls_8.20.0-1 libcurl4-gnutls-dev_8.20.0-1 libdb5.3t64_5.3.28+dfsg2-11+b1 libdebconfclient0_0.282+b3 libdebhelper-perl_13.31 libdpkg-perl_1.23.7 libelf1t64_0.195-1 libevent-2.1-7t64_2.1.12-stable-10+b2 libffi8_3.5.2-4 libfile-stripnondeterminism-perl_1.15.0-1 libfuse3-4_3.18.2-2 libfuse3-dev_3.18.2-2 libgcc-15-dev_15.2.0-17 libgcc-s1_16-20260425-1 libgcrypt20_1.12.2-1 libgcrypt20-dev_1.12.2-1 libgdbm-compat4t64_1.26-1+b2 libgdbm6t64_1.26-1+b2 libgmp-dev_2:6.3.0+dfsg-5+b2 libgmp10_2:6.3.0+dfsg-5+b2 libgmpxx4ldbl_2:6.3.0+dfsg-5+b2 libgnutls-dane0t64_3.8.13-1 libgnutls28-dev_3.8.13-1 libgnutls30t64_3.8.13-1 libgomp1_16-20260425-1 libgpg-error-dev_1.59-4 libgpg-error0_1.59-4 libgprofng0_2.46-3 libgssapi-krb5-2_1.22.1-2+b1 libgssrpc4t64_1.22.1-2+b1 libhogweed6t64_3.10.2-1+b1 libhwasan0_16-20260425-1 libidn2-0_2.3.8-4+b2 libidn2-dev_2.3.8-4+b2 libisl23_0.27-2 libitm1_16-20260425-1 libjansson4_2.14-2+b4 libk5crypto3_1.22.1-2+b1 libkadm5clnt-mit12_1.22.1-2+b1 libkadm5srv-mit12_1.22.1-2+b1 libkdb5-10t64_1.22.1-2+b1 libkeyutils1_1.6.3-6+b2 libkrb5-3_1.22.1-2+b1 libkrb5-dev_1.22.1-2+b1 libkrb5support0_1.22.1-2+b1 libldap-dev_2.6.10+dfsg-1+b2 libldap2_2.6.10+dfsg-1+b2 liblsan0_16-20260425-1 liblz4-1_1.10.0-10 liblzma-dev_5.8.3-1 liblzma5_5.8.3-1 libmagic-mgc_1:5.46-5+b2 libmagic1t64_1:5.46-5+b2 libmd0_1.1.0-2+b2 libmount1_2.42-5 libmpc3_1.3.1-3 libmpfr6_4.2.2-3 libnettle8t64_3.10.2-1+b1 libnghttp2-14_1.69.0-1 libnghttp2-dev_1.69.0-1 libnghttp3-9_1.15.0-1 libnghttp3-dev_1.15.0-1 libngtcp2-16_1.22.1-1 libngtcp2-crypto-gnutls-dev_1.22.1-1 libngtcp2-crypto-gnutls8_1.22.1-1 libngtcp2-dev_1.22.1-1 libp11-kit-dev_0.26.2-2 libp11-kit0_0.26.2-2 libpam-modules_1.7.0-5+b2 libpam-modules-bin_1.7.0-5+b2 libpam-runtime_1.7.0-5 libpam0g_1.7.0-5+b2 libpcre2-16-0_10.46-1+b2 libpcre2-32-0_10.46-1+b2 libpcre2-8-0_10.46-1+b2 libpcre2-dev_10.46-1+b2 libpcre2-posix3_10.46-1+b2 libperl5.40_5.40.1-7+b1 libpipeline1_1.5.8-3 libpkgconf7_2.5.1-4 libpsl-dev_0.21.5-1 libpsl5t64_0.21.5-1 libquadmath0_16-20260425-1 librtmp-dev_2.6-1 librtmp1_2.6-1 libsasl2-2_2.1.28+dfsg1-11 libsasl2-modules-db_2.1.28+dfsg1-11 libseccomp2_2.6.0-2+b1 libselinux-dev_3.10-1 libselinux1_3.10-1 libsepol-dev_3.10-1 libsepol2_3.10-1 libsframe3_2.46-3 libsmartcols1_2.42-5 libssh2-1-dev_1.11.1-2 libssh2-1t64_1.11.1-2 libssl-dev_3.6.2-1 libssl3t64_3.6.2-1 libstdc++-15-dev_15.2.0-17 libstdc++6_16-20260425-1 libsystemd0_260.1-1 libtasn1-6_4.21.0-2+b1 libtasn1-6-dev_4.21.0-2+b1 libtinfo6_6.6+20251231-1+b1 libtool_2.5.4-11 libtsan2_16-20260425-1 libubsan1_16-20260425-1 libuchardet0_0.0.8-2+b2 libudev1_260.1-1 libunbound8_1.24.2-1+b1 libunistring5_1.4.2-1 libuuid1_2.42-5 libxml2-16_2.15.2+dfsg-0.1 libxml2-dev_2.15.2+dfsg-0.1 libxxhash0_0.8.3-2+b2 libzstd-dev_1.5.7+dfsg-3+b2 libzstd1_1.5.7+dfsg-3+b2 linux-libc-dev_7.0.3-1 m4_1.4.21-1 make_4.4.1-3 man-db_2.13.1-1 mawk_1.3.4.20260302-1 ncurses-base_6.6+20251231-1 ncurses-bin_6.6+20251231-1+b1 nettle-dev_3.10.2-1+b1 openssl-provider-legacy_3.6.2-1 patch_2.8-2 perl_5.40.1-7+b1 perl-base_5.40.1-7+b1 perl-modules-5.40_5.40.1-7 pkgconf_2.5.1-4 pkgconf-bin_2.5.1-4 po-debconf_1.0.22 rpcsvc-proto_1.4.3-1 sbuild-build-depends-main-dummy_0.invalid.0 sed_4.9-3 sensible-utils_0.0.26 sqv_1.3.0-5+b1 sysvinit-utils_3.18-1 tar_1.35+dfsg-4 util-linux_2.42-5 xz-utils_5.8.3-1 zlib1g_1:1.3.dfsg+really1.3.2-3 zlib1g-dev_1:1.3.dfsg+really1.3.2-3
 
 +------------------------------------------------------------------------------+
-| Build                                        Fri, 01 May 2026 10:31:48 +0000 |
+| Build                                        Sat, 02 May 2026 19:17:22 +0000 |
 +------------------------------------------------------------------------------+
 
 
@@ -700,21 +699,20 @@ Version: 1.97-1
 Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
 Homepage: https://github.com/s3fs-fuse/s3fs-fuse
 Standards-Version: 4.7.4
-Vcs-Browser: https://salsa.debian.org/debian/s3fs-fuse
-Vcs-Git: https://salsa.debian.org/debian/s3fs-fuse.git -b debian
+Vcs-Browser: https://salsa.debian.org/hikmahgumelar/s3fs-fuse
+Vcs-Git: https://salsa.debian.org/hikmahgumelar/s3fs-fuse.git -b debian
 Build-Depends: debhelper-compat (= 13), libcurl4-gnutls-dev, libfuse3-dev, libgcrypt20-dev, libgnutls28-dev, libxml2-dev, pkgconf
 Package-List:
  s3fs-fuse deb utils optional arch=any
 Checksums-Sha1:
  75438ef284a50f236233f9f32765c4338eacb0e0 307251 s3fs-fuse_1.97.orig.tar.gz
- b6d850edbb234da8f6d9d54a5567b1b043baf393 3640 s3fs-fuse_1.97-1.debian.tar.xz
+ fc0d30ebaddb93094673b9b4c4f36f6dcd9e130e 3708 s3fs-fuse_1.97-1.debian.tar.xz
 Checksums-Sha256:
  28413457cbf923b9b81e546caffabb8edd5c18f263e698ad86f564fd4b5b344d 307251 s3fs-fuse_1.97.orig.tar.gz
- 187304868f132b4fe1ab1f006a95694fafe9659f8aa61fde6f78077096c94db1 3640 s3fs-fuse_1.97-1.debian.tar.xz
+ 5c785e13c9e5aaa8d588b5ec7afb3e3f19e46102df1725452dc3e6924ad6bd29 3708 s3fs-fuse_1.97-1.debian.tar.xz
 Files:
  6f8bd7c602eee555cd9a07b9eb07e096 307251 s3fs-fuse_1.97.orig.tar.gz
- 42c248bf2c84f6a4046234451a971a00 3640 s3fs-fuse_1.97-1.debian.tar.xz
-Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
+ 152a0711c18437291dac0e14dcc70089 3708 s3fs-fuse_1.97-1.debian.tar.xz
 
 dpkg-source: warning: extracting unsigned source package (s3fs-fuse_1.97-1.dsc)
 dpkg-source: info: extracting s3fs-fuse in /build/reproducible-path/s3fs-fuse-1.97
@@ -748,7 +746,7 @@ Command: dpkg-buildpackage --sanitize-env -us -uc -b
 dpkg-buildpackage: info: source package s3fs-fuse
 dpkg-buildpackage: info: source version 1.97-1
 dpkg-buildpackage: info: source distribution unstable
-dpkg-buildpackage: info: source changed by Hikmah Gumelar  <hikmahgumelar@gmail.com>
+dpkg-buildpackage: info: source changed by Hikmah Gumelar <hikmahgumelar@gmail.com>
  dpkg-source --before-build .
 dpkg-buildpackage: info: host architecture amd64
  debian/rules clean
@@ -880,6 +878,8 @@ g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-g
 g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o mpu_util.o mpu_util.cpp
 g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o curl.o curl.cpp
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
 <command-line>: note: this is the location of the previous definition
@@ -890,8 +890,6 @@ g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-g
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
-<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
-<command-line>: note: this is the location of the previous definition
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
 <command-line>: note: this is the location of the previous definition
@@ -947,9 +945,9 @@ g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-g
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
 <command-line>: note: this is the location of the previous definition
 g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o filetimes.o filetimes.cpp
-g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o addhead.o addhead.cpp
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
 <command-line>: note: this is the location of the previous definition
+g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o addhead.o addhead.cpp
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
 <command-line>: note: this is the location of the previous definition
 g++ -DHAVE_CONFIG_H -I. -I..  -I/usr/include/fuse3 -I/usr/include/x86_64-linux-gnu -isystem /usr/include/mit-krb5 -isystem /usr/include/mit-krb5 -I/usr/include/libxml2 -I/usr/include/p11-kit-1   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -c -o sighandlers.o sighandlers.cpp
@@ -993,14 +991,14 @@ g++ -DHAVE_CONFIG_H -I. -I..   -Wdate-time -D_FORTIFY_SOURCE=2  -Wall -fno-excep
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
-<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
-<command-line>: note: this is the location of the previous definition
 <command-line>: note: this is the location of the previous definition
 <command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
 <command-line>: note: this is the location of the previous definition
+<command-line>: warning: ‘_FORTIFY_SOURCE’ redefined
+<command-line>: note: this is the location of the previous definition
+g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o junk_data junk_data.o  -ldl -lgnutls -lgcrypt 
 g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o truncate_read_file truncate_read_file.o  -ldl -lgnutls -lgcrypt 
 g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o cr_filename cr_filename.o  -ldl -lgnutls -lgcrypt 
-g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o junk_data junk_data.o  -ldl -lgnutls -lgcrypt 
 g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o mknod_test mknod_test.o  -ldl -lgnutls -lgcrypt 
 g++  -Wall -fno-exceptions -D_FILE_OFFSET_BITS=64 -D_FORTIFY_SOURCE=3 -std=c++14 -g -O2 -ffile-prefix-map=/build/reproducible-path/s3fs-fuse-1.97=. -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection  -Wl,-z,relro -Wl,-z,now -o write_multiblock write_multiblock.o  -ldl -lgnutls -lgcrypt 
 make[3]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97/test'
@@ -1068,15 +1066,15 @@ make[1]: Leaving directory '/build/reproducible-path/s3fs-fuse-1.97'
    dh_gencontrol
    dh_md5sums
    dh_builddeb
-dpkg-deb: building package 's3fs-fuse-dbgsym' in '../s3fs-fuse-dbgsym_1.97-1_amd64.deb'.
 dpkg-deb: building package 's3fs-fuse' in '../s3fs-fuse_1.97-1_amd64.deb'.
+dpkg-deb: building package 's3fs-fuse-dbgsym' in '../s3fs-fuse-dbgsym_1.97-1_amd64.deb'.
  dpkg-genbuildinfo --build=binary -O../s3fs-fuse_1.97-1_amd64.buildinfo
  dpkg-genchanges --build=binary -O../s3fs-fuse_1.97-1_amd64.changes
 dpkg-genchanges: info: binary-only upload (no source code included)
  dpkg-source --after-build .
 dpkg-buildpackage: info: binary-only upload (no source included)
 --------------------------------------------------------------------------------
-Build finished at 2026-05-01T10:32:33Z
+Build finished at 2026-05-02T19:17:52Z
 
 Finished
 --------
@@ -1084,7 +1082,7 @@ Finished
 I: Built successfully
 
 +------------------------------------------------------------------------------+
-| Changes                                      Fri, 01 May 2026 10:32:35 +0000 |
+| Changes                                      Sat, 02 May 2026 19:17:53 +0000 |
 +------------------------------------------------------------------------------+
 
 
@@ -1092,7 +1090,7 @@ s3fs-fuse_1.97-1_amd64.changes:
 -------------------------------
 
 Format: 1.8
-Date: Fri, 24 Apr 2026 15:25:02 +0000
+Date: Fri, 1 May 2026 11:16:02 +0000
 Source: s3fs-fuse
 Binary: s3fs-fuse s3fs-fuse-dbgsym
 Architecture: amd64
@@ -1100,32 +1098,32 @@ Version: 1.97-1
 Distribution: unstable
 Urgency: medium
 Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
-Changed-By: Hikmah Gumelar  <hikmahgumelar@gmail.com>
+Changed-By: Hikmah Gumelar <hikmahgumelar@gmail.com>
 Description:
  s3fs-fuse  - FUSE-based file system backed by Amazon S3
 Changes:
  s3fs-fuse (1.97-1) unstable; urgency=medium
  .
+   * Take over maintainership (ITA: #1134438)
    * New upstream release (1.97).
    * Refresh packaging for upstream changes.
    * Update Build-Depends for FUSE3 support.
    * Review build dependencies for new upstream requirements.
 Checksums-Sha1:
- f5524c44e97ac077e3306fa99da9eda49e567734 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
- bafc46293b4da752ad0572532149ec636802ac4e 7049 s3fs-fuse_1.97-1_amd64.buildinfo
- 3159c32312b2b34e7f0118b12493a6363c4d473b 344408 s3fs-fuse_1.97-1_amd64.deb
+ c1f9a6bd61d2a1f256fbd73ff98082a18f3cd11f 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ 531fcf1101575b8b1e7618dd0a94752345488d94 7049 s3fs-fuse_1.97-1_amd64.buildinfo
+ 2f2cadf968c663a12e9cf0e86c135e38fb70972f 344892 s3fs-fuse_1.97-1_amd64.deb
 Checksums-Sha256:
- edd0707bf75ead1a5a9f66ddd618e086f5882635b16530ae8ccc2a8d328dbdb4 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
- ce98b3e596d67e15bf37804bff693e29f2565661191027a025d23261811ab6c2 7049 s3fs-fuse_1.97-1_amd64.buildinfo
- f6a90b4fee31315a63e79a7e7fdd121ea5f7eb416b99c489f62941fc7e35668f 344408 s3fs-fuse_1.97-1_amd64.deb
+ 11506f98fc7477314bb4d8bff014e6c611dae29d017a2b41727dc83416558ce8 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ 04694d0256eeadfad3779d2cb20511adeeb97723d53626a9a2b1d0fdb7c98a52 7049 s3fs-fuse_1.97-1_amd64.buildinfo
+ 4d6cc787dc312034d9d3ff8c625f70a06245a76eeff160bf6747ad2fd6bf287a 344892 s3fs-fuse_1.97-1_amd64.deb
 Files:
- f713523c91be7295b2bd6923191722c7 4104544 debug optional s3fs-fuse-dbgsym_1.97-1_amd64.deb
- dc060a7152a336e0ae78f1b205d555a8 7049 utils optional s3fs-fuse_1.97-1_amd64.buildinfo
- d8155f0a264b4680082d60c620715c14 344408 utils optional s3fs-fuse_1.97-1_amd64.deb
-Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
+ 4aa8a750020f2960372f31f0381a54b9 4104544 debug optional s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ 5bb8e5b41067b32e0267d130fda93284 7049 utils optional s3fs-fuse_1.97-1_amd64.buildinfo
+ 048fd3ce01adb67fab9044082428397e 344892 utils optional s3fs-fuse_1.97-1_amd64.deb
 
 +------------------------------------------------------------------------------+
-| Buildinfo                                    Fri, 01 May 2026 10:32:36 +0000 |
+| Buildinfo                                    Sat, 02 May 2026 19:17:53 +0000 |
 +------------------------------------------------------------------------------+
 
 Format: 1.0
@@ -1134,17 +1132,17 @@ Binary: s3fs-fuse s3fs-fuse-dbgsym
 Architecture: amd64
 Version: 1.97-1
 Checksums-Md5:
- f713523c91be7295b2bd6923191722c7 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
- d8155f0a264b4680082d60c620715c14 344408 s3fs-fuse_1.97-1_amd64.deb
+ 4aa8a750020f2960372f31f0381a54b9 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ 048fd3ce01adb67fab9044082428397e 344892 s3fs-fuse_1.97-1_amd64.deb
 Checksums-Sha1:
- f5524c44e97ac077e3306fa99da9eda49e567734 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
- 3159c32312b2b34e7f0118b12493a6363c4d473b 344408 s3fs-fuse_1.97-1_amd64.deb
+ c1f9a6bd61d2a1f256fbd73ff98082a18f3cd11f 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ 2f2cadf968c663a12e9cf0e86c135e38fb70972f 344892 s3fs-fuse_1.97-1_amd64.deb
 Checksums-Sha256:
- edd0707bf75ead1a5a9f66ddd618e086f5882635b16530ae8ccc2a8d328dbdb4 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
- f6a90b4fee31315a63e79a7e7fdd121ea5f7eb416b99c489f62941fc7e35668f 344408 s3fs-fuse_1.97-1_amd64.deb
+ 11506f98fc7477314bb4d8bff014e6c611dae29d017a2b41727dc83416558ce8 4104544 s3fs-fuse-dbgsym_1.97-1_amd64.deb
+ 4d6cc787dc312034d9d3ff8c625f70a06245a76eeff160bf6747ad2fd6bf287a 344892 s3fs-fuse_1.97-1_amd64.deb
 Build-Origin: Debian
 Build-Architecture: amd64
-Build-Date: Fri, 01 May 2026 10:32:33 +0000
+Build-Date: Sat, 02 May 2026 19:17:52 +0000
 Build-Path: /build/reproducible-path/s3fs-fuse-1.97
 Installed-Build-Depends:
  autoconf (= 2.72-6),
@@ -1365,11 +1363,11 @@ Environment:
  LANG="C.UTF-8"
  LC_COLLATE="C.UTF-8"
  LC_CTYPE="C.UTF-8"
- SOURCE_DATE_EPOCH="1777044302"
+ SOURCE_DATE_EPOCH="1777634162"
 
 
 +------------------------------------------------------------------------------+
-| Package contents                             Fri, 01 May 2026 10:32:36 +0000 |
+| Package contents                             Sat, 02 May 2026 19:17:54 +0000 |
 +------------------------------------------------------------------------------+
 
 
@@ -1377,8 +1375,8 @@ s3fs-fuse-dbgsym_1.97-1_amd64.deb
 ---------------------------------
 
  new Debian package, version 2.0.
- size 4104544 bytes: control archive=556 bytes.
-     401 bytes,    13 lines      control
+ size 4104544 bytes: control archive=520 bytes.
+     345 bytes,    12 lines      control
      106 bytes,     1 lines      md5sums
  Package: s3fs-fuse-dbgsym
  Source: s3fs-fuse
@@ -1392,26 +1390,25 @@ s3fs-fuse-dbgsym_1.97-1_amd64.deb
  Priority: optional
  Description: debug symbols for s3fs-fuse
  Build-Ids: 3a90898485b3817fb297c6f136dab452e054b5a5
- Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
 
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/lib/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/lib/debug/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/lib/debug/.build-id/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/lib/debug/.build-id/3a/
--rw-r--r-- root/root   4435008 2026-04-24 15:25 ./usr/lib/debug/.build-id/3a/90898485b3817fb297c6f136dab452e054b5a5.debug
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/doc/
-lrwxrwxrwx root/root         0 2026-04-24 15:25 ./usr/share/doc/s3fs-fuse-dbgsym -> s3fs-fuse
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/lib/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/lib/debug/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/lib/debug/.build-id/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/lib/debug/.build-id/3a/
+-rw-r--r-- root/root   4435008 2026-05-01 11:16 ./usr/lib/debug/.build-id/3a/90898485b3817fb297c6f136dab452e054b5a5.debug
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/share/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/share/doc/
+lrwxrwxrwx root/root         0 2026-05-01 11:16 ./usr/share/doc/s3fs-fuse-dbgsym -> s3fs-fuse
 
 
 s3fs-fuse_1.97-1_amd64.deb
 --------------------------
 
  new Debian package, version 2.0.
- size 344408 bytes: control archive=968 bytes.
-     882 bytes,    19 lines      control
+ size 344892 bytes: control archive=936 bytes.
+     826 bytes,    18 lines      control
      327 bytes,     5 lines      md5sums
  Package: s3fs-fuse
  Version: 1.97-1
@@ -1431,21 +1428,20 @@ s3fs-fuse_1.97-1_amd64.deb
   .
   s3fs is stable and is being used in a number of production environments,
   for example for  rsync backups to s3.
- Original-Maintainer: Mattia Rizzolo <mattia@debian.org>
 
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/bin/
--rwxr-xr-x root/root    903456 2026-04-24 15:25 ./usr/bin/s3fs
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/doc/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/doc/s3fs-fuse/
--rw-r--r-- root/root       735 2026-04-24 15:25 ./usr/share/doc/s3fs-fuse/changelog.Debian.gz
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/bin/
+-rwxr-xr-x root/root    903456 2026-05-01 11:16 ./usr/bin/s3fs
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/share/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/share/doc/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/share/doc/s3fs-fuse/
+-rw-r--r-- root/root       763 2026-05-01 11:16 ./usr/share/doc/s3fs-fuse/changelog.Debian.gz
 -rw-r--r-- root/root     11189 2025-12-07 20:44 ./usr/share/doc/s3fs-fuse/changelog.gz
--rw-r--r-- root/root      1719 2026-04-24 15:24 ./usr/share/doc/s3fs-fuse/copyright
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/man/
-drwxr-xr-x root/root         0 2026-04-24 15:25 ./usr/share/man/man1/
--rw-r--r-- root/root     11261 2026-04-24 15:25 ./usr/share/man/man1/s3fs.1.gz
+-rw-r--r-- root/root      1840 2026-05-01 11:16 ./usr/share/doc/s3fs-fuse/copyright
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/share/man/
+drwxr-xr-x root/root         0 2026-05-01 11:16 ./usr/share/man/man1/
+-rw-r--r-- root/root     11261 2026-05-01 11:16 ./usr/share/man/man1/s3fs.1.gz
 
 
 lintian
@@ -1457,15 +1453,15 @@ Setup apt archive
 
 Merged Build-Depends: lintian
 Filtered Build-Depends: lintian
-dpkg-deb: building package 'sbuild-build-depends-lintian-dummy' in '/build/reproducible-path/resolver-ngNKB3/apt_archive/sbuild-build-depends-lintian-dummy.deb'.
-Ign:1 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ InRelease
-Get:2 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Release [615 B]
-Ign:3 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Release.gpg
-Get:4 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Sources [1273 B]
-Get:5 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ Packages [1342 B]
+dpkg-deb: building package 'sbuild-build-depends-lintian-dummy' in '/build/reproducible-path/resolver-bEbiRc/apt_archive/sbuild-build-depends-lintian-dummy.deb'.
+Ign:1 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ InRelease
+Get:2 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ Release [615 B]
+Ign:3 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ Release.gpg
+Get:4 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ Sources [1273 B]
+Get:5 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ Packages [1342 B]
 Hit:6 http://deb.debian.org/debian unstable InRelease
 Get:7 http://deb.debian.org/debian unstable/main amd64 Packages [10.4 MB]
-Fetched 10.4 MB in 6s (1739 kB/s)
+Fetched 10.4 MB in 5s (2050 kB/s)
 Reading package lists...
 
 Install lintian build dependencies (apt-based resolver)
@@ -1582,13 +1578,13 @@ The following NEW packages will be installed:
 0 upgraded, 152 newly installed, 0 to remove and 0 not upgraded.
 Need to get 19.0 MB of archives.
 After this operation, 77.8 MB of additional disk space will be used.
-Get:1 copy:/build/reproducible-path/resolver-ngNKB3/apt_archive ./ sbuild-build-depends-lintian-dummy 0.invalid.0 [828 B]
+Get:1 copy:/build/reproducible-path/resolver-bEbiRc/apt_archive ./ sbuild-build-depends-lintian-dummy 0.invalid.0 [832 B]
 Get:2 http://deb.debian.org/debian unstable/main amd64 netbase all 6.5 [12.4 kB]
 Get:3 http://deb.debian.org/debian unstable/main amd64 libncursesw6 amd64 6.6+20251231-1+b1 [136 kB]
 Get:4 http://deb.debian.org/debian unstable/main amd64 libproc2-0 amd64 2:4.0.4-9+b2 [63.8 kB]
 Get:5 http://deb.debian.org/debian unstable/main amd64 procps amd64 2:4.0.4-9+b2 [880 kB]
 Get:6 http://deb.debian.org/debian unstable/main amd64 readline-common all 8.3-4 [74.8 kB]
-Get:7 http://deb.debian.org/debian unstable/main amd64 openssl amd64 3.6.2-1 [1517 kB]
+Ign:7 http://deb.debian.org/debian unstable/main amd64 openssl amd64 3.6.2-1
 Get:8 http://deb.debian.org/debian unstable/main amd64 ca-certificates all 20260223 [158 kB]
 Get:9 http://deb.debian.org/debian unstable/main amd64 libtext-charwidth-perl amd64 0.04-11+b5 [9532 B]
 Get:10 http://deb.debian.org/debian unstable/main amd64 libtext-wrapi18n-perl all 0.06-10 [8808 B]
@@ -1599,9 +1595,10 @@ Get:14 http://deb.debian.org/debian unstable/main amd64 libfyaml0 amd64 0.9.4-1 
 Get:15 http://deb.debian.org/debian unstable/main amd64 libstemmer0d amd64 3.0.1-1+b2 [131 kB]
 Get:16 http://deb.debian.org/debian unstable/main amd64 libxmlb2 amd64 0.3.24-2+b1 [62.8 kB]
 Get:17 http://deb.debian.org/debian unstable/main amd64 libappstream5 amd64 1.1.2-1+b1 [225 kB]
+Get:7 http://deb.debian.org/debian unstable/main amd64 openssl amd64 3.6.2-1 [1517 kB]
 Get:18 http://deb.debian.org/debian unstable/main amd64 appstream amd64 1.1.2-1+b1 [564 kB]
 Get:19 http://deb.debian.org/debian unstable/main amd64 diffstat amd64 1.69-1 [34.9 kB]
-Ign:20 http://deb.debian.org/debian unstable/main amd64 libassuan9 amd64 3.0.2-2+b2
+Get:20 http://deb.debian.org/debian unstable/main amd64 libassuan9 amd64 3.0.2-2+b2 [60.7 kB]
 Get:21 http://deb.debian.org/debian unstable/main amd64 libreadline8t64 amd64 8.3-4 [181 kB]
 Get:22 http://deb.debian.org/debian unstable/main amd64 gpgconf amd64 2.4.9-4 [126 kB]
 Get:23 http://deb.debian.org/debian unstable/main amd64 libksba8 amd64 1.6.8-2 [135 kB]
@@ -1612,7 +1609,6 @@ Get:27 http://deb.debian.org/debian unstable/main amd64 iso-codes all 4.20.1-1 [
 Get:28 http://deb.debian.org/debian unstable/main amd64 libaliased-perl all 0.34-3 [13.5 kB]
 Get:29 http://deb.debian.org/debian unstable/main amd64 libapt-pkg-perl amd64 0.1.43 [68.4 kB]
 Get:30 http://deb.debian.org/debian unstable/main amd64 libb-hooks-op-check-perl amd64 0.22-3+b4 [10.6 kB]
-Get:20 http://deb.debian.org/debian unstable/main amd64 libassuan9 amd64 3.0.2-2+b2 [60.7 kB]
 Get:31 http://deb.debian.org/debian unstable/main amd64 libdynaloader-functions-perl all 0.004-2 [12.2 kB]
 Get:32 http://deb.debian.org/debian unstable/main amd64 libdevel-callchecker-perl amd64 0.009-3 [15.3 kB]
 Get:33 http://deb.debian.org/debian unstable/main amd64 libparams-classify-perl amd64 0.015-2+b5 [22.5 kB]
@@ -1736,7 +1732,7 @@ Get:150 http://deb.debian.org/debian unstable/main amd64 t1utils amd64 1.41-4 [6
 Get:151 http://deb.debian.org/debian unstable/main amd64 unzip amd64 6.0-29 [173 kB]
 Get:152 http://deb.debian.org/debian unstable/main amd64 lintian all 2.135.0 [1025 kB]
 Preconfiguring packages ...
-Fetched 19.0 MB in 1min 29s (214 kB/s)
+Fetched 19.0 MB in 1min 9s (276 kB/s)
 Selecting previously unselected package netbase.
 (Reading database ... 16034 files and directories currently installed.)
 Preparing to unpack .../000-netbase_6.5_all.deb ...
@@ -2375,46 +2371,41 @@ done.
 Running lintian...
 W: s3fs-fuse: groff-message an.tmac:<standard input>:526: warning: cannot nest .TP or .TQ inside .TP; supply a tag [usr/share/man/man1/s3fs.1.gz:2]
 W: s3fs-fuse: groff-message troff:<standard input>:419: warning: name '<schema>://'' not defined [usr/share/man/man1/s3fs.1.gz:1]
-W: s3fs-fuse source: no-nmu-in-changelog [debian/changelog:1]
-W: s3fs-fuse source: source-nmu-has-incorrect-version-number 1.97-1 [debian/changelog:1]
-W: s3fs-fuse source: unknown-field Original-Maintainer
-W: s3fs-fuse: unknown-field Original-Maintainer
-W: s3fs-fuse-dbgsym: unknown-field Original-Maintainer
 
 I: Lintian run successful (worst tag: warn)
 
 +------------------------------------------------------------------------------+
-| Post Build                                   Fri, 01 May 2026 10:35:26 +0000 |
+| Post Build                                   Sat, 02 May 2026 19:19:35 +0000 |
 +------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------+
-| Cleanup                                      Fri, 01 May 2026 10:35:26 +0000 |
+| Cleanup                                      Sat, 02 May 2026 19:19:35 +0000 |
 +------------------------------------------------------------------------------+
 
 Purging /build/reproducible-path
 Not cleaning session: cloned chroot in use
 
 +------------------------------------------------------------------------------+
-| Summary                                      Fri, 01 May 2026 10:35:28 +0000 |
+| Summary                                      Sat, 02 May 2026 19:19:36 +0000 |
 +------------------------------------------------------------------------------+
 
 Build Architecture: amd64
 Build Type: binary
 Build-Space: 64100
-Build-Time: 42
+Build-Time: 28
 Distribution: unstable
 Host Architecture: amd64
-Install-Time: 144
-Job: /packaging/s3fs-fuse_1.97-1.dsc
+Install-Time: 76
+Job: /packaging/s3fs-fuse/1.97/s3fs-fuse_1.97-1.dsc
 Lintian: successful (worst tag: warn)
 Machine Architecture: amd64
 Package: s3fs-fuse
-Package-Time: 318
+Package-Time: 285
 Source-Version: 1.97-1
 Space: 64100
 Status: successful
 Version: 1.97-1
 --------------------------------------------------------------------------------
-Finished at 2026-05-01T10:32:33Z
-Build needed 00:05:18, 64100k disk space
+Finished at 2026-05-02T19:17:52Z
+Build needed 00:04:45, 64100k disk space
