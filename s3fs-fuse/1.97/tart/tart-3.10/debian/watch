@@ -1,2 +1,5 @@
 version=5
-http://sf.net/linuxtart/ LinuxTaRT-([0-9.]*)\.tar\.gz
+
+# Upstream does not provide signed release tarballs
+opts=downloadurlmangle=s|sf.net/linuxtart|downloads.sourceforge.net/linuxtart| \
+http://sf.net/linuxtart/LinuxTaRT-([0-9.]+)\.tar\.gz

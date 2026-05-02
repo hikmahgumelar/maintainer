@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Fri, 01 May 2026 15:19:04 +0000
+Source: tart
+Binary: tart tart-dbgsym
+Architecture: amd64
+Version: 3.10-4
+Distribution: unstable
+Urgency: medium
+Maintainer: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Changed-By: Hikmah Gumelar <hikmahgumelar@gmail.com>
+Description:
+ tart       - versatile and feature-rich email signature generator
+Changes:
+ tart (3.10-4) unstable; urgency=medium
+ .
+   * Take over maintenance (ITA: #1135355).
+   * Refresh packaging.
+   * Fix lintian warnings:
+     - Update debian/watch to version 4
+     - Fix DEP-5 copyright format
+     - Bump Standards-Version to 4.7.4
+     - Clean up debian/control (remove redundant fields)
+Checksums-Sha1:
+ 022d5287a7b4528906c679276c3a532f86731b1d 32684 tart-dbgsym_3.10-4_amd64.deb
+ ddae7ac2a7c0434aaf771d30beeb5fedbedc975c 4762 tart_3.10-4_amd64.buildinfo
+ 83b90e42ca7920ed7bc80d97b6d27f51430a506e 63080 tart_3.10-4_amd64.deb
+Checksums-Sha256:
+ 84f087452c3a34c461c5712f57ca622b056f479630a5ae2151f3de8a91bfbf80 32684 tart-dbgsym_3.10-4_amd64.deb
+ 7e7299c8710fe6f5fd259c8537dbba9a0d77994d7e97dfe243a54e9db47722f7 4762 tart_3.10-4_amd64.buildinfo
+ 814507ca6264957f32f8a4a9307bb1a1d80b9baeca51c2ddeed4bb3e77356f07 63080 tart_3.10-4_amd64.deb
+Files:
+ 6560d859951c1669fb35a71fe3ac9a08 32684 debug optional tart-dbgsym_3.10-4_amd64.deb
+ cea2d426bf3c83376683841b5c7e98b4 4762 mail optional tart_3.10-4_amd64.buildinfo
+ c3a5887d7076573f02abf0676bb21e5e 63080 mail optional tart_3.10-4_amd64.deb
